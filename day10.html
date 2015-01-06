@@ -1,0 +1,576 @@
+<!--.row>(.col-md-3>h2.text-right)+.col-md-9-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geekwise Javascript 1</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700'
+          rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/prism.css" />
+    <link rel="stylesheet" href="./static/css/reset.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <style>
+        .urgent {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body class="theme day">
+<header id="nav">
+</header>
+
+<div class="container content">
+<h1 class="row text-center hdr">
+    Day 10
+</h1>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2 class="text-right">Concepts</h2>
+    </div>
+    <div class="col-md-9 concepts">
+        <ul>
+            <li>Review Take Home Assignment</li>
+            <li>array forEach</li>
+            <li>Skill Builder</li>
+            <li>Date Object</li>
+            <li>Other fun stuff</li>
+        </ul>
+    </div>
+</div>
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Review Take Home</h2>
+        </div>
+        <div class="col-md-9">
+            <div class="point">
+                We'll code this up in class
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">array forEach</h2>
+        </div>
+        <div class="col-md-9">
+            <div class="point">
+                Another very useful feature of an array is the <code>forEach</code> function.  It's a shortcut to a
+                for loop, with the added benefit of a function closure.
+            </div>
+
+            <div class="point">
+                The idea with a normal <code>for</code> loop is to create a loop that will loop N number of times.  We
+                usually combine this with an array so we can loop over the array contents.  The <code>forEach</code>
+                loop gets right to the point, and automatically loops over all of an array's contents.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var arr = ['a', 'b', 'c'];
+arr.forEach(function (item) {
+    console.log(item);
+});
+    </code>
+</pre>
+
+            <div class="point">
+                Lets pick that apart.  We first target the <code>arr</code> and call the <code>forEach</code> function.
+                The <code>forEach</code> function takes one argument, the function to call on each item of the array.
+                That callback function gets one argument, an item in the array, and it can then do something with each
+                of those items.  This might be useful to augment our movieapp.js file, and simplify some things for us.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Skill Builder</h2>
+        </div>
+        <div class="col-md-9">
+            <div class="point">
+                Alter the take home in the following way:
+
+                <ul class="list">
+                    <li>
+                        Add a new div to your markup below your form with an id attribute of "movieDetails".  For now,
+                        just add some random content.
+                    </li>
+                    <li>
+                        Set the new div display to none via css (inline style tag is fine, but external css file is preferred.
+                    </li>
+                    <li>When you click on a movie li, show this div (in addition to hiding the form)</li>
+                    <li>When you click on the "add a new movie button", hide this div.</li>
+                    <li>Instead of using a for loop to create our li's for each movie, use a forEach loop instead.</li>
+                </ul>
+
+                In effect, your simply hiding and showing different things based on a specific "state" of the app.  When
+                we are in "add a movie" state, we see a form, when we have selected a movie by clicking on it, we see the
+                div.  Don't worry about the content of the div just yet.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Date Object</h2>
+        </div>
+        <div class="col-md-9">
+            <div class="point">
+                The Date object in javascript is a built in way to create, manipulate and display Dates.
+            </div>
+
+            <div class="point">
+                The date will always be relative to the users computer settings that the javascript is running on,
+                since javascript runs in their browser a date object created at the same time in two different time zones
+                will yield two different date objects.
+            </div>
+
+            <div class="point">
+                To create a date object, we'll first need to call the Date constructor function.
+
+                <div class="excercise">
+                    Try it: Create a date object in your console
+                </div>
+            </div>
+
+<pre>
+    <code class="language-javascript">
+new Date();
+    </code>
+</pre>
+
+            <div class="point">
+                The console should output a "stringified" version of a date.  But it is indeed an object, and as we know
+                constructor functions return an object with functions and properties we can use.  To take a closer look
+                lets use another lesser known console function.  It's called <code>dir(...)</code>.  Call <code>dir</code>
+                around your date object and lets see if we can look at the date objects prototype.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+dir(new Date());
+    </code>
+</pre>
+
+            <div class="point">
+                Now we can investigate the Date objects prototype.  Any functions look interesting?
+            </div>
+
+            <div class="point">
+                One thing that javascript lacks is a really good way of formatting dates for output once we have created
+                a date object.
+            </div>
+
+            <div class="point">
+                Essentially, a javascript date object gives you access to all the individual parts of a date, and you must
+                build a string for output.
+            </div>
+
+            <div class="point">
+                One useful function on a Date object is the <code>getTime()</code> function.  This functino returns the
+                number of seconds since the epoch (Jan 1, 1970 UTC).  This can be useful if you want to compare two
+                date objects since the number of seconds will always be relative to the Epoch.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var d = new Date();
+console.log(d.getTime());
+    </code>
+</pre>
+
+            <div class="point">
+                Another useful function is the <code>getMonth()</code> function.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var d = new Date();
+console.log(d.getMonth()); //huh?
+    </code>
+</pre>
+
+            <div class="point">
+                The <code>getMonth</code> function is zero based, for some reason, of which I'm not even sure.  Go home
+                javascript, you're drunk.
+            </div>
+
+            <div class="point">
+                Just remember when working with <code>Date</code> objects that <code>getMonth</code> functions are zero
+                based, and require adding 1 to the value to get the current month.
+            </div>
+
+            <div class="point">
+                Next up is the <code>getDate</code> function.  This returns the numeric value for the current day of the
+                date.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var d = new Date();
+console.log(d.getDate());
+    </code>
+</pre>
+
+            <div class="point">
+                Finally, lets look at the <code>getFullYear()</code> function.  This returns the the full year as a 4 digit
+                number.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var d = new Date();
+console.log(d.getFullYear()); //2014
+    </code>
+</pre>
+
+            <div class="point">
+                So, now you've got the basics to reconstruct a date for display on the screen.
+
+                <div class="excercise">
+                    Create a date object, and output a string in MM/DD/YYYY format using the functions discussed above.
+                </div>
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var d = new Date();
+console.log((d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear());
+    </code>
+</pre>
+
+        </div>
+    </div>
+
+<div class="row">
+<div class="col-md-3">
+    <h2 class="text-right">How Do I...</h2>
+</div>
+<div class="col-md-9">
+<div class="point">
+    This section will aim to answer the rest of the questions you'll need to finish the final exam.  My files
+    for review up to this point have been distributed via email.  You can use these as a starting
+    point to add the rest of the functionality that we'll discuss later in class.
+</div>
+
+<h3>Generate a random number</h3>
+
+<div class="point">
+    Random numbers are really useful for a lot of things.  Picking a random item from an array comes to mind
+    but there are many other uses.
+</div>
+
+<div class="point">
+    To genreate a random number, first, we need to do a bit of math.  The <code>Math</code> object in javascript
+    holds many math functions, look at it in the console, which function seems appropriate for generating a
+    random number?
+</div>
+
+<pre>
+    <code class="language-javascript">
+        console.log(Math);
+    </code>
+</pre>
+<div class="point">
+    You probably notices the <code>Math.random</code> function.  Lets try and call that.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        console.log(Math.random());
+    </code>
+</pre>
+
+<div class="point">
+    Great, so this will generate a random floating point number (notice the decimal).  So in order to get
+    an integer between 1 - N we need to do some more work.
+</div>
+
+<div class="point">
+    To start off, we need to define the <code>N</code> mentioned above.  That calculateion simply looks like:
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var n = 5;
+        Math.random() * n;
+    </code>
+</pre>
+
+<div class="point">
+    So, the random number times the thing we want to be the top level bound will yield a random number.  Lets
+    try that.  Try changing up the <code>n</code> in the code above, and the result should always be a random
+    number below <code>n</code>.
+</div>
+
+<div class="point">
+    This gets us closer to what we want (a random integer), but we need to do some rounding.  In this case,
+    we'll just go ahead and round up, and we can do this using the <code>Math.ceil</code> function.
+</div>
+
+<div class="point">
+    <code>Math.ceil</code> will return the smallest integer that's larger than the given float. ie
+    <code>Math.ceil(1.1) === 2</code>, <code>Math.ceil(99.0000001) === 100</code>.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var n = 10;
+        var randFloat = Math.random() * n;
+        var randInt = Math.ceil(randFloat);
+        console.log(randInt);
+    </code>
+</pre>
+
+<div class="point">
+    So now we've got a nice little random number script.
+
+    <div class="excercise">
+        Rename <code>elements.js</code> to <code>helpers.js</code> and update your html page to include
+        <code>helpers.js</code>.  In <code>helpers.js</code> create a function called <code>randomNum</code>
+        that takes as an agrument a "top bound" and returns a random number between 1 and that value.
+    </div>
+</div>
+
+<h3>Create a random string</h3>
+
+<div class="point">
+    We'll continue with some randomness by learning how to generate a random string.  (think generated password)
+</div>
+
+<div class="point">
+    First, lets define the things that we want to include in our random string.  We'll create a variable called
+    <code>lang</code> that will hold all the characters we'll allow in the string.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var lang = "abcdefghijklmnopqrstuvwxyz";
+    </code>
+</pre>
+
+<div class="point">
+    Would probably be nice to include upper case letters too.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var lang = "abcdefghijklmnopqrstuvwxyz";
+        lang = lang + lang.toUpperCase();
+    </code>
+</pre>
+
+<div class="point">
+    Great, now we have upper and lower case, lets also include numbers.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var lang = "abcdefghijklmnopqrstuvwxyz";
+        lang += lang.toUpperCase();
+        lang += "0123456789";
+    </code>
+</pre>
+
+<div class="point">
+    Ok, so this lang string now defines the allowable chacters that we'll use in our generated strings.
+</div>
+
+<div class="point">
+    Next we need to know how long we want our generated string.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var lang = "abcdefghijklmnopqrstuvwxyz";
+        lang += lang.toUpperCase();
+        lang += "0123456789";
+        var len = 10;
+    </code>
+</pre>
+
+<div class="point">
+    Finally we'll loop the number of times specified in length, and generate a random number each time.
+    The random number will be used to select a single character, and that character will be added to the
+    generated string.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var lang = "abcdefghijklmnopqrstuvwxyz";
+        lang += lang.toUpperCase();
+        lang += "0123456789";
+        var len = 10;
+        var str = "";
+
+        for (var i = 0; i < len; i++) {
+        var num = randomNum(lang.length);
+        var letter = lang[num];
+        str += letter;
+        }
+
+        console.log(str);
+    </code>
+</pre>
+
+<div class="point">
+    So, to walk through the workflow, we are:
+
+    <ul class="list">
+        <li>creating a lang string that we can use for selecting letters</li>
+        <li>createing a variable <code>str</code> for storing our generated string</li>
+        <li>Looping <code>len</code> number of times to create a string <code>len</code> characters long</li>
+        <li>Inside each loop, genreating a random number that is no larger than the length of our lang str</li>
+        <li>Using the random number to find a character in the string using bracket syntax</li>
+        <li>Appending the letter to the base <code>str</code> variable</li>
+        <li>logging the final product.</li>
+    </ul>
+</div>
+
+<h3>Add days to a date object</h3>
+
+<div class="point">
+    Date objects in javascript are cool, in that you can easily add days to a date object and it will internally
+    calculate the proper date for you.  In order to set the date of a date object, you first need to be able
+    to get the date.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var d = new Date();
+        console.log(d.getDate());
+    </code>
+</pre>
+
+<div class="point">
+    This will get you the date part of the date object.  This is a good place to start.  Now we need to be
+    able to set the date to that number plus the number of days you want to add.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var d = new Date();
+        d.setDate(d.getDate() + 10);
+        console.log(d);
+    </code>
+</pre>
+
+<div class="point">
+    Pretty much all there is too adding days to a date.  We'll be using this in our movie checkout app to
+    simulate a long checkout period.
+</div>
+
+<h3>Determine the amount of time between two dates?</h3>
+
+<div class="point">
+    The final piece to the movie checkout puzzle is knowing how long a movie was checked out for.  To do this,
+    we need to examine two date objects.  Lets set up two date objects, one for today, and one for two days
+    from now.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var checkOut = new Date();
+        var checkIn = new Date();
+        checkIn.setDate(checkIn.getDate() + 2);
+
+        var checkOutTime = checkOut.getTime();
+        var checkInTime = checkIn.getTime();
+        console.log(checkOutTime);
+        console.log(checkInTime);
+    </code>
+</pre>
+
+<div class="point">
+    Great, now we need to get the milliseconds from the epoch from those date objects.  This is where
+    <code>getTime()</code> comes in handy.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var checkOut = new Date();
+        var checkIn = new Date();
+        checkIn.setDate(checkIn.getDate() + 2);
+
+        var checkOutTime = checkOut.getTime();
+        var checkInTime = checkIn.getTime();
+        console.log(checkOutTime);
+        console.log(checkInTime);
+    </code>
+</pre>
+
+<div class="point">
+    So now we have the milliseconds for each one, subtracting the check in from the check out will give us the
+    number of milliseconds between the two dates, and then we can convert today's.
+</div>
+
+<pre>
+    <code class="language-javascript">
+        var checkOut = new Date();
+        var checkIn = new Date();
+        checkIn.setDate(checkIn.getDate() + 2);
+
+        var checkOutTime = checkOut.getTime();
+        var checkInTime = checkIn.getTime();
+        var days = Math.abs(checkInTime - checkOutTime) / 1000 / 60 / 60 / 24;
+    </code>
+</pre>
+
+</div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-3">
+        <h2 class="text-right">Take Home</h2>
+    </div>
+    <div class="col-md-9">
+        <div class="point">
+            <ol class="list">
+                <li>When selecting a movie, show the #moveDetails div</li>
+                <li>Create markup for your movie fields inside the #movieDetails div</li>
+                <li>When clicking on a movie, populate all the fields in the dom with the movie details</li>
+                <li>
+                    Set a variable in your movieapp.js script that will represent a fee per day for a checkout.  Something
+                    like <code>var dailyRate = 3; //three dollars a day</code>.
+                </li>
+                <li>Add a check in / check out function to the Movie prototype</li>
+                <li>The check out function should set a Date object with the current time on the movie instance.</li>
+                <li>
+                    The check in function should create a Date object on the movie instance.  It should then add a random
+                    number of days to this date (to simulate a real checkout).  Then it should calculate the difference
+                    in the number of days since checkout (Math.ceil using the milliseconds to days calc).  Finally, once you
+                    know how many days the movie was checked out (based on the random adding of days to the check in date)
+                    alert something like <strong>Fee for this movie checkout: $6.00</strong>.
+                </li>
+                <li>
+                    Add a button for check in visible when a movies details are displayed.  Only show this button if the
+                    movie is currently checked out.
+                </li>
+                <li>
+                    Add a button for check out visible when a movies details are displayed.  Only show this button if the
+                    movie is currently checked in.
+                </li>
+                <li>Add an event listener for check in that will run the <code>movie.checkIn</code> function</li>
+                <li>Add an event listener for check out that will run the <code>movie.checkOut</code> function</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- closing the main container -->
+</div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="./static/js/prism.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./static/js/nav.js"></script>
+</body>
+</html>

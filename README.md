@@ -1,4 +1,4 @@
 geekwise-js
 ===========
 
-The daily overviews for GeekWise JavaScript 1 (Intro to JavaScript)
+The daily overviews for Geekwise javascript 1 class

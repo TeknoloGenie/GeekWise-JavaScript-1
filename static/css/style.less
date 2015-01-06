@@ -1,0 +1,187 @@
+@blue: #0073EA;
+@pink: #ff0084;
+@white: #ffffff;
+@grey: #cccccc;
+@black: #000000;
+@yellow: #ffee88;
+@gunmetal: #3e3f47;
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: @gunmetal;
+    margin-bottom: 100px;
+
+    strong {
+        font-weight: 800;
+    }
+
+    .point {
+        font-size: 1.8em;
+        font-weight: 100;
+        margin-bottom: 15px;
+        line-height: 1.2;
+
+        pre {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            code {
+                font-size: .75em;
+            }
+
+        }
+
+        h4 {
+            color: @blue;
+            margin-bottom: 20px;
+        }
+
+        .exampleLeadin {
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: @blue;
+            margin-top: 40px;
+        }
+
+        .excercise {
+            font-size: .8em;
+            border: 2px dashed #f8af3d;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidenote {
+            color: @blue;
+            font-size: .6em;
+            padding: 20px;
+            border: 1px solid lighten(@blue, 10%);
+            background-color: lighten(@blue, 50%);
+        }
+
+        ol.list,
+        ul.list {
+            list-style-type: disc;
+            margin-left: 50px;
+            font-size: .8em;
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            li {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+
+        ol.list {
+            list-style-type: decimal;
+        }
+    }
+
+    &.theme {
+
+        h1 {
+            color: @blue;
+            font-size: 2em;
+            font-weight: 300;
+
+            &.hdr {
+                font-size: 3em;
+                margin-bottom: 60px;
+                margin-top: 60px;
+            }
+        }
+
+        h2 {
+            color: @pink;
+            font-size: 1.8em;
+            font-weight: 400;
+        }
+
+        .content {
+            .row {
+                margin-bottom: 50px;
+            }
+        }
+
+        &.day {
+
+            .concepts {
+                font-size: 1.8em;
+                font-weight: 100;
+
+                ul {
+
+                    li {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+
+            h3 {
+                font-size: 2em;
+                color: @blue;
+                margin-bottom: 30px;
+                margin-top: 50px;
+            }
+
+            .refresh {
+                margin-top: 20px;
+                margin-bottom: 30px;
+                font-size: 1.2em;
+                background-color: lighten(@grey, 15%);
+                padding: 10px;
+                border: 2px dashed darken(@grey, 5%);
+                border-radius: 5px;
+                color: darken(@grey, 20%);
+            }
+        }
+
+        &.home {
+            font-weight: 100;
+
+            .dates {
+                font-size: 1.8em;
+                margin-bottom: 40px;
+            }
+
+            .location {
+                font-size: 1.8em;
+            }
+        }
+    }
+
+    &.links {
+        font-weight: 100;
+
+        .link-list {
+
+            ul {
+                font-size: 1.7em;
+
+                li {
+                    margin-bottom: 30px;
+
+                    a {
+                        color: @blue;
+                        display: block;
+                        margin-top: 5px;
+
+                        &:hover {
+                            color: @pink;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    pre {
+        code {
+            &.smallText {
+                font-size: .75em;
+            }
+        }
+    }
+}
