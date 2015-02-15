@@ -3,7 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Geekwise Javascript 1</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="./static/css/prism.css" />
+	<link rel="stylesheet" href="./static/css/reset.css">
+	<link rel="stylesheet" href="./static/css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
 </head>
@@ -53,19 +55,18 @@
     <h1 class="text-center hdr">Day 1</h1>
     <div class="row">
         <div class="col-md-3">
-            <h2 class="subhdr">Concepts</h2>
+            <h2 class="subhdr">Agenda</h2>
         </div>
         <div class="col-md-9 concepts">
-            <ul>
-                <li>Class Goals</li>
-                <li>What is Javascript?</li>
-                <li>Tools of the trade</li>
-                <li>Where do my codes go?</li>
-                <li>Variables and datatypes</li>
-                <li>Truthy / Falsy</li>
-                <li>alert / confirm / prompt</li>
-				<li>Take Home Assignemnt</li>
-            </ul>
+			<ul>
+				<li>Class Goals</li>
+				<li>What is JavaScript?</li>
+				<li>HTML Refresher</li>
+				<li>Tools</li>
+				<li>Getting Started</li>
+				<li>Variables and Basic Datatypes</li>
+				<li>Basic JavaScript Methods</li>
+			</ul>
         </div>
     </div>
 
@@ -74,120 +75,409 @@
         	<h2 class="subhdr">Class Goals</h2>
         </div>
         <div class="col-md-9">
-            <div class="point">Develop a solid foundation of Javascript Fundamentals</div>
-            <div class="point">Discover how javascript can be used to manipulate the DOM</div>
-            <div class="point">Best practices for javascript development</div>
-            <div class="point">Javascript libraries and Frameworks</div>
-            <div class="point">Ajax!</div>
-            <div class="point">Build something!</div>
+			<div class="point">Develop a solid foundation of JavaScript Fundamentals</div>
+			<div class="point">Learn how to manipulate the DOM using JavaScript</div>
+			<div class="point">Best practices</div>
+			<div class="point">JavaScript libraries and Frameworks</div>
+			<div class="point">Connecting to a Rest API</div>
+			<div class="point">Build an advance chat system</div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-3">
-        	<h2 class="subhdr">What is Javascript?</h2>
-        </div>
-        <div class="col-md-9">
-            <div class="point">Created around '95 by Brendan Eich.</div>
-            <div class="point">Mocha -&gt; Livescript -&gt; Javascript -&gt; ECMAScript</div>
-            <div class="point">Programming language that powers the web</div>
-            <div class="point">
-                Allows for "handling" user behavior.  IE Do "this" if a user does "that".
-            </div>
-            <div class="point">
-                Comes with a toolkit for not only running "programs" but also manipulating and interacting  with
-                the document object model.
-            </div>
-            <div class="point">
-                Ecma International is a non profit with the goal of developing standards for the web. It's
-                because of these guys that you can write (mostly) the same javascript and every browser will
-                understand what you want it to do.
-            </div>
+        <div class="col-md-10 col-md-offset-1">
+        	<h2 class="text-center sub">What is Javascript?</h2>
+			<div class="point">Created in 1995 by Brendan Eich</div>
+			<div class="point">It is an Object Oriented Programming language that powers the web</div>
+			<div class="point">
+				Allows for "handling" user behavior. IE "alert" a welcome message to a user "if user is new"
+			</div>
+			<div class="point">
+				JavaScript is not only used to handle logical behavior, and its also not only used for DOM manipulation,
+				for the past 5 years we have been using it to develop backend services to store user information. This
+				used to be something only possible with languages like Java, Ruby on Rails and PHP.
+			</div>
+			<div class="point">
+				ECMA International is a non profit with the goal of developing standards for the web. It's
+				because of these guys that you can write (mostly) the same JavaScript and every browser will
+				understand what you want it to do.
+			</div>
         </div>
     </div>
 
 
 
+<!--<div class="row">-->
+	<div class="col-md-10 col-md-offset-1">
+		<div class="row">
+			<h2 class="text-center sub">A Quick HTML refresher</h2>
+			<pre class="language-markup">
+				<code class="language-markup">
+					&lt;html&gt;
+					&lt;head&gt;
+					&lt;title&gt;My page&lt;/title&gt;
+					&lt;/head&gt;
+					&lt;body&gt;
+					&lt;span class="someclass" id="someid"&gt;Content!&lt;/span&gt;
+					&lt;/body&gt;
+					&lt;/html&gt;
+				</code>
+			</pre>
+			<div class="refresh">
+				Remember, classes can be reused in our markup, id's can not!
+			</div>
+		</div>
 
+		<div class="row">
+			<h2 class="text-center sub">HTML & CSS Refresher</h2>
+			<div class="point">HTML Attributes (class, id, style, data)</div>
+			<div class="point">CSS Selectors</div>
+		</div>
 
+		<div class="row">
+			<h2 class="text-center sub">Tools of the Trade</h2>
+			<div class="point">Chrome</div>
+			<div class="point">Developer Console</div>
+			<div class="point">Chrome Snippets</div>
+			<div class="point">IntelliJ or Webstorm</div>
+			<div class="point"><a target="_blank" href="http://jsfiddle.net">jsfiddle</a></div>
+		</div>
 
+		<div class="row">
+			<h2 class="text-center sub">How do i use JavaScript alongside HTML?</h2>
+			<p>There are 3 ways you can use JavaScript in your WebPage. Inline, Inline Script Tag and Script Tag with Src (source)</p>
+		</div>
 
-<div class="row">
-	<h3 class="text-center sub">Header</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum magni asperiores in excepturi officia sit quis magnam minus delectus at quos omnis dolor similique enim, architecto possimus consequatur doloremque aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eos, quod excepturi possimus nihil nobis voluptate eius aliquid voluptatum, doloribus vel sit nisi laudantium aperiam facere expedita molestiae, atque nemo! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat impedit eum quos reprehenderit tempore pariatur odio tempora earum, magni iste cumque eveniet vel perspiciatis error provident tenetur, voluptate distinctio, sed.</p>
-    <div class="row">
-    	<pre class=" language-markup">
-			<code class=" language-markup">
+		<div class="row">
+			<h3 class="text-center sub">Inline</h3>
+			<div class="point">
+				Lets start with a basic example of Inline JavaScript.
 
-
+				<div class="excercise">
+					Create a blank html file with an button element using the <code>onclick</code> attribute like the
+					example <a target="_blank" href="day1-examples.html">below</a>.
+				</div>
+			</div>
+		<pre class="language-markup">
+			<code class="language-markup">
+				&lt;html&gt;
+				&lt;head&gt;
+				&lt;title&gt;My page&lt;/title&gt;
+				&lt;/head&gt;
+				&lt;body&gt;
+				&lt;h1 onclick="alert('hello world');"&gt;click me!&lt;/h1&gt;
+				&lt;/body&gt;
+				&lt;/html&gt;
 			</code>
 		</pre>
-    </div>
-    <div class="refresh">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit velit dolorum necessitatibus maiores sequi cupiditate natus earum quasi modi culpa, non at adipisci quis atque rem tempore laboriosam enim ipsam.</p>
-    </div>
 
-</div>
+			<div class="point">
+				The <code>onclick</code> attribute can be used to attach some functionality to a DOM Node that is
+				triggered when a user <code>clicks</code> an element, in this case a button.
+				<div class="refresh">
+					This is not the recommended way of attaching functionality to your DOM elements, we will later
+					discuss best practices.
+				</div>
+			</div>
 
+			<div class="point">
+				This is considered <code>inline</code> since the code that JavaScript will execute is inside the
+				node itself.  It lives in the page, thus it's considered inline.
+			</div>
+		</div>
+		<div class="row">
+			<h3 class="text-center sub">Inline Script Tag</h3>
 
+			<div class="point">
+				The next way is another type of inline JavaScript, in this case, the JavaScript is executed when
+				the pages <code>script</code> tag is loaded.
 
-<div class="row">
-	<h3 class="text-center sub">Header</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum magni asperiores in excepturi officia sit quis magnam minus delectus at quos omnis dolor similique enim, architecto possimus consequatur doloremque aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eos, quod excepturi possimus nihil nobis voluptate eius aliquid voluptatum, doloribus vel sit nisi laudantium aperiam facere expedita molestiae, atque nemo! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat impedit eum quos reprehenderit tempore pariatur odio tempora earum, magni iste cumque eveniet vel perspiciatis error provident tenetur, voluptate distinctio, sed.</p>
-    <div class="row">
-    	<div class="col-sm-6">
-			<h4 class="desc">Javascript:</h4>
-	    	<pre class=" language-markup">
-				<code class=" language-markup">
+				<div class="excercise">
+					Remove the <code>onclick</code> attribute from your <code>button</code> tag, and alter your page
+					markup to match the example below.
+				</div>
+			</div>
 
+		<pre class="language-markup">
+			<code class="language-markup">
+				&lt;html&gt;
+				&lt;head&gt;
+				&lt;title&gt;My page&lt;/title&gt;
+				&lt;/head&gt;
+				&lt;body&gt;
+				&lt;h1&gt;I'm an h1 tag&lt;/h1&gt;
+				&lt;script type="text/JavaScript"&gt;
+				alert("I run inline too!");
+				&lt;/script&gt;
+				&lt;/body&gt;
+				&lt;/html&gt;
+			</code>
+		 </pre>
+		</div>
 
+		<div class="row">
+			<h3 class="text-center sub">Script Tag with Src</h3>
+
+			<div class="point">
+				The last way to include JavaScript in your Web Page is to use a <code>script</code> tag with a
+				<code>src</code> attribute. This allows for your JavaScript to be maintained in a separate file,
+				which is the proper way to include JavaScript in your code.
+
+				<div class="excercise">
+					Create a new folder called <code>js</code>, inside of that folder create a JavaScript file
+					called <code>scripts</code>. Include that file into your html file using the method below.
+				</div>
+			</div>
+
+		<pre class="language-markup">
+			<code class="language-markup">
+				&lt;html&gt;
+				&lt;head&gt;
+				&lt;title&gt;My page&lt;/title&gt;
+				&lt;/head&gt;
+				&lt;body&gt;
+				&lt;button&gt;Im a button!&lt;/button&gt;
+				&lt;script src="scripts.js"&gt;&lt;/script&gt;
+				&lt;/body&gt;
+				&lt;/html&gt;
+			</code>
+		</pre>
+			<div class="refresh">
+				Notice we didn't include it in between the <code>head</code> like we do ur stylesheets? For the
+				most part we should always be including our JavaScript at the bottom of our page but before the
+				closing <code>body</code> tag. Why? DOM Manipulation is a big factor. We want the DOM to be loaded
+				before we try and handle any manipulation.
+			</div>
+
+			<div class="point">
+				After you have created the <code>scripts.js</code> file in your <code>js</code> folder we can
+				then take our alert code and put it in javascript file. So your <code>script</code>
+			</div>
+
+		<pre>
+			<code class="language-javascript">
+				alert("i'm external");
+			</code>
+		</pre>
+
+			<div class="point">
+				Whenn the browser encounters a <code>script</code> tag with a <code>src</code> attribute it
+				will include the file, and execute it.
+			</div>
+		</div>
+		<div class="row">
+			<h2 class="text-center sub">Execution of a JS file</h2>
+
+			<div class="point">
+				JavaScript always executes from top to bottom.  So if you include two JavaScript files like so...
+			</div>
+
+		<pre class="language-markup">
+			<code class="language-markup">
+				&lt;script type="text/JavaScript" src="foo.js"&gt;&lt;/script&gt;
+				&lt;script type="text/JavaScript" src="bar.js"&gt;&lt;/script&gt;
+			</code>
+		</pre>
+
+			<div class="point">
+				The browser will first download <code>foo.js</code>, execute it, line by line, then download
+				<code>bar.js</code> and execute that, etc...
+			</div>
+
+			<div class="point">
+				Often, you may want to use something defined in <code>foo.js</code> inside <code>bar.js</code>.
+				In order to do this, you must load <code>foo.js</code> first, so it is executed, then load
+				<code>bar.js</code>.
+			</div>
+		</div>
+		<div class="row">
+			<h3 class="text-center sub">This Application Structure</h3>
+		<pre class="language-markup">
+			<code class="language-markup">
+				/* File Structure
+				├── images
+				├── css
+				│   └── style.css
+				├── js
+				│   └── scripts.js
+				└── index.html
+			</code>
+		</pre>
+		</div>
+		<div class="row">
+			<h2 class="text-center sub">Variables & Datatypes & Comments</h2>
+
+			<div class="point">
+				Comments: Are notes to your future self or future developers that may work on your
+				project at a later time.
+			</div>
+		</div>
+		<div class="row">
+			<h4 class="desc">
+				Variables: Are used to store values
+			</h4>
+		<pre>
+			<code class="language-javascript">
+				var x = 5;
+				var y = 6;
+				var z = x + y;
+				//whats the value of z?
+			</code>
+		</pre>
+		</div>
+
+		<div class="row">
+			<h4 class="desc">Strings</h4>
+		<pre>
+			<code class="language-javascript">
+				var helloWorld = 'Hello World!';
+			</code>
+		</pre>
+		</div>
+
+		<div class="row">
+			<h4 class="desc">Numbers</h4>
+		<pre>
+			<code class="language-javascript">
+				//This is known as a integer value
+				var three = 3;
+				//This is known as a float value
+				var floatingThree = 3.14;
+			</code>
+		</pre>
+		</div>
+
+		<div class="row">
+			<h4 class="desc">Booleans</h4>
+		<pre>
+			<code class="language-javascript">
+				var valueIsTrue = true;
+				var valueIsFalse = false;
+			</code>
+		</pre>
+
+			<div class="point">
+				<div class="excercise">
+					Try it: Create some variables for storing some strings, numbers and booleans in your
+					snippets console. Then type the variable name you assigned into the console. What do you see?
+				</div>
+			</div>
+
+			<div class="point">
+				Certain values in JavaScript, when evaluated, are considered "falsy" or "truthy"
+			</div>
+			<div class="point">
+				The following values are always falsy:
+
+				<ul class="list">
+					<li>false</li>
+					<li>0 (literal number zero)</li>
+					<li>"" empty string</li>
+					<li>null</li>
+					<li>undefined</li>
+					<li>NaN (Not a number, more on this later)</li>
+				</ul>
+
+				The following are truthy:
+
+				<ul class="list">
+					<li>true</li>
+					<li>Any variable with a value even "0" (zero in quotes), "false" (false in quotes)</li>
+					<li>empty functions</li>
+					<li>empty arrays</li>
+					<li>empty objects</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row">
+			<h2 class="text-center sub">Alert / Confirm / Prompt</h2>
+			<div class="refresh">
+				We will get much deeper into functions in the following class sessions, but for now, understand
+				a JavaScript function is a block of code designed to perform a particular task.
+				You <code>invoke</code> a function.  It <code>return</code>s a value or does an action (like DOM
+				manipulation). We can assign a function to a variable which allows us to store the result (return)
+				to use at a later time.
+			</div>
+			<div class="point"><code>alert()</code> and <code>confirm()</code> and <code>prompt()</code> are all great
+			</div>
+			<div class="point"><code>alert()</code> alerts the user a read only value</div>
+			<div class="point">
+				<code>confirm()</code> will return a boolean result depending on the button a user clicked
+				(yes or no, okay or cancel)
+			</div>
+			<div class="point">
+				<code>prompt()</code> will ask the user something, they enter in a value, that value is then returned
+			</div>
+			<div class="point">
+				All three functions stop the execution of the JavaScript until some action takes place. This is
+				known as <code>synchronous</code>. Whats synchronous you ask? Its the terminology used when
+				code is running line by line. Meaning the previous line or function must be executed and finished
+				before the next one can. <code>Asynchronous</code> code takes statements outside of the main program
+				flow (not line by line), allowing the code after the asynchronous call to be executed immediately
+				without waiting.
+			</div>
+			<div class="point">
+				<div class="exampleLeadin">Some Examples</div>
+			<pre>
+				<code class="language-javascript">
+					//tell the user something
+					alert("Ah, hi there, I'll wait here till you close me");
+
+					//confirm a users action
+					confirm("Sure you want to do that...?");
+
+					//ask the user for input
+					prompt("What is your name?");
 				</code>
 			</pre>
-    	</div>
-    	<div class="col-sm-6">
-			<h4 class="desc">JQuery:</h4>
-	    	<pre class=" language-markup">
-				<code class=" language-markup">
-
-
-				</code>
-			</pre>
-    	</div>
-    </div>
-
-    <div class="refresh">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit velit dolorum necessitatibus maiores sequi cupiditate natus earum quasi modi culpa, non at adipisci quis atque rem tempore laboriosam enim ipsam.</p>
-    </div>
-</div>
-
-
+			</div>
+		</div>
+	</div>
+<!--</div>-->
 	<div class="row">
 		<h2 class="col-md-3 subhdr">Take Home</h2>
 
 		<div class="col-md-9">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quam ut repellendus atque, omnis nam asperiores aliquid dicta iusto, sapiente culpa illo modi ex enim aperiam quaerat aliquam odio minima:</p>
-			<ul class="list">
-			    <li>create a name variable</li>
-			    <li>create a number variable</li>
-			    <li>log the name to the console</li>
-			    <li>alert the number</li>
-			    <li>show a confirm box with the message, "Are you sure?"</li>
-			</ul>
-			<p>Bonus Points:</p>
-			<ul class="list">
-			    <li>ask the user for their age, and then alert that value</li>
-			</ul> 
-			<p>This is what your code should do:</p>
-				<a href="#">takehome.js</a>  		
+			<div class="point">
+				Now that we've gotten acquainted with our console, why don't we practice a bit of what we
+				learned today.  Create a snippet that will:
+
+				<ul class="list">
+					<li>prompt the user for there name and age</li>
+					<li>confirm the users name</li>
+					<li>alert the users name and age</li>
+					<li>show a confirm box with the message, "Are you sure?"</li>
+				</ul>
+
+				Bonus points:
+
+				<ul class="list">
+					<li>Ask (confirm) that the user wants to be asked there name and age, and if they do, ask it
+						and alert it. If not, alert "Okay, well have a great day anyways Unknown User"</li>
+				</ul>
+				<div class="refresh">Hint #1: Use whats called an <code>if</code> condition looks something like this</div>
+				 <pre>
+					 <code class="language-javascript">
+						 if(true) {
+						 //do something
+						 } else {
+						 //do something else
+						 }
+					 </code>
+				 </pre>
+				<div class="refresh">Hint #2: Remember two things, we can store the <code>confirm</code>
+					functions result to a variable, the second thing to remember how we can tell if a value (variable)
+					is truthy or falsy.
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 
 
-
-
-
 	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/JavaScript" src="./static/js/prism.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>
