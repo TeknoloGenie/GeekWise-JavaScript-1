@@ -1,27 +1,40 @@
-<!--.row>(.col-md-3>h2.text-right)+.col-md-9-->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Geekwise Javascript 1</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./static/css/prism.css" />
-    <link rel="stylesheet" href="./static/css/reset.css">
-    <link rel="stylesheet" href="./static/css/style.css">
 </head>
-<body class="theme day">
+<body class="theme" data-spy="scroll" data-target=".fixed-quick-link">
     <header id="nav">
     </header>
 
+    <div class="fixed-quick-link">
+        <div class="btn-group bottom-left dropdown">
+            <button type="button" class="btn btn-default">Agenda</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li><a href="#skillBuilder">Skill Builder - Test your knowledge</a></li>
+                <li><a href="#syntax">The Syntax</a></li>
+                <li><a href="#operators">Operators</a></li>
+                <li><a href="#math">Math</a></li>
+                <li><a href="#controlFlow">Control Flow</a></li>
+            </ul>
+        </div>
+    </div>
+
+
     <div class="container content">
-        <h1 class="row text-center hdr">
-            Day 2
-        </h1>
+        <h1 class="text-center hdr">Day 2</h1>
         <div class="row">
             <div class="col-md-3">
-                <h2 class="text-right">Agenda</h2>
+                <h2 class="subhdr">Agenda</h2>
             </div>
             <div class="col-md-9 concepts">
                 <ul>
@@ -31,40 +44,41 @@
                     <li>Operators</li>
                     <li>Math</li>
                     <li>Control Flow</li>
-                    <li></li>
                 </ul>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-3"><h2 class="text-right">Skill Builder - Test your knowledge</h2></div>
+            <div class="col-md-3">
+                <h2 id="skillBuilder" class="subhdr">Skill Builder - Test your knowledge</h2>
+            </div>
             <div class="col-md-9">
-                <form>
-                    <h4>What does a variable do</h4>
-                    <input type="radio" name="testVariables" value="a"/> Calls a method or function is JavaScript <br>
-                    <input type="radio" name="testVariables" value="b"/> Stores the assigned value to be used later
+                <form class="skill-builder-test">
+                    <h3>What does a variable do</h3>
+                    <input type="radio" name="testVariables" value="a"/> <strong>A:</strong> Calls a method or function is JavaScript <br>
+                    <input type="radio" name="testVariables" value="b"/> <strong>B:</strong> Stores the assigned value to be used later
                     in the application. <br>
-                    <input type="radio" name="testVariables" value="c"/> Forces a value to be stored as a integer value <br>
+                    <input type="radio" name="testVariables" value="c"/> <strong>C:</strong> Forces a value to be stored as a integer value <br>
 
-                    <h4>Which of these sets is Datatypes?</h4>
-                    <input type="radio" name="testDatatypes" value="a"/> style, data, id, class <br>
-                    <input type="radio" name="testDatatypes" value="b"/> math, alert, confirm, prompt <br>
-                    <input type="radio" name="testDatatypes" value="c"/> string, integer, boolean, object <br>
+                    <h3>Which of these sets is Datatypes?</h3>
+                    <input type="radio" name="testDatatypes" value="a"/> <strong>A:</strong> style, data, id, class <br>
+                    <input type="radio" name="testDatatypes" value="b"/> <strong>B:</strong> math, alert, confirm, prompt <br>
+                    <input type="radio" name="testDatatypes" value="c"/> <strong>C:</strong> string, integer, boolean, object <br>
 
-                    <h4>Is this value truthy or falsy? <code>var object = {}</code></h4>
-                    <input type="radio" name="testTruthy" value="a"/> Truthy <br>
-                    <input type="radio" name="testTruthy" value="b"/> Falsy <br>
+                    <h3>Is this value truthy or falsy? <code>var object = {}</code></h3>
+                    <input type="radio" name="testTruthy" value="a"/> <strong>A:</strong> Truthy <br>
+                    <input type="radio" name="testTruthy" value="b"/> <strong>B:</strong> Falsy <br>
 
-                    <h4>Is this value truthy or falsy? <code>var string = ""</code></h4>
-                    <input type="radio" name="testFalsy" value="a"/> Truthy <br>
-                    <input type="radio" name="testFalsy" value="b"/> Falsy <br>
+                    <h3>Is this value truthy or falsy? <code>var string = ""</code></h3>
+                    <input type="radio" name="testFalsy" value="a"/> <strong>A:</strong> Truthy <br>
+                    <input type="radio" name="testFalsy" value="b"/> <strong>B:</strong> Falsy <br>
                 </form>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-3">
-                <h2 class="text-right">Symantics in the syntax</h2>
+                <h2 id="syntax" class="subhdr">Symantics in the syntax</h2>
             </div>
             <div class="col-md-9">
                 <div class="point">Readability matters</div>
@@ -75,7 +89,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-3"><h2 class="text-right">Operators</h2></div>
+            <div class="col-md-3">
+                <h2 id="operators" class="subhdr">Operators</h2>
+            </div>
             <div class="col-md-9">
                 <div class="point">
                     We talked a bit about number data types in the <a href="day1.html">last class</a>, but not much about
@@ -126,7 +142,7 @@
 
         <div class="row">
             <div class="col-md-3">
-                <h2 class="text-right">Math</h2>
+                <h2 id="math" class="subhdr">Math</h2>
             </div>
             <div class="col-md-9">
                 <div class="point">You can perform mathmatical calculations using operators as discussed above.
@@ -271,7 +287,7 @@ console.log(isNaN(b)); //true
 
         <div class="row">
             <div class="col-md-3">
-                <h2 class="text-right">Control Flow</h2>
+                <h2 id="controlFlow" class="subhdr">Control Flow</h2>
             </div>
             <div class="col-md-9">
                 <div class="point">Control flow simply means controlling what code actually gets executed in your program.</div>
@@ -427,10 +443,12 @@ var hasPets = dogs ? true : cats ? true : fish ? true : false; //wat?
         </div>
 
         <div class="row">
-            <div class="col-md-3"><h2 class="text-right">Operators & Conditions in Practice</h2></div>
+            <div class="col-md-3">
+                <h2 class="subhdr">Operators & Conditions in Practice</h2>
+            </div>
             <div class="col-md-9">
                 <div class="point">
-                    <h4>Who's practiced more?</h4>
+                    <h3>Who's practiced more?</h3>
                     <div class="problem">
                         Jules has been writing javascript for 4 years.  She spends 4 hours every day writing javascript.
                         Hallie has been writing javascript for 6 years, but only spends about 2.5 hours a day coding.
@@ -445,7 +463,7 @@ var hasPets = dogs ? true : cats ? true : fish ? true : false; //wat?
 
         <div class="row">
             <div class="col-md-3">
-                <h2 class="text-right">Take Home Assignment</h2>
+                <h2 class="subhdr">Take Home Assignment</h2>
             </div>
             <div class="col-md-9">
                 <div class="point">
@@ -464,9 +482,9 @@ var hasPets = dogs ? true : cats ? true : fish ? true : false; //wat?
         </div>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./static/js/prism.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./static/js/nav.js"></script>
+    <script src="static/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="static/js/prism.js"></script>
+    <script src="static/js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/nav.js"></script>
 </body>
 </html>

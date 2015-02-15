@@ -46,3 +46,14 @@ ul{
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
+
+.skill-builder-test input[type='radio'] {
+    margin-left: 40px;
+}
+
+.fixed-quick-link {
+    position: fixed;
+    right: 10px;
+    top: 60px;
+    z-index: 99999;
+}
