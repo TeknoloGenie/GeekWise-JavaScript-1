@@ -180,8 +180,8 @@
                         </div>
                     </div>
 
-<pre class="language-markup">
-    <code class="language-markup">
+                    <pre class="language-markup">
+                        <code class="language-markup">
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;My page&lt;/title&gt;
@@ -191,8 +191,8 @@
         &lt;script src="scripts.js"&gt;&lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-    </code>
-</pre>
+                        </code>
+                    </pre>
                     <div class="refresh">
                         Notice we didn't include it in between the <code>head</code> like we do ur stylesheets? For the
                         most part we should always be including our JavaScript at the bottom of our page but before the
@@ -224,8 +224,8 @@ alert("i'm external");
 
                     <pre class="language-markup">
                         <code class="language-markup">
-                            &lt;script type="text/JavaScript" src="foo.js"&gt;&lt;/script&gt;
-                            &lt;script type="text/JavaScript" src="bar.js"&gt;&lt;/script&gt;
+    &lt;script type="text/JavaScript" src="foo.js"&gt;&lt;/script&gt;
+    &lt;script type="text/JavaScript" src="bar.js"&gt;&lt;/script&gt;
                         </code>
                     </pre>
 
@@ -239,6 +239,19 @@ alert("i'm external");
                         In order to do this, you must load <code>foo.js</code> first, so it is executed, then load
                         <code>bar.js</code>.
                     </div>
+
+                    <h3>This Application Structure</h3>
+                    <pre class="language-markup">
+                        <code class="language-markup">
+/* File Structure
+├── imgs
+├── css
+│   └── style.css
+├── js
+│   └── scripts.js
+└── index.html
+                        </code>
+                    </pre>
 
                     <h3>Variables & Datatypes & Comments</h3>
 
@@ -339,7 +352,9 @@ var valueIsFalse = false;
                         All three functions stop the execution of the JavaScript until some action takes place. This is
                         known as <code>synchronous</code>. Whats synchronous you ask? Its the terminology used when
                         code is running line by line. Meaning the previous line or function must be executed and finished
-                        before the next one can occur.
+                        before the next one can. <code>Asynchronous</code> code takes statements outside of the main program
+                        flow (not line by line), allowing the code after the asynchronous call to be executed immediately
+                        without waiting.
                     </div>
                     <div class="point">
                         <div class="exampleLeadin">Some Examples</div>
