@@ -25,7 +25,8 @@
             </div>
             <div class="col-md-9 concepts">
                 <ul>
-                    <li>Review Takehome</li>
+                    <li>Review Take Home</li>
+                    <li>Skill Builder - Test your knowledge</li>
                     <li>The Syntax</li>
                     <li>Operators</li>
                     <li>Math</li>
@@ -36,25 +37,28 @@
         </div>
 
         <div class="row">
-            <div class="col-md-3"><h2 class="text-right">Skill Builder</h2></div>
+            <div class="col-md-3"><h2 class="text-right">Skill Builder - Test your knowledge</h2></div>
             <div class="col-md-9">
-                <div class="point">
-                    <ul>
-                        <li>Create a new script called <code>app.js</code></li>
-                        <li>In app.js, do the following:
-                            <ul class="list">
-                                <li>Ask for your first name</li>
-                                <li>Ask for your last name</li>
-                                <li>Log your first name to the console</li>
-                                <li>Alert your last name</li>
-                                <li>Confirm (anything) and alert the result of the confirm</li>
-                                <li>Include your <code>app.js</code> file in a blank empty html page</li>
-                                <li>Execute your script</li>
-                                <li>confirm that your script functions the way it's expected too</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                <form>
+                    <h5>What does a variable do</h5>
+                    <input type="radio" name="testVariables" value="a"/> Calls a method or function is JavaScript
+                    <input type="radio" name="testVariables" value="b"/> Stores the assigned value to be used later
+                    in the application.
+                    <input type="radio" name="testVariables" value="c"/> Forces a value to be stored as a integer value
+
+                    <h5>Which of these sets is Datatypes?</h5>
+                    <input type="radio" name="testDatatypes" value="a"/> style, data, id, class
+                    <input type="radio" name="testDatatypes" value="b"/> math, alert, confirm, prompt
+                    <input type="radio" name="testDatatypes" value="c"/> string, integer, boolean, object
+
+                    <h5>Is this value truthy or falsy? <code>var object = {}</code></h5>
+                    <input type="radio" name="testTruthy" value="a"/> Truthy
+                    <input type="radio" name="testTruthy" value="b"/> Falsy
+
+                    <h5>Is this value truthy or falsy? <code>var string = ""</code></h5>
+                    <input type="radio" name="testFalsy" value="a"/> Truthy
+                    <input type="radio" name="testFalsy" value="b"/> Falsy
+                </form>
             </div>
         </div>
 
