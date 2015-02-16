@@ -95,7 +95,7 @@
 		<div class="row">
 			<h2 class="text-center sub">HTML & CSS Refresher</h2>
 			<div class="point">HTML Attributes (class, id, style, data)</div>
-			<div class="point">CSS Selectors</div>
+			<div class="point">CSS Selectors (the HTML element or class to be styled)</div>
 		</div>
 
 		<div class="row">
@@ -139,7 +139,7 @@
 				The <code>onclick</code> attribute can be used to attach some functionality to a DOM Node that is
 				triggered when a user <code>clicks</code> an element, in this case a button.
 				<div class="refresh">
-					This is not the recommended way of attaching functionality to your DOM elements, we will later
+					This is <b>not</b> the recommended way of attaching functionality to your DOM elements, we will later
 					discuss best practices.
 				</div>
 			</div>
@@ -210,9 +210,9 @@
 				Notice we didn't include it in between the <code>head</code> like we do ur stylesheets? For the
 				most part we should always be including our JavaScript at the bottom of our page but before the
 				closing <code>body</code> tag. Why? DOM Manipulation is a big factor. We want the DOM to be loaded
-				before we try and handle any manipulation.
+				before we try and handle any manipulation. This also allows users to see the content of the page even if the javascript is slow to load or has an error.
 			</div>
-
+            <br>
 			<div class="point">
 				After you have created the <code>scripts.js</code> file in your <code>js</code> folder we can
 				then take our alert code and put it in javascript file. So your <code>script</code>
@@ -225,7 +225,7 @@
 		</pre>
 
 			<div class="point">
-				Whenn the browser encounters a <code>script</code> tag with a <code>src</code> attribute it
+				When the browser encounters a <code>script</code> tag with a <code>src</code> attribute it
 				will include the file, and execute it.
 			</div>
 		</div>
@@ -280,6 +280,7 @@
 			<h4 class="desc">
 				Variables: Are used to store values
 			</h4>
+            <p>There are three types of variables: strings, numbers, and booleans.</p>
 		<pre>
 			<code class="language-javascript">
 				var x = 5;
@@ -292,6 +293,7 @@
 
 		<div class="row">
 			<h4 class="desc">Strings</h4>
+            <p>Strings can take any "string" of characters wrapped inside quotation marks:</p>
 		<pre>
 			<code class="language-javascript">
 				var helloWorld = 'Hello World!';
@@ -301,6 +303,7 @@
 
 		<div class="row">
 			<h4 class="desc">Numbers</h4>
+            <p>Number variables take whole(integers) and decimal(floats) value numbers: </p>
 		<pre>
 			<code class="language-javascript">
 				//This is known as a integer value
@@ -313,6 +316,7 @@
 
 		<div class="row">
 			<h4 class="desc">Booleans</h4>
+            <p>Booleans take a simple true/false value:</p>
 		<pre>
 			<code class="language-javascript">
 				var valueIsTrue = true;
@@ -363,16 +367,21 @@
 				manipulation). We can assign a function to a variable which allows us to store the result (return)
 				to use at a later time.
 			</div>
+            <br>
 			<div class="point"><code>alert()</code> and <code>confirm()</code> and <code>prompt()</code> are all great
 			</div>
+            <br>
 			<div class="point"><code>alert()</code> alerts the user a read only value</div>
+            <br>
 			<div class="point">
-				<code>confirm()</code> will return a boolean result depending on the button a user clicked
+				<code>confirm()</code> will return a boolean(true or false) result depending on the button a user clicked
 				(yes or no, okay or cancel)
 			</div>
+            <br>
 			<div class="point">
 				<code>prompt()</code> will ask the user something, they enter in a value, that value is then returned
 			</div>
+            <br>
 			<div class="point">
 				All three functions stop the execution of the JavaScript until some action takes place. This is
 				known as <code>synchronous</code>. Whats synchronous you ask? Its the terminology used when
@@ -381,8 +390,9 @@
 				flow (not line by line), allowing the code after the asynchronous call to be executed immediately
 				without waiting.
 			</div>
+            <br>
 			<div class="point">
-				<div class="exampleLeadin">Some Examples</div>
+				<div class="exampleLeadin">Some Examples:</div>
 			<pre>
 				<code class="language-javascript">
 					//tell the user something
@@ -441,7 +451,8 @@
 
 
 	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/JavaScript" src="./static/js/prism.js"></script>
+	<script type="text/javascript" src="./static/js/prism.js"></script>
+    <script type="text/javascript" src="./static/js/nav.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>
