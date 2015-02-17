@@ -1,3 +1,3 @@
-function alertHelloWorld() {
-    alert('Hello World');
+function alertMsg() {
+    alert('Im inside of a function!');
 }
