@@ -315,7 +315,7 @@
 
         //if / else, if the first condition is true, run the first
         //block, else run the second block
-        if (false) {
+        if (/*if this is true*/) {
 
         alert("it's true");
 
@@ -327,13 +327,13 @@
 
         //if else if statments, the last else is our "fallback"
         if (condition1) {
-
+        //if condition1 is true do this code
 
         } else if (condition2) {
-
+        //if condition1 is false then if condition2 is true do this code
 
         } else {
-
+        //if neither condition1 or condition2 is true do this code
 
         }
     </code>
@@ -413,13 +413,14 @@
             <div class="point">
                 It looks like: <code class="language-javascript">condition ? trueValue : falseValue;</code>
             </div>
-                <pre><code class="language-javascript">
-                    var loggedIn = true;
-                    var needsLogin = loggedIn ? false : true;
-
-                    var age = 31;
-                    var logout = age < 13 ? true : false;
-                </code></pre>
+                    <pre><code class="language-javascript">
+                        var loggedIn = true;
+                        var needsLogin = loggedIn ? false : true;
+                        //if loggedIn is true then needsLogin = false, else needsLogin = true
+                        var age = 31;
+                        var logout = age < 13 ? true : false;
+                        //if age is less than 13 then logout = true, else logout = false
+                    </code></pre>
 
             <div class="point">Ternary operators are great for simply quick conditions where the evaluates are simple</div>
             <div class="point">Avoid nested ternary</div>
@@ -439,7 +440,7 @@
         <div class="col-md-10 col-md-offset-1">
             <h2 class="text-center sub">Operators & Conditions in Practice</h2>
             <div class="point">
-                <h4 class="desc">Who's practiced more?</h3>
+                <h4 class="desc">Who's practiced more?</h4>
                 <div class="problem">
                     Jules has been writing javascript for 4 years.  She spends 4 hours every day writing javascript.
                     Hallie has been writing javascript for 6 years, but only spends about 2.5 hours a day coding.
