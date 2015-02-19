@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Geekwise Javascript 1</title>
-	<link rel="stylesheet" href="./static/css/prism.css" />
-	<link rel="stylesheet" href="./static/css/reset.css">
-	<link rel="stylesheet" href="./static/css/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title>Geekwise Javascript 1</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
 </head>
-<body class="theme day">
+<body class="theme">
 <header id="nav">
 </header>
 
@@ -25,8 +24,8 @@
 		<div class="col-md-9 concepts">
 			<ul>
 				<li>Review Take Home</li>
-				<li>Skill Builder - Fill in the blanks</li>
-				<li>String Concatenation</li>
+				<li>Skill Builder</li>
+				<li>Functions and Methods</li>
 				<li>Arrays</li>
 				<li>Array Functions</li>
 				<li>Objects</li>
@@ -57,51 +56,36 @@
 		</div>
 	</div>
 
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">Functions</h2>
 
+            <div class="point">
+                A JavaScript function is defined with the function keyword, followed by a name ending with parentheses.
+                Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).
+                Inside the parentheses of a function are the <code>parameters</code>, parameters are passed into a function
+                and are used as values that your functions code will need.
+            </div>
 
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<h2 class="text-center sub">String Concatenation</h2>
-			<div class="point">
-				The act of joining two things together is called "concatenation".
-			</div>
-			<div class="point">
-				In javascript, we can concat two strings using the <code>+</code> operator.  Yes, the same one we
-				use for math.
-			</div>
-<pre>
-	<code class="language-javascript">
-		var salt = "abc123";
-		var pass = "secret";
-		var saltedPassword = salt + pass;
+            <pre>
+                <code class="language-javascript">
+function functionName(parameter1, parameter2, ...) {
+    //code to be executed
+}
+                </code>
+            </pre>
 
-		console.log(saltedPassword);
-	</code>
-</pre>
-			<div class="point">
-				However, watch out when trying to concat a string and a number, javascript will attempt to be "helpful"
-				and convert the number into a string.  This is called <strong>type casting</strong>.
-			</div>
-			<div class="point">
-				It's essentially saying "Hey, you're trying to concat values of different types, so I'm going to
-				convert one of them for you so the concat will work.
-			</div>
-<pre>
-	<code class="language-javascript">
-		var num = 1;
-		var str = "foo";
+            <div class="point">
+                A <code>return</code> statement is the final value that the function will return. Most of the time your
+                functions will return a value, most there will be times where one function will just simply call another
+                function, or some DOM manipulation.
+            </div>
 
-		//cast a number to a string
-		console.log(num + str); //1foo
-
-		//cast a number to a string
-		console.log(1 + "");
-	</code>
-</pre>
-		</div>
-	</div>
-
-
+            <div class="point">
+                In order to <code>invoke</code> a function you must use the parentheses after the functions name.
+            </div>
+        </div>
+    </div>
 
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
@@ -116,7 +100,7 @@
 			</div>
 
 			<div class="point">
-				You create a new array using the <code>[...]</code> syntax
+				You create a new array using the <code>[...]</code> (brackets) syntax
 			</div>
 
 			<div class="point">
@@ -124,9 +108,9 @@
 			</div>
 
 			<div class="point">
-				Lets try creating an array to hold a list of your favorite fruits.
+				Lets try creating an array to hold a list of your friends.
 
-				<div class="excercise">
+				<div class="alert alert-success">
 					Try it: in your console create a new array and store the value in a variable.  Then log the
 					variable.
 				</div>
@@ -134,31 +118,22 @@
 
 <pre>
     <code class="language-javascript">
-		//lets create an array
-		var fruits = ["apple", "banana", "cherry", "strawberry"];
-
-		console.log(fruits);
+//lets create an array
+var friends = ["billy", "brandon", "jason", "jeremy"];
 	</code>
 </pre>
 
 			<div class="point">
-				Array's have built in ways of determining how many items they are holding, the <code>length</code>
-				property.
+				Array's have a property called <code>length</code> that allows you to determine how many items it is holding.
 
-				<div class="excercise">
-					Try it: log to the console the length of the fruits array you created previously.
+				<div class="alert alert-success">
+					Try it: log to the console the length of the fruits array you created previously by typing <code>friends.length</code>
+                    into your console.
 				</div>
 			</div>
 
-<pre>
-    <code class="language-javascript">
-		//how many items are in the array?
-		console.log(fruits.length);
-	</code>
-</pre>
-
 			<div class="point">
-				Ok, so we've got some data in our arrays, and we know how many items are in the array, now how do we
+				Now that we have some data in our arrays, and we know how many items are in the array, now how do we
 				get it back out?
 			</div>
 		</div>
@@ -175,42 +150,16 @@
 			</div>
 <pre>
 	<code class="language-javascript">
-		var a = [1, 2, 3];
+var friends = ["billy", "brandon", "jason", "jeremy"];
+friends[2] //will give us the result of "jason"
 
-		console.log(a[N]); //where N would be a numbered index you want to retrieve
-
-		//this works too
-		console.log([1, 2, 3, 4][N]);
 	</code>
 </pre>
 			<div class="point">
-				You might have noticed something odd using the example above.  Try this:
+				You might have noticed something odd using the example above. Notice we asked for the 2nd index value?
+                And it gave us the 3rd value? That's because the 1st value in an array starts with 0 and not 1.
 			</div>
-<pre>
-	<code class="language-javascript">
-		var a = [1, 2, 3];
-		var index = 2;
 
-		console.log(a[index]); //what does this yield?
-	</code>
-</pre>
-			<div class="point">
-				Array indexes (as well as other indexes we'll discuss later) all start with 0.  So in the example above,
-				index zero would have the value 1, index 1 has the value 2, index 2 has the value 3, etc...
-			</div>
-<pre>
-	<code class="language-javascript">
-		var firstFruit = fruits[0];
-		console.log(firstFruit); //log the first value in the array
-
-		var secondFruits = fruits[1];
-		console.log(secondFruits);
-
-		//etc...
-
-		console.log(fruits[4]); //what does a unknown index return?
-	</code>
-</pre>
 		</div>
 	</div>
 
@@ -220,58 +169,49 @@
 		<div class="col-md-10 col-md-offset-1">
 			<h3 class="text-center sub">Adding items to an array</h3>
 			<div class="point">
-				Awesome, I can get my data back out of an array once I put it in, how do I add more things to it?
+				Awesome, we can get our data back out of an array once its been defined, but how do we add more things to it?
 			</div>
 			<div class="point">
-				Javascript Array's provide a function called <code>push</code> that allows for adding items to the
+				Javascript Array's provide a method called <code>push</code> that allows for adding items to the
 				<strong>end</strong> of an array.
-				<div class="excercise">
-					Try it: Add a new fruit to the end of your fruits array using the <code>fruits.push(...)</code>
+				<div class="alert alert-success">
+					Try it: Add a new friend to the end of your friends array using the <code>friends.push(...)</code>
 					function.
 				</div>
 			</div>
 <pre>
 	<code class="language-javascript">
 		//add an item to the end of an array
-		fruits.push("blackberry");
+		friends.push('franklin');
 	</code>
 </pre>
 			<div class="point">
 				When you add items to your array, the <code>length</code> property is automatically updated for you.
 			</div>
-<pre>
-	<code class="language-javascript">
-		var a = [1];
-		console.log(a.length);
 
-		a.push(2);
-		console.log(a.length);
-	</code>
-</pre>
 			<div class="point">
 				Array's can also contain other arrays.
 			</div>
 <pre>
 	<code class="language-javascript">
-		//create an array to hold multiple arrays
-		var fruitColors = [];
-		var cherry = ["cherry", "red"];
-		var banana = ["banana", "yellow"];
-		var orange = ["orange", "orange"];
+//create an array to hold multiple arrays
+var friendGroups = [];
+var jason = ["jason", "bestie"];
+var jeremy = ["jeremy", "family"];
+var brandon = ["brandon", "friend"];
 
-		//add all the fruit vars into the fruitColors array
-		fruitColors.push(cherry);
-		fruitColors.push(banana);
-		fruitColors.push(orange);
+//add all the friend variables into the friendGroups array
+friendGroups.push(jason);
+friendGroups.push(jeremy);
+friendGroups.push(brandon);
 
-		console.log(fruitColors);
 	</code>
 </pre>
 			<div class="point">
-				Now lets attempt to pull out the color's only for each of the three fruits in our <code>fruitColors</code>
+				Now lets attempt to pull out the groups only for each of the three friends in our <code>friendGroups</code>
 				array.
 
-				<div class="excercise">
+				<div class="alert alert-success">
 					Try it: create a snippet that will create an array to hold multiple arrays (defined above).
 					Then write three console logs that log <strong>only</strong> the colors of the fruits.
 				</div>
@@ -323,7 +263,7 @@
 				The <code>begin</code> is the zero based starting index, and the <code>end</code> is the index to
 				stop at.  NOTE: The extraction does not include the end index!
 
-				<div class="excercise">
+				<div class="alert alert-success">
 					Try it: Create an array with 4 strings, then slice the middle two.
 				</div>
 			</div>
@@ -355,7 +295,7 @@
 				from the starting index, and additional items to add are more elements that you want to add to the
 				array (comma separated values).
 
-				<div class="excercise">
+				<div class="alert alert-success">
 					Try it: Create an array with 4 elements in it.  Then remove the third element.  Log the array
 					to the console.
 				</div>
@@ -368,7 +308,7 @@
 	</code>
 </pre>
 			<div class="point">
-				<div class="excercise">
+				<div class="alert alert-success">
 					Using the same array, remove the second element and add a new second element.
 				</div>
 			</div>
@@ -411,7 +351,7 @@
 			<div class="point">
 				One important concept with while loops is that you must write the code that will make the condition
 				false, otherwise you get an infinite loop.
-				<div class="excercise">
+				<div class="alert alert-success">
 					Try it: Create a loop that will log the numbers 1 - 10 to the console.
 				</div>
 			</div>
@@ -470,7 +410,7 @@
 			<div class="point">
 				<code>continue</code> will immediately reset the loop to the next iteration, and continue on with the
 				loop.  It's basically just saying, disregard the rest of this loop and go to the next loop.
-				<div class="excercise">
+				<div class="alert alert-success">
 					Try it: Create a loop (for or while) that will loop 10 times, and skip the 5th and 7th loop.
 					All other loops should log the loop number to the console.
 				</div>
@@ -493,7 +433,7 @@
 			<div class="point">
 				The <code>break</code> keyword will, when encountered, immediately stop the loop AND all subsequent
 				loops.
-				<div class="excercise">
+				<div class="alert alert-success">
 					Create a <code>for</code> loop that will loop ten times, each time logging the current loop number,
 					but terminate the loop on the seventh loop.
 				</div>
@@ -525,7 +465,7 @@
 			<div class="point">
 				LOOP ALL THE THINGS! A for loop is a perfect mechanism for iterating over each element in an array.
 
-				<div class="excercise">
+				<div class="alert alert-success">
 					Try it: How would you create a for loop and log all the items in our fruit array to the console?
 					Hint...you may find the <code>length</code> property of an array useful here.
 				</div>
