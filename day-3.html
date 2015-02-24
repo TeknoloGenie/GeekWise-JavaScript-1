@@ -25,12 +25,10 @@
 			<ul>
 				<li>Review Take Home</li>
 				<li>Skill Builder</li>
-				<li>Functions and Methods</li>
-				<li>Arrays</li>
-				<li>Array Functions</li>
-				<li>Objects</li>
-				<li>Object Functions</li>
-				<li>Control Flow - Looping</li>
+                <li>Arrays</li>
+                <li>Array Functions</li>
+                <li>Control Flow - Looping Arrays</li>
+                <li>Take Home Assignment</li>
 			</ul>
 		</div>
 	</div>
@@ -55,37 +53,6 @@
 			</div>
 		</div>
 	</div>
-
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <h2 class="text-center sub">Functions</h2>
-
-            <div class="point">
-                A JavaScript function is defined with the function keyword, followed by a name ending with parentheses.
-                Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).
-                Inside the parentheses of a function are the <code>parameters</code>, parameters are passed into a function
-                and are used as values that your functions code will need.
-            </div>
-
-            <pre>
-                <code class="language-javascript">
-function functionName(parameter1, parameter2, ...) {
-    //code to be executed
-}
-                </code>
-            </pre>
-
-            <div class="point">
-                A <code>return</code> statement is the final value that the function will return. Most of the time your
-                functions will return a value, most there will be times where one function will just simply call another
-                function, or some DOM manipulation.
-            </div>
-
-            <div class="point">
-                In order to <code>invoke</code> a function you must use the parentheses after the functions name.
-            </div>
-        </div>
-    </div>
 
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
@@ -169,7 +136,7 @@ friends[2] //will give us the result of "jason"
 		<div class="col-md-10 col-md-offset-1">
 			<h3 class="text-center sub">Adding items to an array</h3>
 			<div class="point">
-				Awesome, we can get our data back out of an array once its been defined, but how do we add more things to it?
+				Okay, so we can get our data back out of an array once its been defined, but how do we add more things to it?
 			</div>
 			<div class="point">
 				Javascript Array's provide a method called <code>push</code> that allows for adding items to the
@@ -190,7 +157,7 @@ friends[2] //will give us the result of "jason"
 			</div>
 
 			<div class="point">
-				Array's can also contain other arrays.
+				Like stated above, arrays can contain any datatype as its item. So in theory, an array can also contain other arrays.
 			</div>
 <pre>
 	<code class="language-javascript">
@@ -218,10 +185,10 @@ friendGroups.push(brandon);
 			</div>
 <pre>
 	<code class="language-javascript">
-		//we can access our array's based on index
-		console.log(fruitColors[0][1]);
-		console.log(fruitColors[1][1]);
-		console.log(fruitColors[2][1]);
+//we can access our array's based on index
+console.log(friendGroups[0][1]);
+console.log(friendGroups[1][1]);
+console.log(friendGroups[2][1]);
 	</code>
 </pre>
 		</div>
@@ -238,15 +205,14 @@ friendGroups.push(brandon);
 			</div>
 			<div class="point">
 				Items can be removed one at a time <strong>from the end</strong> of the array, using the <code>pop</code>
-				function. NOTE: This modifies the original array
+				method. NOTE: This modifies the original array
 			</div>
-<pre>
-	<code class="language-javascript">
-		var lastFruit = fruits.pop();
-		console.log(lastFruit);
-		console.log(fruits);
-	</code>
-</pre>
+
+            <div class="alert alert-success">
+                Try it: Create a variable called lastFriend and assign it to <code>friends.pop()</code>. Then log the variable
+                and what do you get? What about logging the friends array? Has it changed?
+            </div>
+
 			<div class="point">
 				Another handy array function we'll talk about is the <code>slice</code> function.  It works on arrays a little
 				differently.
@@ -257,54 +223,55 @@ friendGroups.push(brandon);
 			</div>
 			<div class="point">
 				The <strong>signature</strong> of the slice function looks like:
-				<code class="language-javascript">fruits.slice(begin, [end])</code>
+				<code class="language-javascript">friends.slice(begin, end)</code>
 			</div>
 			<div class="point">
-				The <code>begin</code> is the zero based starting index, and the <code>end</code> is the index to
-				stop at.  NOTE: The extraction does not include the end index!
+				The <code>begin</code> is the starting index, and the <code>end</code> is the index to
+				stop at.  NOTE: If the end (param) is not passed it will get everything until the last one.
 
 				<div class="alert alert-success">
-					Try it: Create an array with 4 strings, then slice the middle two.
+					Try it: Create an array with 4 strings, then slice the array to return the first 2 strings.
 				</div>
 			</div>
 <pre>
 	<code class="language-javascript">
-		var fruits = ["apple", "cherry", "plum", "apricot"];
-		console.log(fruits.slice(1, 3));
-		console.log(fruits); //note, it's the same as the original array.
+		var strings = ["hello", "awesome", "javascript", "geekwise"];
+		fruits.slice(0, 2);
 	</code>
 </pre>
 			<div class="point">
 				One point to remember about the <code>slice</code> functions is that is <strong>does not</strong>
-				modify the original array.  But what if we actually did want to modify the original?
+				modify the original array. Go ahead and console.log(fruits). Note that it's the same as the original array.
+                But what if we actually did want to modify the original?
 			</div>
 			<div class="point">
 				<code>splice</code> to the rescue!  The splice function works in a similar way to the slice function,
-				however it allows you to modify the original array.
+				however it allows you to modify the original array. So imagine this like a cake, where as we are splicing
+                out those pieces of cake and the will never be there again.
 			</div>
 			<div class="point">
 				The <strong>signature</strong> of the splice function looks like:
 			</div>
 <pre>
 	<code class="language-javascript">
-		fruits.splice(begin, howManyToRemove, [additional, items, to, add]);
+		strings.splice(begin, howManyToRemove, [additional, items, to, add]);
 	</code>
 </pre>
 			<div class="point">
-				So <code>begin</code> is our starting index, <code>howManyToRemove</code> is how many items to remove
+				So lets break this apart, the <code>begin</code> param is our starting index, <code>howManyToRemove</code> is how many items to remove
 				from the starting index, and additional items to add are more elements that you want to add to the
 				array (comma separated values).
 
 				<div class="alert alert-success">
-					Try it: Create an array with 4 elements in it.  Then remove the third element.  Log the array
+					Try it: Create an array with at least 4 things in it. Then remove the third element. And log the array
 					to the console.
 				</div>
 			</div>
 <pre>
 	<code class="language-javascript">
-		var fruits = ["cherry", "apple", "banana", "plum"];
-		fruits.splice(2, 1);
-		console.log(fruits);
+		var numbers = [100, 200, 300, 400, 500];
+		numbers.splice(2, 1);
+        //then console.log the array
 	</code>
 </pre>
 			<div class="point">
@@ -314,8 +281,8 @@ friendGroups.push(brandon);
 			</div>
 <pre>
 	<code class="language-javascript">
-		fruits.splice(1, 1, "pluot");
-		console.log(fruits);
+		numbers.splice(1, 1, [222]);
+		//then console.log the array
 	</code>
 </pre>
 			<div class="point">
@@ -327,13 +294,12 @@ friendGroups.push(brandon);
 	</div>
 
 
-
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<h2 class="text-center sub">Control Flow - Looping</h2>
 			<div class="point">
-				Looping is the act of repeating a block of code based on a given condition.  When the conditions
-				ceases to be truthy, the loop stops.
+				Looping is the act of repeating a block of code based on a given condition. When the conditions
+				is no longer truthy, the loop stops.
 			</div>
 			<div class="point">
 				We'll talk about 2 kinds of loops tonight.
@@ -357,11 +323,11 @@ friendGroups.push(brandon);
 			</div>
 <pre>
 	<code class="language-javascript">
-		var a = 0;
-		while (a < 10) {
-		console.log(a);
-		a++;
-		}
+var a = 0;
+while (a < 10) {
+    console.log(a);
+    a++;
+}
 	</code>
 </pre>
 			<div class="point">
@@ -374,12 +340,12 @@ friendGroups.push(brandon);
 			</div>
 <pre>
 	<code class="language-javascript">
-		var i = 1;
+var i = 1;
 
-		do {
-		console.log(i);
-		i++;
-		} while (i < 10);
+do {
+    console.log(i);
+    i++;
+} while (i < 10);
 	</code>
 </pre>
 			<div class="point">
@@ -395,9 +361,9 @@ friendGroups.push(brandon);
 			</div>
 <pre>
 	<code class="language-javascript">
-		for (var i = 0; i < 10; i++) {
-		console.log(i);
-		}
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
 	</code>
 </pre>
 			<div class="point">
@@ -417,17 +383,16 @@ friendGroups.push(brandon);
 			</div>
 <pre>
 	<code class="language-javascript">
-		var i = 0;
+var i = 0;
 
-		while (i < 10) {
-		if (i === 5 || i === 7) {
-		i++;
-		continue;
-		}
-
-		console.log(i);
-		i++;
-		}
+while (i < 10) {
+    if (i === 5 || i === 7) {
+        i++;
+        continue;
+    }
+    console.log(i);
+    i++;
+}
 	</code>
 </pre>
 			<div class="point">
@@ -440,13 +405,13 @@ friendGroups.push(brandon);
 			</div>
 <pre>
 	<code class="language-javascript">
-		for (var i = 0; i < 10; i++) {
-		console.log(i);
+for (var i = 0; i < 10; i++) {
+    console.log(i);
 
-		if (i === 6) {
-		break;
-		}
-		}
+    if (i === 6) {
+        break;
+    }
+}
 	</code>
 </pre>
 		</div>
@@ -459,14 +424,14 @@ friendGroups.push(brandon);
 			<h2 class="text-center sub">Looping &amp; Arrays, a perfect match</h2>
 			<div class="point">
 				So all our work with arrays up to this point has been retrieving array indexes one at a time using
-				a numbered bracket notation, IE <code>fruits[3]</code>.  This is useful, but what if your application
+				a numbered bracket notation, IE <code>friends[3]</code>.  This is useful, but what if your application
 				requirements were such that you needed to do something to every element in the array?
 			</div>
 			<div class="point">
 				LOOP ALL THE THINGS! A for loop is a perfect mechanism for iterating over each element in an array.
 
 				<div class="alert alert-success">
-					Try it: How would you create a for loop and log all the items in our fruit array to the console?
+					Try it: How would you create a for loop and log all the items in our friends array to the console?
 					Hint...you may find the <code>length</code> property of an array useful here.
 				</div>
 			</div>
@@ -493,27 +458,19 @@ friendGroups.push(brandon);
 				Create a program that will:
 				<ul class="list">
 					<li>
-						Prompt the user for a starting number
+						Create an empty array called family
 					</li>
 					<li>
-						Prompt the user for an ending number
+						Create a for loop that will ask (prompt) the user to enter a family members name 5 times. In the end you
+                        will have prompted yourself 5 times for a friends name. Each time a friends name is entered you should
+                        push that value into the empty friends array you created. Thus creating an array of 5 friends.
 					</li>
-					<li>
-						These numbers will become the start and end points for our loop.  If either number is not a
-						number, alert to the user that only numbers can be entered.  (no further action should take
-						place, if / else will be handy here)
-					</li>
-					<li>Parse the start and stop points into numbers and store them in variables you can use later</li>
-					<li>
-						Ensure that the start number is smaller than the stop number, otherwise stop execution (if / else)
-					</li>
-					<li>
-						Create a loop (for or while, you choose) that will loop starting at the starting number,
-						and end on the ending number.
-					</li>
-					<li>
-						For each loop, log to the console if the number is even or odd (remember our % operator :)
-					</li>
+                    <li>
+                        Prompt for your families last name
+                    </li>
+                    <li>
+                        After you have created the family array you will loop over each one of your family members and alert their full name.
+                    </li>
 				</ul>
 			</div>
 		</div>
