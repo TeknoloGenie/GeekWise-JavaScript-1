@@ -57,3 +57,7 @@ ul{
     top: 60px;
     z-index: 99999;
 }
+
+.point {
+    margin: 20px 0;
+}
