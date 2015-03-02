@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geekwise Javascript 1</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet'
+          type='text/css'>
+</head>
+<body class="theme">
+<header id="nav">
+</header>
+
+<div class="container content">
+    <h1 class="row text-center hdr">
+        Day 5
+    </h1>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Concepts</h2>
+        </div>
+        <div class="col-md-9 concepts">
+            <ul>
+                <li>Review Take Home Assignment</li>
+                <li>Skill Builder</li>
+                <li>Objects and Object Functions</li>
+                <li>Control Flow - Looping Objects</li>
+                <li>JSON</li>
+                <li>Take home assignment</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Skill Builder</h2>
+        </div>
+        <div class="col-md-9">
+            <div class="point">
+                Write a js program that will:
+
+                <ul class="list">
+                    <li>
+                        Create a function named isMultipleThree that will accept a number (please consider edge cases)
+                        and return <code>true</code> if a number is a multiple of three else return <code>false</code>.
+                    </li>
+                    <li>
+                        Create a function named isMultipleFive that will accept a number (please consider edge cases)
+                        and return <code>true</code> if a number is a multiple of five else return <code>false</code>.
+                    </li>
+                    <li>
+                        For the numbers 1 - 100 (inclusive), print to the console, following these given rules:
+
+                        <ul class="list">
+                            <li>
+                                If the number is a multiple of three log the word "fizz"
+                            </li>
+                            <li>
+                                If the number is a multiple of five log the word "buzz"
+                            </li>
+                            <li>
+                                If the number is a multiple of both three and five, log the word "fizzbuzz"
+                            </li>
+                            <li>
+                                If a number is neither a multiple of three or five, log the number
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">Objects</h2>
+            <div class="point">
+                Objects in javascript allow us to store a collection of properties and functions
+            </div>
+            <div class="point">
+                This can be considered useful for a veriety of things, one thing could be to group together functionality,
+                another could be to simply store all the data of a user in an object.
+            </div>
+            <div class="point">
+                By abstracting your functions to objects it allows our global namespace to not be so cluttered with the
+                name of every single function we create. Maybe we only want to access a specific function on a specific
+                type of thing.
+
+                <div class="alert alert-success">
+                    Try it: just enter "window" in your console and press enter. What do you see? It will vary depending
+                    on what site you're on, but the window is our "global" namespace. It holds all the top level
+                    properties, functions, and objects that are available to our application.
+                </div>
+            </div>
+            <div class="point">
+                Objects are essentially a set of <strong>key</strong> / <strong>value</strong> pairs. Imagine it like a variable,
+                the variable name is the key in this case, and what your assigning it to is the value.
+            </div>
+            <div class="point">
+                The typical way we'll talk about creating objects is with the <code>{...}</code> notation.
+            </div>
+            <div class="point">
+                You'll use the curly braces, followed by a property name, a colon, and the property value.
+            </div>
+            <div class="point">
+                All key value pairs are separated with a <code>,</code> (comma)
+            </div>
+            <div class="point">
+                Lets take a look at a simple object
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var student = {
+    firstName: "Joe",
+    lastName: "Dirt",
+    age: 35,
+    "favorite-food": "pizza",
+    raiseHand: function raiseHand() {
+        alert("the student raises their hand");
+    }
+};
+    </code>
+</pre>
+
+            <div class="point">
+                Run the above code in your console. What happens? How can we use this thing?
+            </div>
+            <div class="point">
+                We can access properties and functions of our objects using the <code>.</code> notation. Lets look at
+                out object values.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+console.log(student.firstName);
+console.log(student.age);
+student.raiseHand();
+    </code>
+</pre>
+
+            <div class="point">
+                Lets pick that code apart. <code>student</code> is telling javascript to look inside of the
+                <code>student</code> object, and the <code>.</code> (dot) notation is asking for something, in this case
+                it will find a function named <code>raiseHand</code>.
+            </div>
+            <div class="point">
+                Once the function <code>raiseHand</code> is located it's called like any other function.
+            </div>
+            <div class="point">
+                Alternatively, we can also use <code>[...]</code> (bracket) notation for accessing our object
+                properties.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+student['raiseHand']();
+    </code>
+</pre>
+            <div class="point">
+                The above code works in the exact same way as dot notation. Sometimes you MUST use this
+                notation, for example, when the key for our js object is not a valid object name. (See the favorite-food
+                example)
+            </div>
+
+            <div class="point">
+                You can also access object properties using variables. 
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var prop = "raiseHand";
+student[prop]();
+    </code>
+</pre>
+
+            <div class="point">
+                What about if we access an object property that doesn't exist? What result does that yield?
+            </div>
+
+<pre>
+    <code class="language-javascript">
+console.log(student.foo);
+    </code>
+</pre>
+
+            <div class="point">
+                Non-existant properties when accessed will return <code>undefined</code>.
+            </div>
+
+            <h3>Modifying Objects</h3>
+
+            <div class="point">
+                Unlike strings, <strong>objects are mutable</strong> (they can be changed). To change an object we can
+                simply use dot or bracket notation along with the assignment operator for the new values.
+
+                <div class="alert alert-success">
+                    Try it: Modify your object to include some new properties. Make one of your new properties an
+                    array that holds a new objects. Each of these new objects should have the same keys.
+                </div>
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var student = {
+    firstName: "Joe",
+    lastName: "Dirt",
+    age: 35,
+    "favorite-food": "pizza",
+    raiseHand: function raiseHand() {
+        console.log("the student has raised their hand");
+    }
+};
+
+//I'll create an array holding my books name and age.
+student.books = [
+    {name: "Web Design with HTML, CSS, JavaScript and jQuery Set", author: "Jon Duckett"},
+    {name: "OS X Yosemite: The Missing Manual ", author: "David Pogue"}
+];
+
+console.log(student);
+    </code>
+</pre>
+
+            <div class="point">
+                Notice, the new books array will holds a few new objects, representing the students books.
+
+                <div class="alert alert-success">
+                    Try it: create a for loop and loop over the objects in your new array, and use the keys to output
+                    a string to the console.
+                </div>
+            </div>
+
+<pre>
+    <code class="language-javascript">
+for (var i = 0; i < student.books.length; i++) {
+    var book = student.books[i];
+    console.log("Once " + student.firstName + " was done reading " + book.name + " by " + book.author + " i had a clear perspective of what to do.");
+}
+    </code>
+</pre>
+
+            <div class="point">
+                You can also add items to an array using the bracket syntax
+            </div>
+
+<pre>
+    <code class="language-javascript">
+        student["school"] = "geekwise";
+    </code>
+</pre>
+
+            <div class="point">
+                Now that we can add elements to an object, how do we remove them? That's where the <code>delete</code>
+                keyword comes into play.
+            </div>
+
+
+<pre>
+    <code class="language-javascript">
+        
+delete student["favorite-food"];
+
+console.log(student);
+    </code>
+</pre>
+
+            <div class="point">
+                Just like any other data type, objects can be passed into functions as arguments.
+
+                <div class="alert alert-success">
+                    Move our for loop code from above into a function, and pass the student object into the function for
+                    outputing our array's properties.
+                </div>
+            </div>
+
+<pre>
+    <code class="language-javascript">
+      
+function bookInfo(person) {
+    var books = person.books;
+    if (!books) {
+        return;
+    }
+
+    if (books && books.length) {
+        for (var i = 0; i < books.length; i++) {
+            var book = books[i];
+            console.log("Once " + student.firstName + " was done reading " + book.name + " by " + book.author + " i had a clear perspective of what to do.");
+        }
+    }
+}
+
+bookInfo(student);
+    </code>
+</pre>
+
+            <h3><code>this</code> keyword</h3>
+
+            <div class="point">
+                Lets revisit that raiseHand function. We're currently hard coding in our string for our raiseHand function.
+                Wouldn't it be nice if our function could use the properties of the object it's in?
+            </div>
+
+            <div class="point">
+                The most obvious way to refer to an objects properties is by referencing our object. Lets alter our
+                raiseHand function to refer back to the firstName and lastName of our object logging "Joe Dirt has
+                raised his hand"
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var student = {
+    firstName: "Joe",
+    lastName: "Dirt",
+    age: 35,
+    "favorite-food": "pizza",
+    raiseHand: function raiseHand() {
+        var message = student.firstName + " " + student.lastName + " has raised his hand";
+        console.log(message);
+    }
+};
+    </code>
+</pre>
+
+            <div class="point">
+                This makes sense, our function is reaching into an outer scope to find the student object, then looking
+                at the firstName and lastName property for building the message string.
+            </div>
+
+            <div class="point">
+                We can however simplify this. For instance, lets say this is a large object, and in many places we are
+                referencing the object name (student in this case). Then we decide that "student" isn't an appropriate name
+                for this object, so we want to change it. We would have to update all of the places where we are
+                referencing that name.
+            </div>
+
+            <div class="point">
+                The <code>this</code> keyword solves this issue. Just like the special <code>arguments</code> variable
+                we talked about with functions, functions also have a special variable called <code>this</code>.
+            </div>
+
+            <div class="point">
+                So what is <code>this</code>? <code>this</code> is a special keyword that refers to the functions
+                <code>context</code>.
+            </div>
+
+            <div class="point">
+                What is a <code>context</code> you might ask? The functions context is essentially just a reference to
+                the object that owns that function. In this case, our <code>student</code> object.
+            </div>
+
+            <div class="point">
+                Lets add a new function called "context" so we can investigate this a bit.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var student = {
+    firstName: "Joe",
+    lastName: "Dirt",
+    age: 35,
+    "favorite-food": "pizza",
+    raiseHand: function raiseHand() {
+        var message = student.firstName + " " + student.lastName + " has raised his hand";
+        console.log(message);
+    },
+    context: function context() {
+        console.log(this);
+    }
+};
+
+student.context();
+    </code>
+</pre>
+
+            <div class="point">
+                Ok, so now we can see that the <code>this</code> keyword points to the object that the function
+                belongs to. That begs the question, what if a function isn't in an object?
+            </div>
+
+<pre>
+    <code class="language-javascript">
+function ordinaryFunction() {
+    console.log(this);
+}
+
+ordinaryFunction();
+    </code>
+</pre>
+
+            <div class="point">
+                What object gets logged when a function doesn't belong to an object?
+            </div>
+
+            <div class="point">
+                The <code>window</code> object is our "outer most" object / scope. Any functions created that are not
+                inside of another function, or part of an object will automatically be included in the window object.
+            </div>
+
+            <div class="point">
+                So now that we know that the <code>this</code> keyword references the object that the function belongs
+                to, we can use that instead of the variable name to access the properties.
+
+                <div class="alert alert-success">
+                    Try it: Edit the raiseHand function to use the <code>this</code> object for accessing the firstName and
+                    lastName properties.
+                </div>
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var student = {
+    firstName: "Joe",
+    lastName: "Dirt",
+    age: 35,
+    "favorite-food": "pizza",
+    raiseHand: function raiseHand() {
+        var message = this.firstName + " " + this.lastName + " has raised his hand";
+        console.log(message);
+    }
+};
+
+student.raiseHand();
+    </code>
+</pre>
+
+            <div class="point">
+                Interesting, so this, is just the object that owns the function. What happens if we assign that function
+                to a different object?
+
+                <div class="alert alert-success">
+                    Try it: Create a new object that has a firstName and a lastName property. Call raiseHand again, what
+                    happens?
+                </div>
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var teacher = {
+    firstName: "Aaron",
+    lastName: "Russell"
+};
+
+teacher.raiseHand = student.raiseHand;
+
+teacher.raiseHand();
+    </code>
+</pre>
+
+            <div class="point">
+                This is a great example of <code>context</code> in action. The object that owns the function provides
+                the
+                <code>context</code>.
+            </div>
+
+            <div class="point">
+                I lied. <code>context</code> isn't always defined by the object that owns the function, you can also
+                "fake"
+                it, by providing your own context. This is done with the <code>call</code> and <code>apply</code>
+                functions.
+            </div>
+
+            <h3>
+                <code>call</code> function
+            </h3>
+
+            <div class="point">
+                The <code>call</code> and <code>apply</code> functions simply exist to enable the overloading of context
+                in
+                a function call. The only difference between the two is how you pass arguments to the function. Lets
+                alter
+                our raiseHand function to accept an argument that we'll also raiseHand.
+            </div>
+
+
+<pre>
+    <code class="language-javascript">
+
+var student = {
+    firstName: "Joe",
+    lastName: "Dirt",
+    age: 35,
+    "favorite-food": "pizza",
+    raiseHand: function raiseHand(words) {
+        var message = words + " " + this.firstName + " " + this.lastName + " has raised his hand";
+        console.log(message);
+    }
+};
+
+student.raiseHand("This call and apply stuff is fun!");
+    </code>
+</pre>
+
+            <div class="point">
+                Lets call our raiseHand function, providing a completely made up context.
+            </div>
+
+            <div class="point">
+                Note how we pass our arguments to the call function, first we provide the fake context, then we provide
+                our arguments.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+student.raiseHand.call({
+    firstName: "foo",
+    lastName: "bar"
+}, "This call and apply stuff is fun!");
+    </code>
+</pre>
+
+            <div class="point">
+                Notice, even though we called raiseHand on the student object, we <strong>overloaded</strong> the context by
+                using
+                the call function. In this case, the object we provided became the context.
+            </div>
+
+            <h3>
+                <code>apply</code> function
+            </h3>
+
+            <div class="point">
+                The <code>apply</code> function works in a very similar way to the <code>call</code> function, with one
+                exception, instead of a comma separated list of arguments, you must provide an array as the second
+                argument.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+student.raiseHand.apply({
+    firstName: "John",
+    lastName: "Doe"
+}, ["Apply needs an array as the second argument!"]);
+    </code>
+</pre>
+
+            <div class="point">
+                Again, our context was overloaded, so the the <code>this</code> keyword changed to be the first argument
+                to the apply function. Our arguments array was then mapped to each argument in the function signature and
+                the function was called.
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">for / in loop</h2>
+            <div class="point">
+                The <code>for / in</code> loop is a nice way of looping over an objects keys.  It looks like this:
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var obj = {
+    name: "Joe",
+    age: 35
+};
+
+for (var key in obj) {
+    console.log(key);
+    console.log(obj[key]);
+}
+    </code>
+</pre>
+
+            <div class="point">
+                One gotcha here... which we have not got much into the discussion of prototypes, but just imagine a protoyped object has
+                a bunch of properties and methods, some we might now want to loop over?  Well, the <code>for / in</code>
+                loop will also loop over those properties if they exist in the object.  For this reason, it's good practice
+                to add a check to make sure that the <code>key</code> we are working with only exists on the actual object
+                and not part of some other prototype.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+
+var obj = {
+    name: "greg",
+    age: 35
+};
+
+for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+    console.log(key);
+    console.log(obj[key]);
+    }
+}
+    </code>
+</pre>
+
+            <div class="point">
+                This will now ONLY operate on a key that actually exists in the <code>obj</code>.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">JSON - JavaScript Object Notation</h2>
+            <div class="point">
+                Before we end todays lesson lets talk a little about a way you can store data, more specifically the formatting
+                in which you can store data. There are many types, XML and JSON are the most popular but today i will
+                only introduce you to JSON. To start off with, JSON is formatted similar to objects in javascript.
+                JSON is not JavaScript specific and is used in many programming languages. Lets take a look at what a JSON Object looks like.
+            </div>
+
+            <pre>
+                <code class="language-javascript">
+{ "firstName":"John", "lastName":"Doe" }
+                </code>
+            </pre>
+            <div class="point">
+                Looks almost exactly like a JavaScript object huh? The only real difference between the two is that
+                the <code>key</code> portion of the JSON is surrounded in quotes. See in JavaScript these quotes are NOT needed, however
+                to keep with the JSON international standards the key must be surrounded in quotation marks. Now lets take a
+                look at another type of JSON, called JSON Array
+            </div>
+
+            <pre>
+                <code class="language-javascript">
+"employees":[
+    {"firstName":"John", "lastName":"Doe"},
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter","lastName":"Jones"}
+]
+                </code>
+            </pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Take home assignment</h2>
+        </div>
+        <div class="col-md-9">
+
+            <div class="point">
+                The goal is to create an object, then to manipulate that object, every time the object is manipulated a
+                copy of it is put into a JSON Array.
+
+                <ul class="list">
+                    <li> Create an object that has some default data, a few properties called 'name' and 'isFriend'. The
+                        isFriend key should default to false.</li>
+                    <li>
+                        Create a function called addFriend that will ask for your friends name, just a simple full name, or single first name is fine.
+                        Set the name on the 'friend' object then pushed that object up to the JSON array. However, after setting
+                        the new name, add another property to the friend object called 'id' that is incremented every time
+                        a new friend is pushed into the JSON array.
+                    </li>
+                    <li>Create a basic html page with a Add Friend button that triggers the addFriend function. On Wednesday we will
+                        learn how to display those friends in your HTML, and start working more with DOM Manipulation.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- closing the main container -->
+</div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="./static/js/prism.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./static/js/nav.js"></script>
+<script type="text/javascript">
+    function geekwiseClass() {
+        console.log("Congrats, you found a global function");
+    }
+</script>
+</body>
+</html>

@@ -128,60 +128,6 @@ console.log(EECU.balance);
 
     <div class="row">
         <div class="col-md-3">
-            <h2 class="text-right">for / in loop</h2>
-        </div>
-        <div class="col-md-9">
-            <div class="point">
-                The <code>for / in</code> loop is a nice way of looping over an objects keys.  It looks like this:
-            </div>
-
-<pre>
-    <code class="language-javascript">
-var obj = {
-    name: "greg",
-    age: 35
-};
-
-for (var key in obj) {
-    console.log(key);
-    console.log(obj[key]);
-}
-    </code>
-</pre>
-
-            <div class="point">
-                One gotcha here...remember we discussed prototype as a way of inheriting properties?  Well, the <code>for / in</code>
-                loop will also loop over those properties if they exist in the object.  For this reason, it's good practice
-                to add a check to make sure that the <code>key</code> we are working with only exists on the actual object
-                and not part of some other prototype.
-            </div>
-
-<pre>
-    <code class="language-javascript">
-
-var obj = {
-    name: "greg",
-    age: 35
-};
-
-for (var key in obj) {
-    if (obj.hasOwnProperty(key)) {
-        console.log(key);
-        console.log(obj[key]);
-    }
-}
-    </code>
-</pre>
-
-            <div class="point">
-                This will now ONLY operate on a key that actually exists in the <code>obj</code>.
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-md-3">
             <h2 class="text-right">The DOM</h2>
         </div>
         <div class="col-md-9">
