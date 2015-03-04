@@ -1,14 +1,29 @@
-var username = prompt('What would you like your username to be?'),
-    password = prompt('Please input a password');
-
-if (username && password){
-    alert('Welcome ' + username + '!');
+function isMultipleThree(num){
+    return num % 3 === 0;
 }
 
-var verifyPassword = prompt('Welcome back ' + username + '. Please input your password');
-
-if (verifyPassword === password) {
-    alert('Authentication passed! You may proceed!');
-} else {
-    alert('Authentication failed, try again.');
+function isMultipleFive(num){
+    if(isNaN(num) == false && num % 5 == 0){
+        return true;
+    }else{
+        return false;
+    }
 }
+
+for(i=0;i<101;i++){
+    if ( isMultipleThree(i) && isMultipleFive(i) ){
+        console.log('FIZZBUZZ');
+    } else if(isMultipleThree(i)){
+        console.log('Fizz');
+    } else if(isMultipleFive(i)){
+        console.log('Buzz');
+    } else{
+        console.log(i);
+    }
+}
+
+var obj = {
+    name: "Joe",
+    age: 35,
+    phone: ''
+};
