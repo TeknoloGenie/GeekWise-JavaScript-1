@@ -40,28 +40,20 @@
             <h2 id="skillBuilder" class="text-center sub">Test your knowledge</h2>
 
             <form class="skill-builder-test">
-                <h3>What is the shorthand way to write the <code>if</code> statement.</h3>
-                <input type="radio" name="testVariables" value="a"/> <strong>A:</strong> condition ? false : true <br>
-                <input type="radio" name="testVariables" value="b"/> <strong>B:</strong> condition ? true : false <br>
-                <input type="radio" name="testVariables" value="c"/> <strong>C:</strong> true : false ? condition <br>
+                <h3>Which of the following is the correct notation for creating an object</h3>
+                <input type="radio" name="testVariables" value="a"/> <strong>A:</strong> var object = {..} <br>
+                <input type="radio" name="testVariables" value="b"/> <strong>B:</strong> var object = [...] <br>
+                <input type="radio" name="testVariables" value="c"/> <strong>C:</strong> var object = '...' <br>
 
-                <h3>Which notation represents Arrays</h3>
-                <input type="radio" name="testDatatypes" value="a"/> <strong>A:</strong> {...} <br>
-                <input type="radio" name="testDatatypes" value="b"/> <strong>B:</strong> (...) <br>
-                <input type="radio" name="testDatatypes" value="c"/> <strong>C:</strong> [...] <br>
+                <h3>When can the <code>this</code> keyword be used</h3>
+                <input type="radio" name="testDatatypes" value="a"/> <strong>A:</strong> when referencing an object from the global scope <br>
+                <input type="radio" name="testDatatypes" value="b"/> <strong>B:</strong> when referencing an object key from within the object's scope <br>
+                <input type="radio" name="testDatatypes" value="c"/> <strong>C:</strong> when referencing the object from within it's scope <br>
 
-                <h3>You and Billy have sent each other quite a few messages and you want to clean them up, you decide
-                    you
-                    want to delete the first 10 messages you and Billy ever sent back and forward to each other, which
-                    of these
-                    is how you would achieve that?</h3>
-                <input type="radio" name="testTruthy" value="a"/> <strong>A:</strong> Pop off the last 10 items in the
-                array. <br>
-                <input type="radio" name="testTruthy" value="b"/> <strong>B:</strong> Pop off the first 10 items in the
-                array.<br>
-                <input type="radio" name="testTruthy" value="c"/> <strong>C:</strong> Splice out the last 10 items in
-                the
-                array.<br>
+                <h3>Which of these would you likely see in a Json file</h3>
+                <input type="radio" name="testTruthy" value="a"/> <strong>A:</strong> <code> 'username':'my name' </code> <br>
+                <input type="radio" name="testTruthy" value="b"/> <strong>B:</strong> <code>"username":"my name"</code><br>
+                <input type="radio" name="testTruthy" value="c"/> <strong>C:</strong> <code> 'username':this.username</code><br>
 
             </form>
         </div>
@@ -74,18 +66,22 @@
         </div>
         <div class="col-md-9">
             <div class="point">
-                Refactor the take home project to now do the following:
+                Let's create a login using an object to verify the user's information.
                 <ul class="list">
-                    <li>Prompt the user for a movie title</li>
-                    <li>Loop your movie objects and when you find a matching title, alert something like: "Rad was
-                        released in
-                        1983 and has a running time of 85 minutes.
+                    <li>Create a simple HTML page with 2 buttons: 1 called create account and another called login.</li>
+                    <li>in your js file create an object called user that will have keys for a username and password.</li>
+                    <li>Create a function for creating a new user. This should prompt the user for a username and password
+                        and then set values of the object to their respective keys. This function should be called when
+                        the create account button is clicked.
                     </li>
+                    <li>Create a second function that is called when the login button is clicked. This function should
+                        prompt the user for their username and password and then check to see if it matches the ones
+                        stored in the object.
+                    </li>
+                    <li>Finally, if the login function returns true either alert the user that they match or, if you're
+                        feeling really productive, redirect the user to a second html page.</li>
                 </ul>
 
-                Now, Further refactor to allow for accepting a year or a title, and if either is matched, alert that
-                movies
-                info.
             </div>
         </div>
     </div>
@@ -95,7 +91,7 @@
             <h2 class="text-center sub">Prototype</h2>
 
             <div class="point">
-                First, before we get into prototype, lets talk about why we would need to use it, what problem does it
+                First, before we get into prototype, let's talk about why we would need to use it and what problems does it
                 solve?
             </div>
 
@@ -111,9 +107,8 @@
 
             <div class="point">
                 For instance, lets say you are building a time scheduling app. You may break down your code into
-                "objects" like,
-                Person, Worker, Developer. In this case, a Developer would be the most specific case, and would inherit
-                properties from Worker, and Worker, and Worker inherits properties from Person.
+                "objects" like Person, Worker, and Developer. In this case, a Developer would be the most specific case,
+                and would inherit properties from Worker, and Worker would inherit properties from Person.
 
                 <ul class="list">
                     <li>
@@ -182,9 +177,9 @@
             <h3>It's all objects</h3>
 
             <div class="point">
-                Notice how we are adding the greet function, what does that look like? Looks like object syntax, right?
+                Notice how we are adding the greet function. What does that look like? Looks like object syntax, right?
                 In
-                javascript, everything is an object, including functions. Each data type, is handled differently by
+                javascript, everything is an object, including functions. Each data type is handled differently by
                 javascript, but they are indeed objects. That's why <code>"foo".length</code> works or
                 <code>[1, 2, 3].length</code> works.
             </div>
@@ -223,7 +218,7 @@
             </div>
 
             <div class="point">
-                The first way, is by simply calling the function as we have been.
+                The first way is by simply calling the function as we have been.
             </div>
 
 <pre>
@@ -243,7 +238,7 @@
 </pre>
 
             <div class="point">
-                We are simply invoking the function, there will always be a default return value from this function
+                We are simply invoking the function. There will always be a default return value from this function
                 regardless
                 of if we store that value or not.
             </div>
@@ -316,7 +311,7 @@
             </div>
 
             <div class="point">
-                So, why use a constructor function with a prototype over, simple objects, or stand alone functions...
+                So, why use a constructor function with a prototype over simple objects or stand alone functions...?
             </div>
 
             <div class="point">
@@ -325,10 +320,10 @@
                 instance. So it becomes pretty handy to now reuse this code throughout your application as needed.
             </div>
 
-            <h3>Movie object function revisited</h3>
+            <h3>Friends List revisited</h3>
 
             <div class="point">
-                For our takehome assignment, you wrote a function that took some arguments (title, runningtime, year)
+                For our take home assignment, you wrote a function that took some arguments (friend's name and id)
                 and it
                 returned a simple object. Lets refactor that function so that it actually acts as a constructor function
                 and we'll add some nice behavior to it's prototype.
@@ -338,16 +333,16 @@
                 Lets start by analyzing how constructor functions work again. If we look at our Person function, it
                 looks like
                 they simply set some properties. They quite literally "construct" the instance. So lets set up our
-                movieObjects
+                friends object
                 function that way.
             </div>
 
 <pre>
     <code class="language-javascript">
-        function Movie(title, runningTime, year) {
-        this.title = title;
-        this.runningTime = runningTime;
-        this.year = year;
+        function Friend(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
         }
     </code>
 </pre>
@@ -359,38 +354,39 @@
 
             <div class="point">
                 Another style convention that is widely recognized is that constructor functions use Capitalized names.
-                <code>Movie</code> in this case.
+                <code>Friend</code> in this case.
             </div>
 
             <div class="point">
-                This is sufficient to create a movie constructor. Now lets say, that we always want to make sure that
-                the movie
-                title name is capitalized. Lets add a capitalize function to this function prototype that will do just
+                This is sufficient to create a friend constructor. Now lets say, that we always want to make sure that
+                the friend's
+                first name is capitalized. Lets add a capitalize function to this function prototype that will do just
                 that...
             </div>
 
 <pre>
     <code class="language-javascript">
-        Movie.prototype.capitalizedTitle = function capitalizedTitle() {
-        return this.title[0].toUpperCase() + this.title.slice(1);
+        Friend.prototype.capitalizedName = function capitalizedName() {
+        return this.firstName[0].toUpperCase() + this.firstName.slice(1);
+        return this.lastName[0].toUpperCase() + this.lastName.slice(1);
         };
     </code>
 </pre>
 
             <div class="point">
-                Notice, this function, that's part of <code>Movie</code>'s prototype, also has access to all the
+                Notice, this function, that's part of <code>Friend</code>'s prototype, also has access to all the
                 properties
                 that the constructor created.
             </div>
 
             <div class="point">
-                Finally, lets actually create an instance of a "Movie" object, and use that capitalizedTitle function.
+                Finally, lets actually create an instance of a "Friend" object, and use that capitalizedName function.
             </div>
 
 <pre>
     <code class="language-javascript">
-        var movie = new Movie("top gun", 100, 1980);
-        console.log(movie.capitalizedTitle());
+        var friend = new Friend("tim", 'smith', 27);
+        console.log(friend.capitalizedName());
     </code>
 </pre>
 
@@ -399,8 +395,22 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h2 class="text-center sub">Using 'Strict Mode'</h2>
+                What is strict mode? Let's test it out. In your editor add the following code:
+                <code>
+                    foo = bar;
+                </code>
 
-                <!-- needs content still, just quick examples of why to use strict mode and when and where to use them -->
+                Notice that you should not be receiving any errors.
+                Now add <code>'use strict';</code> above your variable like so:
+<pre>
+    <code class="language-javascript">
+        'use strict';
+        foo = bar;
+    </code>
+</pre>
+                Notice anything? If you entered it correctly you should be receiving an unresolved variable error.
+                This is because <code>'strict mode';</code> catches silent errors,
+
 
             </div>
         </div>
@@ -417,30 +427,59 @@
                 </div>
 
                 <div class="point">
-                    Lets practice this a bit. Create a js program (snippet is fine) that will:
+                    Lets practice this a bit. At the beginning of the day we created a object that stores a username and
+                    paassword and then verified the user input against those values. Let's change this so that it uses prototypes and constructors.
+                    Start by setting up a folder with an index.html file, a js folder, and inside the js folder a js file.
+                    Once those are created and your basic index.html information and js file is linked copy this code in
+                    between your opening and closing body tags:
+
+
+    <!--<code>-->
+        <!--<input type="text" name="name" id="uname" value="username" />-->
+        <!--<input type="text" name="pword" id="pword" value="password" />-->
+        <!--<button onclick="create()">Create</button><br>-->
+
+        <!--<input type="text" name="name" id="uName" value="username" />-->
+        <!--<input type="text" name="pword" id="pWord" value="password" />-->
+        <!--<button onclick="login()">Login</button>-->
+    <!--</code>-->
+
+                    Now on to the javascript:
 
                     <ul class="list">
                         <li>
-                            Start with your movie array of arrays.
+                           Start by creating an object prototype called User that will have the keys username and password.
+                           Don't forget to use proper syntax when writing out your object prototype name.
                         </li>
-                        <li>Convert each array in the movie array into a movie object using a constructor function</li>
-                        <li>Add a <code>checkIn</code>, <code>checkOut</code> and <code>status</code> functions to your
-                            Movie functions prototype
+                        <li>Next, create a function called create. It won't take any arguments. Inside this function could
+                            take the values of the two input fields on your html page and set these to variables. You can
+                            do this by using <code>document.getElementById("idName").value;</code>. This is what's called
+                            DOM manipulation and we will be going over it in much greater depth later, but for now
+                            understand that it's checking the web page (the document), finding an element with the id of
+                            whatever is put in the (''), and then returning the value of that element.
                         </li>
-                        <li>The <code>checkIn</code> function should set the <code>this.checkedIn</code> property to
-                            <code>true</code></li>
-                        <li>The <code>checkOut</code> function should set the <code>this.checkedIn</code> property to
-                            <code>false</code></li>
-                        <li>The <code>status</code> function should look to see if that movie is checked in our out, and
-                            return a string stating it's status
+                        <li>After setting these variables your create function should create a <code>new</code> instance
+                            of the User prototype. Be sure you pass in the values of your variables so that you save the
+                            new users username and password.
                         </li>
-                        <li>Create a loop that will run 5 times</li>
-                        <li>Inside the loop prompt the user for a movie title they would like to checkout / checkin.
-                            (remember, you
-                            must spell it the same as in your array)
+                        <li>You can add a console.log() to your function if you want to check that your new object is
+                            storing information correctly, but the final thing your function should do is return the
+                            variable your new user is assigned to</li>
+                        <li>Now that we have a new instance of the user object we should use it. Start by creating a login function.
+                            Once again your function should be checking the values of the input fields next to the login button.
                         </li>
-                        <li>Find the movie object with that title and call the the appropriate function.</li>
+                        <li>After retrieving these values compare them to the values stored in your object keys.
+                            IMPORTANT! Remember, you are not checking the values of your object prototype, but rather
+                            the values of the object instance you created.
+                        </li>
+                        <li>If they match have an alert pop up with the message of your choice, else have an alert pop
+                            up that says try again.</li>
+
                     </ul>
+
+                    Hint: The variable that stores your new object instance will be a local variable, thus returning it.
+                    to use it in your login function you'll have to pass it in.
+
                 </div>
             </div>
         </div>

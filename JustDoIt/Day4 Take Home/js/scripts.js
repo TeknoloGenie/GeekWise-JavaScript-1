@@ -1,7 +1,6 @@
 //Create two static strings, password and username assign them to whatever you want
 var password = 'secret';
-var username = 'user';
-var location;
+var username = 'user'
 
 //Create a function called authenticate that will accept two parameters, these parameters will be the users username and
 //password that you will prompt them to enter.
@@ -34,8 +33,9 @@ function login(){
 //Check that the user entered in the correct credentials that you assigned to those static variables.
 //If the user enters them incorrectly alert them that it failed. If they entered in the proper credentials then take
 //them to your dashboard page.
+//
+//function init(){
+//    document.getElementById('login').onclick=function(){login()};
+//}
+//window.onload=init;
 
-function init(){
-    document.getElementById('login').onclick=function(){login()};
-}
-window.onload=init;
