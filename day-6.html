@@ -409,9 +409,16 @@
     </code>
 </pre>
                 Notice anything? If you entered it correctly you should be receiving an unresolved variable error.
-                This is because <code>'strict mode';</code> catches silent errors,
+                This is because <code>'strict mode';</code> catches silent errors, or errors that don't necessarily break your code, but
+                can cause unwanted results, especially when dealing with different browsers. Note, however, that not all
+                browsers support strict mode. It also flags mistakes as errors, making it sometimes easier to debug code.
 
+                'strict mode'; can be used on strings and functions, and much like variables 'strict mode' will be
+                limited to the scope it's applied to, so if you add it inside a function it will not affect code outside
+                of the functions scope.
 
+                More on 'strict mode'; can be found here:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Linky</a>
             </div>
         </div>
 
