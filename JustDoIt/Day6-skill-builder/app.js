@@ -1,6 +1,6 @@
 var user = {
-    username: '',
-    password: ''
+    username: null,
+    password: null
 }
 
 function create(){
