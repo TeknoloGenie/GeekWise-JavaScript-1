@@ -1,19 +1,16 @@
-<!--.row>(.col-md-3>h2.text-right)+.col-md-9-->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Geekwise Javascript 1</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700'
-          rel='stylesheet'
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet'
           type='text/css'>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./static/css/prism.css" />
-    <link rel="stylesheet" href="./static/css/reset.css">
-    <link rel="stylesheet" href="./static/css/style.css">
 </head>
-<body class="theme day">
+<body class="theme">
 <header id="nav">
 </header>
 
@@ -28,70 +25,13 @@
         </div>
         <div class="col-md-9 concepts">
             <ul>
-                <li>Review Take Home Assignment</li>
                 <li>Skill Builder</li>
-                <li>for / in loop</li>
-                <li>The DOM</li>
-                <li>Selecting Elements on a page</li>
-                <li>Creating Elements</li>
-                <li>Removing Elements</li>
+                <li>The DOM (Nodes) & Selecting Elements</li>
+                <li>Creating & Removing Elements</li>
             </ul>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-3">
-            <h2 class="text-right">Review Take Home</h2>
-        </div>
-        <div class="col-md-9">
-<pre>
-    <code class="language-javascript">
-function Bank(balance) {
-    balance = parseInt(balance, 10);
-    balance = isNaN(balance) ? 100 : balance;
-    this.balance = balance;
-}
-
-Bank.prototype = {
-    credit: function (credit) {
-        credit = parseInt(credit, 10);
-
-        if (isNaN(credit)) {
-            return;
-        }
-
-        this.balance += credit;
-    },
-    debit: function (debit) {
-        debit = parseInt(debit, 10);
-
-        if (isNaN(debit)) {
-            return;
-        }
-
-        this.balance -= debit;
-    }
-};
-
-var EECU = new Bank();
-
-for (var i = 0; i < 3; i++) {
-    var credit = prompt("Enter an amount to credit your account");
-
-    EECU.credit(credit);
-}
-
-for (var i = 0; i < 2; i++) {
-    var debit = prompt("Enter an amount to debit your account");
-
-    EECU.debit(debit);
-}
-
-console.log(EECU.balance);
-    </code>
-</pre>
-        </div>
-    </div>
 
 
     <div class="row">
@@ -100,21 +40,24 @@ console.log(EECU.balance);
         </div>
         <div class="col-md-9">
             <div class="point">
-                Refactor the take home so that:
+                Create an Authentication Object that will have some default properties, and methods.
 
                 <ul class="list">
                     <li>
-                        Create a new function called <code>doDebitCredit</code> that has a signature
-                        <code>doDebitCredit(numLoops, action, desc)</code>
+                        Create a new Constructor Object called <code>Auth</code> that has the following default properties.
+                        <code>username</code> <code>password</code> <code>isAuthenticated</code> <code>lastLogin</code>
+                        <code>birthday</code> <code>gender</code>. And create the following prototyped methods on the Auth object.
+                        <code>login</code> <code>register</code> <code>logout</code>
                     </li>
                     <li>
-                        The <code>doDebitCredit</code> function should create a loop that will run the specified number
-                        of times <code>numLoops</code>, prompt the user with the given <code>desc</code>for a number,
-                        and then run the specified <code>action"</code> (HINT: remember functions are first class
-                        citizens in javascript, so you can pass them into other functions).
+                        The <code>register</code> function will create a new User object with more then just the username and password.
+                        Once the user is registered we need to take that User object and push it to an array somewhere. 
+                        Inform your users that the account was created.
                     </li>
                     <li>
-                        Finally, log the final balance and ensure it's the proper amount.
+                        The <code>login</code> function will take the username and password, loop over all the current User's
+                        (you should have registered multiple accounts) and get the User that is equal to the username inputed by the user.
+                        Once you have that user, verify that their password is correct and proceed to take them to their dashboard.
                     </li>
                 </ul>
             </div>
@@ -127,10 +70,9 @@ console.log(EECU.balance);
     </div>
 
     <div class="row">
-        <div class="col-md-3">
-            <h2 class="text-right">The DOM</h2>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">The DOM (Nodes) & Selecting Elements</h2>
+
             <div class="point">
                 What is the DOM?
             </div>
@@ -183,7 +125,7 @@ console.log(EECU.balance);
 </pre>
 
             <div class="point">
-                The DOM gives us some nice ways to select elements on a page for maniuplating.  The first method we'll discuss
+                The DOM gives us some nice ways to select elements on a page for manipulating.  The first method we'll discuss
                 is called <code>document.getElementById()</code>.
             </div>
 
@@ -353,8 +295,8 @@ document.body.appendChild(a);
                 As you can see above, the <code>document.body</code> is a reference to the &lt;body&gt; tag.  So it's telling
                 javascript to append a child node to the body tag.  This can be done on ANY node you have selected.
 
-                <div class="excercise">
-                    Try it: append an anchor tag to the h1 we selected earlier in the excercise.
+                <div class="alert alert-success">
+                    Try it: append an anchor tag to the h1 we selected earlier in the alert alert-success.
                 </div>
             </div>
 
@@ -535,7 +477,7 @@ a.setAttribute("style", "background-color: red; color: white;");
                 and append the elements to other elements already on the page.  Lets create a helper function to make
                 some of this easier.
 
-                <div class="excercise">
+                <div class="alert alert-success">
                     Try it: Create a function that will have the following signature: <code>e(elementType, text, attributes, styles)</code>
                     where <code>elementType</code> is a string of an element type, attributes is an object of attributes to set
                     on an element, and styles is an object of style properties to set on an object.  Then return the
