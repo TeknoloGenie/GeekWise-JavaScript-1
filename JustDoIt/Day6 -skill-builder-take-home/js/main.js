@@ -5,13 +5,11 @@ function User(username, password){
     this.password = password;
 }
 
-function create(username,password){
-    username = document.getElementById("newName").value;
-    password = document.getElementById("newPword").value;
+function create(){
+    var username = document.getElementById("newName").value;
+    var password = document.getElementById("newPword").value;
     myUser = new User(username, password);
 }
-
-
 
 function login(){
     var uName = document.getElementById("uName").value;
