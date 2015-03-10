@@ -45,10 +45,11 @@
                 <ul class="list">
                     <li>
                         Create a new Constructor Object called <code>Auth</code> that has the following default properties.
-                        <code>username</code> <code>password</code> <code>isAuthenticated</code> <code>lastLogin</code>
-                        <code>birthday</code> <code>gender</code>. And create the following prototyped methods on the Auth object.
+                        <code>isAuthenticated</code>  <code>user</code>. And create the following prototyped methods on the Auth object.
                         <code>login</code> <code>register</code> <code>logout</code>
                     </li>
+                    <li>Take the User object you created in Day 6 and add the following properties <code>user</code> <code>password</code>
+                        <code>lastLogin</code> <code>birthday</code> <code>gender</code></li>
                     <li>
                         The <code>register</code> function will create a new User object with more then just the username and password.
                         Once the user is registered we need to take that User object and push it to an array somewhere. 
@@ -57,7 +58,8 @@
                     <li>
                         The <code>login</code> function will take the username and password, loop over all the current User's
                         (you should have registered multiple accounts) and get the User that is equal to the username inputed by the user.
-                        Once you have that user, verify that their password is correct and proceed to take them to their dashboard.
+                        Once you have that user, verify that their password is correct and add the User Instance as the Auth.user prooerty,
+                        and proceed to take them to their dashboard.
                     </li>
                 </ul>
             </div>
