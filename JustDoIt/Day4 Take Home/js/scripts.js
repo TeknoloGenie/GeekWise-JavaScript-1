@@ -8,7 +8,7 @@ var username = 'user'
 function authenticate(password1 , username1){
         if(username1 === username && password1 === password){
             alert('thank you');
-            location = 'dashboard.html'
+            location = 'dashboard.html';
         }else if(username1 === username && password1 !== password){
             alert('Incorrect password');
         }else if(username1 !== username && password1 === password){
