@@ -23,6 +23,6 @@ function e(elementType, text, attributes, styles) {
 function sendMsg(){
     var msg = document.getElementById('outgoingMsg').value;
     var msgDisplay = document.getElementById('messages');
-    msgDisplay.appendChild(e('li', msg, '', {fontFamily: 'cursive', color: '#cecece'} ));
+    msgDisplay.appendChild(e('li', msg, '', {fontFamily: 'cursive', color: '#1a1a1a'} ));
 }
 

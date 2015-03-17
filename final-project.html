@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geekwise Javascript 1</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700'
+          rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/prism.css" />
+    <link rel="stylesheet" href="./static/css/reset.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body class="theme day">
+    <header id="nav">
+    </header>
+
+    <div class="container content">
+        <h1 class="row text-center hdr">
+            Final Project Overview
+        </h1>
+        <div class="row">
+            <div class="col-md-3">
+                <h2 class="text-right">HTML Files</h2>
+            </div>
+            <div class="col-md-9 concepts">
+                <ul>
+                    <li>index.html</li>
+                    <li>registration.html</li>
+                    <li>dashboard.html</li>
+                    <li>friends.html</li>
+                    <li>messages.html</li>
+                    <li>chat.html</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h2 class="text-right">Javascript Files</h2>
+            </div>
+            <div class="col-md-9 concepts">
+                <ul >
+                    <li>app.js</li>
+                    <li>auth.js</li>
+                    <li>friends.js</li>
+                    <li>messages.js</li>
+                    <li>chat.js</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h2 class="text-center sub">HTML Files</h2>
+                <div class="point">
+                    The file structure for your project should follow along these lines:
+
+                    Project Root Folder
+                    <ul>
+                        <li>css folder
+                            <ul class="list">
+                                <li>styles.css</li>
+                            </ul>
+                        </li>
+                        <li>js folder
+                            <ul class="list">
+                                <li>scripts.js or main.js</li>
+                                <li>auth.js</li>
+                                <li>friends.html</li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            pages folder
+                            <ul class="list">
+                                <li>registration.html</li>
+                                <li>dashboard.html</li>
+                                <li>messages.html</li>
+                                <li>chat.html</li>
+                                <li>friends.html</li>
+                            </ul>
+                        </li>
+                        <li>
+                            index.html
+                        </li>
+                    </ul>
+                </div>
+
+                <h2 class="text-center sub">HTML Files</h2>
+                <h3>index.html</h3>
+                <div class="point">
+                    The index.html will serve as the login page for the project. It will need input fields for a username and
+                    password. Below the form should be a link to the registration page for creating new accounts. Upon successful
+                    log in the user should be redirected to the dashboard.html page.
+                </div>
+
+                <h3>registration.html</h3>
+                <div class="point">
+                    The registration page should have a form with the following inputs:
+                    <ul class="list">
+                        <li>Username</li>
+                        <li>Password</li>
+                        <li>First name</li>
+                        <li>Last name</li>
+                        <li>Date of Birth</li>
+                        <li>Email - be sure to use validation to check that it follows email format (email@email.com)</li>
+                        <li>Gender - may use radios or dropdown</li>
+                    </ul>
+
+                    Be sure to check for edge casing, ie. no numbers in the name fields.
+
+                    When all information is entered and the user is created then the user should be redirected to the login page.
+                </div>
+
+                <h3>dashboard.html</h3>
+                <div class="point">
+                    The dashboard should display links to the Friends page, Messages page, chat page, and a button for logging out, as well
+                    as display the user name.
+                </div>
+
+                <h3>friends.html</h3>
+                <div class="point">
+                    The friends page will have a list of all friends, using their username and first and last names, as
+                    well as their current status and, if offline, when they were last logged in. Friends should also have
+                    links for private chatting and messages. The friends list should also have a way of sorting the list
+                    by username, status, and any other way you might want to order it.
+                    <br>
+                    Finally, the list should also have buttons for adding and removing friends. The Remove friend button
+                    can be added to each friend’s info.Adding friends should require a first and last name.
+                    The fields can be set up how you like, whether that’s always visible or setting the form to display:none;
+                    and setting the attributes to display:block; when a button is clicked.
+                </div>
+
+                <h3>messages.html</h3>
+                <div class="point">
+                    The messages page will display direct messages from other users in order of last received and should
+                    have the username of the sender, the message, and a remove message button, as well as a way to send
+                    messages to other users.
+                </div>
+
+                <h3>chat.html</h3>
+                <div class="point">
+                    The chatroom will have an area to display everyones messages, an input field for you to type out
+                    messages and a send button to post those messages. The msg should not only take what you put in,
+                    but should also add your username to the posted text so everyone knows who sent it. The page will
+                    need to check the server every 5 seconds or so to see if any new messages have been added.
+                </div>
+
+                <h2 class="text-center sub">JS Files</h2>
+                <h3>main.js</h3>
+                <div class="point">
+                    This will be the the main javascript file that will access your other js files and force them to
+                    communicate with each other.
+                </div>
+
+                <h3>auth.js</h3>
+                <div class="point">
+                    The auth.js file will be responsible for authorizing a user at login, as well as prototype a login,
+                    register, and logout function to new user objects.
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./static/js/prism.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./static/js/nav.js"></script>
+    <script type="text/javascript">
+        function geekwiseClass() {
+            console.log("Congrats, you found a global function");
+        }
+    </script>
+</body>
+</html>
