@@ -42,10 +42,10 @@
             <div class="col-md-9 concepts">
                 <ul >
                     <li>app.js</li>
+                    <li>register.js</li>
                     <li>auth.js</li>
                     <li>friends.js</li>
                     <li>messages.js</li>
-                    <li>chat.js</li>
                 </ul>
             </div>
         </div>
@@ -149,20 +149,31 @@
                 </div>
 
                 <h2 class="text-center sub">JS Files</h2>
-                <h3>main.js</h3>
+                <h3>main.js/app.js</h3>
                 <div class="point">
                     This will be the the main javascript file that will access your other js files and force them to
-                    communicate with each other.
+                    communicate with each other. It should contain a function for logging in user as well as an event
+                    listener to check when a login event happens.
                 </div>
 
                 <h3>auth.js</h3>
                 <div class="point">
-                    The auth.js file will be responsible for authorizing a user at login, as well as prototype a login,
-                    register, and logout function to new user objects.
+                    The auth.js file will be responsible for authorizing a user at login, as well as prototyping a logout
+                    method to the auth object.
                 </div>
 
+                <h3>register.js</h3>
+                <div class="point">
+                    The register.js file will be responsible for registering a new user. It should have a function for
+                    setting a new user's information and posting it to a server as well as a function that will check
+                    for an event and gather the information a user inputs into a registration form. This info should be
+                    passed to the the function responsible for posting the data to the server.
+                </div>
 
-
+                <h3>user.js</h3>
+                <div class="point">
+                    This file will contain your user object constructor and prototypes for adding, removing, and messaging.
+                </div>
 
 
 
