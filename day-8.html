@@ -1,23 +1,20 @@
-<!--.row>(.col-md-3>h2.text-right)+.col-md-9-->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Geekwise Javascript 1</title>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700'
-              rel='stylesheet'
-              type='text/css'>
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./static/css/prism.css" />
-        <link rel="stylesheet" href="./static/css/reset.css">
-        <link rel="stylesheet" href="./static/css/style.css">
-    </head>
-    <body class="theme day">
-        <header id="nav">
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <title>Geekwise Javascript 1</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet'
+          type='text/css'>
+</head>
+<body class="theme">
+    <header id="nav">
+    </header>
 
-        <div class="container content">
+    <div class="container content">
             <h1 class="row text-center hdr">
                 Day 8
             </h1>
@@ -28,7 +25,6 @@
                 </div>
                 <div class="col-md-9 concepts">
                     <ul>
-                        <li>Review Take Home Assignment</li>
                         <li>Skill Builder</li>
                         <li>Event Listeners</li>
                         <li>Working with forms</li>
@@ -39,122 +35,22 @@
                 </div>
             </div>
 
-
-            <div class="row">
-                <div class="col-md-3">
-                    <h2 class="text-right">Review Take home</h2>
-                </div>
-                <div class="col-md-9">
-
-<pre>
-    <code class="language-javascript">
-//create a function that will take a title, runningTime and year
-//as arguments and return an object of those properties.
-function movieObjCreator(title, runningTime, year) {
-    return {
-        title: title,
-        runningTime: runningTime,
-        year: year
-    };
-}
-
-//Our data structure, an array of arrays
-var movies = [
-    ["bill and teds excellent adventure", 90, 1990],
-    ["rad", 85, 1983],
-    ["goonies", 95, 1985],
-    ["top gun", 90, 1987],
-    ["the shawshank redemption", 120, 2005]
-];
-
-//for holding our new movie objects
-var movieObjs = [];
-
-//initial loop, we'll create our movie objects here
-for (var i = 0; i < movies.length; i++) {
-    var movie = movies[i];
-    movieObjs.push(movieObjCreator.apply({}, movie));
-}
-
-function e(elementType, text, attributes, styles) {
-    attributes = attributes || {};
-    styles = styles || {};
-
-    var newElement = document.createElement(elementType);
-
-    if (text) {
-        newElement.textContent = text;
-    }
-
-    //set the attributes on the tag
-    for (var attr in attributes) {
-        if (attributes.hasOwnProperty(attr)) {
-            newElement.setAttribute(attr, attributes[attr]);
-        }
-    }
-
-    //set the styles
-    for (var style in styles) {
-        if (styles.hasOwnProperty(style)) {
-            newElement.style[style] = styles[style];
-        }
-    }
-
-    return newElement;
-}
-
-//create the main ul
-var ul = e("ul");
-
-//loop our movie array and create one li for each movie,
-//with the title as the text
-for (var i = 0; i < movieObjs.length; i++) {
-    var movie = movieObjs[i];
-    var li = e("li", movie.title, {}, {color: "red"});
-
-    ul.appendChild(li);
-}
-
-document.body.appendChild(ul);
-    </code>
-</pre>
-
-                </div>
-            </div>
-
             <div class="row">
                 <div class="col-md-3">
                     <h2 class="text-right">Event Listeners</h2>
                 </div>
                 <div class="col-md-9">
-                    <div class="point">
-                        In javascript, Event listeners are how we can react to user interaction on the page. For
-                        instance, alert something to a user when they try and delete an element, or run an arbitrary
-                        javascript function when a user clicks a button.
-                    </div>
+
+                    <div class="point"> Can trigger, or be triggered by both user interaction, or pragmatically.</div>
+
+                    <div class="point"> Built into the DOM (not just html) </div>
+
+                    <div class="point"> The syntax: <code>element.addEventListener(event, function)</code></div>
 
                     <div class="point">
-                        The DOM has built in methods that allow for registering "handlers" for a given
-                        "<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Events">event</a>", like click or
-                        mouseover.
-                    </div>
-
-                    <div class="point">
-                        Lets start by creating a simple html page with a with a button.  We'll assign an event handler
-                        to the button.
-                    </div>
-
-<pre>
-    <code class="language-markup">
-&lt;button id="alert"&gt;Alert something&lt;/button&gt;
-    </code>
-</pre>
-
-                    <div class="point">
-                        Now that we have a button we can add a <code>click</code> handler for, lets actually add the listener. We
-                        will use the <code>element.addEventListener(event, handler)</code> function where event is a string for a
-                        named event, and the handler is a function to call when the event happens. In this way, the
-                        function is referred to as a <code>callback</code>.
+                        We could add the event handler to the DOM itself. But lets to it through JavaScript.
+                        Before you can add an event to an element, what must you do? Once you do that what would you pass
+                        as the <code>parameters</code> to the <code>addEventListener</code> function.
 
                         <div class="excercise">
                             Try it: Add the button markup, and write some js that will select the button, and then use
@@ -162,25 +58,8 @@ document.body.appendChild(ul);
                         </div>
                     </div>
 
-<pre>
-    <code class="language-javascript">
-var button = document.getElementById("alert");
-
-button.addEventListener("click", function () {
-    alert("hello world");
-    console.log(this); //what is the context to our callback function?
-});
-    </code>
-</pre>
-
                     <div class="point">
-                        Now, if you've added the button markup, and run that javascript, you should now be able to click
-                        on the button and see an alert. Notice the console.log there? What is the <code>this</code> of
-                        the function?
-                    </div>
-
-                    <div class="point">
-                        In callbacks, it's usually the case that the <code>context</code> will the the node element itself.
+                        Callbacks methods Context.
                     </div>
 
                     <div class="point">
@@ -198,8 +77,8 @@ button.addEventListener("click", function () {
                         this object.
 
                         <div class="excercise">
-                            Try it: Use the <code>this</code> inside your callback to get the attribute value and alert
-                            that instead of the hard coded text.
+                            Try it: Use the <code>rel</code> inside your callback to get the attribute value and alert
+                            that instead of the hard coded text. Rember, how do we access the context?
                         </div>
                     </div>
 
@@ -214,33 +93,8 @@ button.addEventListener("click", function () {
 </pre>
 
                     <div class="point">
-                        <div class="excercise">
-                            Alter the takehome assignment to add a "rel" attribute to the <code>&lt;li&gt;</code> nodes.
-                            Then addEventListener for clicks on the <code>&lt;li&gt;</code> tags.  Alert the <code>rel</code>
-                            attributes for each li that is clicked on.
-                        </div>
-                    </div>
-
-<pre>
-    <code class="language-javascript">
-//loop our movie array and create one li for each movie,
-//with the title as the text
-for (var i = 0; i < movieObjs.length; i++) {
-    var movie = movieObjs[i];
-    var li = e("li", movie.title, {rel: movie.title}, {color: "red"});
-    li.addEventListener("click", function () {
-            alert(this.getAttribute("rel"));
-    });
-
-    ul.appendChild(li);
-}
-    </code>
-</pre>
-
-                    <div class="point">
-                        The above modification will add a rel attribute to our li nodes that will track the movie title,
-                        and the new event listener will listen for <code>click</code> events and run the specified callback
-                        which will alert the <code>rel</code> attribute.
+                        <div class="alert alert-success">
+                            With what we have learned, lets take a look at the take home and discuss what we can do to make it more cool!
                     </div>
 
                     <div class="point">
@@ -258,13 +112,13 @@ for (var i = 0; i < movieObjs.length; i++) {
                     </div>
 
                     <div class="point">
-                        Lets start with a simple text input, that will allow us to input a movie title.
+                        Lets start with a simple registration form. What all have we so far needed when registering a user?
                     </div>
 
 <pre>
     <code class="language-javascript">
-&lt;form name="newMovieForm" id="newMovieForm"&gt;
-    &lt;input type="text" name="movieTitle" id="movieTitle" /&gt;
+&lt;form name="registerForm" id="registerForm"&gt;
+    &lt;input type="text" name="firstName" id="firstName" /&gt;
     &lt;input type="submit" value="Add Movie" /&gt;
 &lt;/form&gt;
     </code>

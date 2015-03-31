@@ -50,35 +50,6 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-3">
-            <h2 class="text-right">Skill Builder</h2>
-        </div>
-        <div class="col-md-9">
-            <div class="point">
-                Alter the takehome from day 8 to use event delegation instead of individual click events on each li node
-                that we add to the movie list.  Remember, this means that there should be a click event somewhere higher
-                up in the dom, that will catch the event.
-            </div>
-
-            <div class="point">
-                Some things to remember:
-
-                <ul class="list">
-                    <li>
-                        Since we're not going to be adding click event handlers, we need to find some other way to store
-                        the movie instance reference to the li.
-                    </li>
-                    <li>
-                        Hint: Dom element objects are no different than any other javascript object, how could you create
-                        an arbitrary element in a normal object?
-                    </li>
-                </ul>
-
-                <a href="day9-skillbuilder.html">Link to example</a>
-            </div>
-        </div>
-    </div>
 
 
 <div class="row">
@@ -221,30 +192,30 @@ console.log(strings);
 
 <pre>
     <code class="language-javascript">
-var movieObjects = [
-    {title: "Rad"},
-    {title: "Avengers"},
-    {title: "Big Lebowski"},
-    {title: "Spiderman 1"},
-    {title: "Spiderman 2"}
+var friendObjects = [
+    {name: "Joey"},
+    {name: "Ross"},
+    {name: "Rachel"},
+    {name: "Pheobe"},
+    {name: "Chandler"}
 ];
 
-movieObjects.sort(function (a, b) {
-    //how can we sort a and b so that the movie titles will be in proper alphabetical order?
+friendObjects.sort(function (a, b) {
+    //how can we sort a and b so that the friends names will be in proper alphabetical order?
 });
     </code>
 </pre>
 
         <div class="point">
-            Given that each of those objects shares a similar form, we can use the <code>title</code> property of each
+            Given that each of those objects shares a similar form, we can use the <code>name</code> property of each
             object and return a -1, 1, or zero depending on the outcome.
         </div>
 
 <pre>
     <code class="language-javascript">
-movieObjects.sort(function (a, b) {
-    var titleA = a.title.toLowerCase();
-    var titleB = b.title.toLowerCase();
+friendObjects.sort(function (a, b) {
+    var nameA = a.name.toLowerCase();
+    var nameB = b.name.toLowerCase();
 
     if (titleA < titleB) {
         return -1;
@@ -384,7 +355,7 @@ window.foo //function () {...}
             <div class="point">
                 One major gotcha here...if our "modules" that we are creating are created inside an <code>IIFE</code>,
                 and and <code>IIFE</code> creates a new scope that the outer scopes can't reach, how can code in another
-                file access our <code>Movie</code> constructor or <code>e</code> function?
+                file access our <code>Friend</code> constructor or <code>e</code> function?
             </div>
 
             <div class="point">
@@ -400,36 +371,36 @@ window.foo //function () {...}
                 First, lets determine some good places that we can break this up a little bit.  What about something like:
 
                 <ul class="list">
-                    <li>movie.js - Will hold our <code>Movie</code> constructor and it's prototype, nothing else.</li>
+                    <li>auth.js - Will hold our <code>Auth</code> constructor and it's prototype, nothing else.</li>
                     <li>element.js - Will hold our e function.</li>
                     <li>
-                        movieapp.js - Will hold our event listeners other code that will use the movie.js and element.js
+                        app.js - Will hold our event listeners other code that will use the auth.js and element.js
                         files.
                     </li>
                 </ul>
 
                 <div class="excercise">
-                    Try it: Create two new files, movie.js and element.js and move the code from the take home into
+                    Try it: Create two new files, auth.js and element.js and move the code from the take home into
                     the appropriate files.  Then make sure to include those files on your html page in an order that
-                    makes sense.  Remember, if movieapp.js will need to use code from movie.js and element.js then movie.js
+                    makes sense.  Remember, if app.js will need to use code from auth.js and element.js then auth.js
                     and element.js need to load first.
                 </div>
             </div>
 
             <div class="point">
-                Lets start with the movie.js module.  First we start with an <code>IIFE</code>:
+                Lets start with the auth.js module.  First we start with an <code>IIFE</code>:
             </div>
 
 <pre>
     <code class="language-javascript">
 (function () {
-    //Movie constructor goes here
+    //Auth constructor goes here
 }());
     </code>
 </pre>
 
             <div class="point">
-                Now we can add our movie constructor, and remove it from our main application (inline in your html page
+                Now we can add our auth constructor, and remove it from our main application (inline in your html page
                 or from an external file)
             </div>
 
@@ -437,15 +408,11 @@ window.foo //function () {...}
     <code class="language-javascript">
 (function() {
     /**
-     * Define our Movie constructor function.
-     * @param title
-     * @param runningTimeInMinutes
-     * @param year
-     * @param genre
+     * Define our Auth constructor function.
      * @param desc
      * @constructor
      */
-    function Movie(title, runningTimeInMinutes, year, genre, desc) {
+    function Auth(title, runningTimeInMinutes, year, genre, desc) {
         this.title = title;
         this.runningTimeInMinutes = parseInt(runningTimeInMinutes, 10) || 0;
         this.year = year;
@@ -454,11 +421,11 @@ window.foo //function () {...}
     }
 
     /**
-     * The movie prototype, lets you see a running time in hours and
+     * The Auth prototype, lets you see a running time in hours and
      * a preview snippet based on the description.
      * @type {{runningTimeHours: Function, preview: Function}}
      */
-    Movie.prototype = {
+    Auth.prototype = {
         runningTimeHours: function runningTimeHours() {
             if (!isNaN(this.runningTimeInMinutes)) {
                 return (this.runningTimeInMinutes / 60) + " hrs";
@@ -476,13 +443,13 @@ window.foo //function () {...}
 </pre>
 
             <div class="point">
-                Now, the <code>Movie</code> constructor is neatly contained in the movie.js file, and exposed to the
+                Now, the <code>Auth</code> constructor is neatly contained in the auth.js file, and exposed to the
                 window at the end of the file so it can be used throughout the application.
             </div>
 
             <div class="point">
                 <div class="excercise">
-                    Try it: Create the element.js file and set it up in the same way as movie.js.  Add the relevant code,
+                    Try it: Create the element.js file and set it up in the same way as auth.js.  Add the relevant code,
                     expose what you want exposed to the window.
                 </div>
             </div>
@@ -501,7 +468,7 @@ window.foo //function () {...}
         &lt;meta charset="utf-8"&gt;
         &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
         &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-        &lt;title&gt;Geekwise - Movie App&lt;/title&gt;
+        &lt;title&gt;Geekwise - Auth App&lt;/title&gt;
 
         &lt;!-- Bootstrap --&gt;
         &lt;link rel="stylesheet" href="./static/js/bootstrap/css/bootstrap.min.css" /&gt;
