@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geekwise Javascript 1</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body class="theme">
+<header id="nav">
+</header>
+
+
+<div class="fixed-quick-link">
+    <div class="btn-group bottom-left dropdown">
+        <button type="button" class="btn btn-default">Agenda</button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu pull-right" role="menu">
+            <li><a href="#skillBuilder">Test your knowledge</a></li>
+            <li><a href="#syntax">The Syntax</a></li>
+            <li><a href="#operators">Operators</a></li>
+            <li><a href="#math">Math</a></li>
+            <li><a href="#controlFlow">Control Flow</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="container content">
+    <h1 class="text-center hdr">Day 2</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="subhdr">Agenda</h2>
+        </div>
+        <div class="col-md-9 concepts">
+            <ul>
+                <li>Review Take Home</li>
+                <li>More on Variables</li>
+                <li>The Syntax</li>
+                <li>Operators</li>
+                <li>Math</li>
+                <li>Alert, Confirm, Prompt</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 id="syntax" class="text-center sub">More on Variables</h2>
+            <div class="point">Readability matters</div>
+            <div class="point">whitespace</div>
+            <div class="point">camelCasing</div>
+            <div class="point">CaSe SeNsItIvItY</div>
+            <div class="point">Boolean naming convention</div>
+            Variables that are boolean datatypes should start with is or has.
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 id="syntax" class="text-center sub">The Syntax</h2>
+            <div class="point">Each statement must end with a semicolon</div>
+            <div class="point">Always use whitespaces in your code.</div>
+            <div class="point">Keywords - var, debugger, function and much more</div>
+            <div class="point">Values - strings, numbers, booleans and many more</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 id="operators" class="text-center sub">Operators</h2>
+            <div class="point">
+                Not only Mathematical operators, there are <code>Comparison</code> operators as well. Bellow is a list of operators used in JavaScript.
+            </div>
+            <div class="point">Operators allow us to do something with the variables we've created.</div>
+
+            <div class="point">
+                <div class="row">
+                <div class="col-md-6">
+                    <h4 class="desc">Mathematical</h4>
+                    <ul class="list">
+                        <li><code>=</code> (equals, assignment)</li>
+                        <li><code>+</code> (addition)</li>
+                        <li><code>-</code> (subtraction)</li>
+                        <li><code>*</code> (multiplication)</li>
+                        <li><code>/</code> (division)</li>
+                        <li><code>%</code> (remainder aka modulus)</li>
+                    </ul>
+                    <h4 class="desc">Shorthand Operators</h4>
+                    <ul class="list">
+                        <li><code>+=</code></li>
+                        <li><code>-=</code></li>
+                        <li><code>*=</code></li>
+                        <li><code>/=</code></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="desc">Comparison</h4>
+                    <ul class="list">
+                        <li><code>==</code> (loose comparison)</li>
+                        <li><code>===</code> (strict comparison)</li>
+                        <li><code>!=</code> (loose not equal comparison)</li>
+                        <li><code>!==</code> (strict not equal comparison)</li>
+                        <li><code><</code> (less than)</li>
+                        <li><code>></code> (greater than)</li>
+                        <li><code><=</code> (less than or equal to)</li>
+                        <li><code>>=</code> (greater than or equal to)</li>
+                    </ul>
+                    <h4 class="desc">Logical</h4>
+                    <ul class="list">
+                        <li><code>&&</code> (and)</li>
+                        <li><code>||</code> (or)</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 id="math" class="text-center sub">Math</h2>
+            <div class="point">You can perform mathematical calculations using operators as discussed above.
+                <div class="alert alert-success">
+                    Try it: Open your console and run a few calculations like <code>2 + 7</code>, etc...
+                </div>
+            </div>
+            <div class="point">
+                The "value" of the expression can be stored for later use.
+                <div class="alert alert-success">
+                    Try it: create a variable called <code>result</code>.  Add two numbers together, and store the
+                    value in your result variable using the <code>=</code> operator. Log that value to the console.
+                </div>
+            </div>
+            <div class="point">
+                Shorthand notation exists for quickly operating on an existing variable.
+                <ul class="list">
+                    <li><code>+=</code></li>
+                    <li><code>-=</code></li>
+                    <li><code>*=</code></li>
+                    <li><code>/=</code></li>
+                </ul>
+                With these shortcut helpers, you can turn this:
+            </div>
+<pre>
+    <code class="language-javascript">
+        var b = 10;
+        b = b / 5; //2
+    </code>
+</pre>
+            <div class="point">
+                into this:
+            </div>
+<pre>
+    <code class="language-javascript">
+        var b = 10;
+        b /= 5;
+    </code>
+</pre>
+            <div class="point">
+                Operator Precedence, works like it did when you were in sixth grade.
+                <ol class="list">
+                    <li>Parentheses</li>
+                    <li>Multiplication / Division</li>
+                    <li>Addition / Subtraction</li>
+                </ol>
+            </div>
+<pre>
+    <code class="language-javascript">
+        //what's the answer?
+        var a = 5 + 5 * 10;
+    </code>
+</pre>
+            <div class="point">
+                If you wanted to have the <code>5 * 10</code> evaluate first, you would need to use
+                parentheses to group the parts you want to take precedence.
+            </div>
+<pre>
+    <code class="language-javascript">
+        //what's the answer?
+        var a = 5 + (5 * 10);
+    </code>
+</pre>
+            <div class="point">
+                The remainder <code>%</code> (aka modulus) is a useful operator to know how to leverage.
+            </div>
+            <div class="point">You can use remainder to determine if something is even or odd, a typical use is if
+                you are generating content like rows in a table, and you want to put an "even" class on even rows
+                and and "odd" class on odd rows.</div>
+<pre>
+    <code class="language-javascript">
+        var a = 5;
+        var remainder = a % 2; //1
+
+        var b = 6;
+        var remainder = b % 3; //0
+    </code>
+</pre>
+            <div class="point">It's also very easy to increment / decrement a number by one using javascript.</div>
+            <div class="point">Use the <code>++</code> or <code>--</code> operators on any existing variable.</div>
+<pre>
+    <code class="language-javascript">
+        var a = 5;
+        a++; //6
+
+        var b = 6;
+        b--; //5
+    </code>
+</pre>
+            <div class="point">Lets do a quick skill builder to practice what we have learned. You can find it in <a
+                    href="http://jsfiddle.net/jhhtawkj/">this JSFiddle</a></div>
+            <div class="point">How can we take a string that we know is a number and convert it to a number datatype?
+                <code>parseInt(number)</code>can be used for turning a string into an whole value integer. parseInt does
+                not round to the nearest whole number, it simply takes everything off after the decimal point. What if you
+                wanted to keep the float value? <code>parseFloat(number)</code>. </div>
+<pre>
+    <code class="language-javascript">
+        var c = "5.4";
+        var d = parseInt(c); // number data type 5
+        var e = parseFloat(c); // number data type 5.5
+    </code>
+</pre>
+
+            <div class="point">If you try and parse a value that cannot be turned into a number, you will get <code>NaN</code> (
+                not a number)</div>
+
+<pre>
+    <code class="language-javascript">
+        var a = "foo";
+        var b = parseInt(a); // NaN
+    </code>
+</pre>
+            <div class="point">
+                You can check if a value is NaN by using the <code>isNaN</code> function.
+            </div>
+<pre>
+    <code class="language-javascript">
+        var a = "foo";
+        var b = parseInt(a); //NaN
+        isNaN(b); //true
+    </code>
+</pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 id="syntax" class="text-center sub">alert / confirm / prompt</h2>
+            <div class="point">We will get much deeper into functions in the following class sessions.</div>
+            <div class="point"><code>alert</code> - telling your user something</div>
+            <div class="point"><code>confirm</code> - asking your user a true or false (yes or no) question.</div>
+            <div class="point"><code>prompt</code> - asking your user for any information</div>
+            <div class="point">Lets do another <a href="http://jsfiddle.net/091ndy75/">quick skill builder</a> based off of the concept that you can take these
+                functions and assign the values of them to a variable.</div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="subhdr">Take Home Assignment</h2>
+        </div>
+        <div class="col-md-9">
+            <div class="point">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="static/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="static/js/prism.js"></script>
+    <script src="static/js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/nav.js"></script>
+</body>
+</html>
