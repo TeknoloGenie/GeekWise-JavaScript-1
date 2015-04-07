@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geekwise Javascript 1</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body class="theme">
+<header id="nav">
+</header>
+
+
+
+<div class="container content">
+	<h1 class="text-center hdr">Day 4</h1>
+
+    <div class="row">
+		<div class="col-md-3">
+			<h2 class="subhdr">Agenda</h2>
+		</div>
+		<div class="col-md-9 concepts">
+			<ul>
+				<li>Review Take Home</li>
+]                <li>Functions</li>
+                <li>Skill Builder - Functions</li>
+                <li>Take Home Assignment</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<h2 class="text-center sub">Functions</h2>
+            <div class="point">
+                We've talked about functions during our first few classes, but up until now we've not really looked at what they are, how they work, and most importantly, how we can write our own.
+            </div>
+
+            <div class="point">
+                Lets define a javascript function as: <strong>a set of statements that performs a task or calculates a value</strong>
+            </div>
+
+            <!--<div class="point">-->
+                <!--Just like how a variable is defined using <code>var</code>. A function is defined with the <code>function</code>-->
+                <!--keyword, followed by a name ending with parentheses. Function names can contain letters, digits,-->
+                <!--underscores, and dollar signs (same rules as variables). Inside the parentheses of a function are the-->
+                <!--<code>parameters</code>.-->
+            <!--</div>-->
+
+            <!--<pre>-->
+                <!--<code class="language-javascript">-->
+<!--function functionName(parameter1, parameter2, ...) {-->
+    <!--//code to be executed-->
+<!--}-->
+                <!--</code>-->
+            <!--</pre>-->
+
+            <div class="point">
+                Functions allow you to perform a series of tasks, and return a value that can be used later.
+            </div>
+
+            <div class="point">
+                The <code>return</code> statement is the value that the function will return.
+            </div>
+
+            <div class="point">
+                In order to <code>invoke</code> a function you must use the parentheses after the functions name.
+            </div>
+
+            <div class="point">
+                All javascript datatypes have different functions that work on them. For example:
+            </div>
+            <ul class="list">
+                <li>Numbers have <code>parseInt</code>, <code>parseFloat</code>, etc...</li>
+                <li>Strings have <code>slice</code>, <code>charAt</code>, etc...</li>
+            </ul>
+
+            These functions are all built into each datatypes, functions that are built into datatypes are known as
+            methods.
+            Lets take a look at a few.
+            <pre>
+<code class="language-javascript">
+var str = 'hello world!';
+var firstLetter = str.charAt(0);
+</code>
+</pre>
+
+            <div class="point">
+                Ok, so we know that javascript has built in functions that perform tasks on certain datatypes, but
+                wouldn't it be nice if we could write our own functions?
+            </div>
+
+            <h3>Creating your first function</h3>
+
+            <div class="point">
+                So lets recap, in order to define a function we require four things
+
+                <ul class="list">
+                    <li>The <code>function</code> keyword followed by...</li>
+                    <li>The name of the function</li>
+                    <li>An optional list of parameters enclosed in parentheses and separated by commas</li>
+                    <li>The statements that define the functions enclosed in curly brackets</li>
+                </ul>
+
+                <div class="alert alert-success">
+                    Whiteboard: Create a function that logs "hello world" to the console.
+                </div>
+            </div>
+
+            <!--Teacher: Draw out on the board a helloWorld function that will log "hello world" and go through line by line -->
+            <!--explaining along the way.-->
+
+            </div>
+
+            <div class="point">You call a function by using it's name, followed by a set of parenthesis. If you
+                recall other functions we've used, the functions are always called with the parentheses.
+                <code>console.log(...)</code>
+                <code>alert(...)</code>, etc...
+            </div>
+
+            <div class="point">
+                So, lets call our function
+                <div class="alert alert-success">
+                    Try it: Place the function in a snippet if you dont already have it in one. Run the snippet then
+                    go to the console and type <code>helloWorld()</code>
+                </div>
+            </div>
+
+            <div class="point">
+                Modify the function to take 1 parameter and log that value to the console. Rename function.
+
+                <!--Teacher: Explain to the students parameters are like in house variables, any dataype can be passed
+                into a parameter.-->
+
+                <div class="alert alert-success">
+                    Whiteboard: Create a function called log that accepts one parameter, and logs it to the console.
+                </div>
+            </div>
+
+            <div class="point">
+                <div class="alert alert-success">
+                    Try it: Call your <code>log</code> function without passing any parameters, what gets logged to the console?
+                </div>
+            </div>
+
+            <!--Teacher: Have the students think of a set of functions they can -->
+
+            <div class="point">
+                Lets try something a little more complicated, but more useful. It would be really nice if we had a
+                way to capitalize a string, for proper names, etc... Maybe js provides a nice way to do this:
+
+                <div class="alert alert-success">
+                    Try it: Lets check and see if js provides a string capitalize function...
+                </div>
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var name = "aaron";
+var capped = name.capitalize();
+
+console.log(capped);
+
+>> TypeError: undefined is not a function
+    </code>
+</pre>
+
+            <div class="point">
+                Lets look a little closer at that error... <code>undefined is not a function</code>. In our example,
+                we are calling two functions, <code>name.capitalize()</code> and <code>console.log()</code>. Which
+                one is likely giving us the problem?
+            </div>
+
+            <div class="point">
+                Since we know <code>console.log()</code> is a real function, it's likely that javascript is telling
+                us that <code>name.capitalize</code> is undefined, and thus when we try and call it, it's not a
+                function. But to be sure lets debug our code.
+            </div>
+            <div class="point">
+                Put a breakpoint on the line where <code>capped</code> is defined. Then type in the console name.capitalize, what do you see?
+            </div>
+
+            <div class="point">
+                While js does not provide a way of capitalizing the first letter of a string, it does provide a way
+                to upper case an entire string. It looks like <code>'aaron'.toUpperCase()</code>.
+
+            </div>
+            <div class="alert alert-success">
+                Try it: Create a string (variable or directly inline) and use the toUpperCase function on it.
+                What is your result?
+            </div>
+
+<pre>
+    <code class="language-javascript">
+        "aaron".toUpperCase();
+    </code>
+</pre>
+
+            <div class="point">
+                The result should be an entirely uppercase string. So how can we use this to our advantage if we
+                wanted to write a function that will capitalize just the first letter?
+            </div>
+
+            <div class="point">
+                So we should create a new function, that will take a string value (argument), and return a new
+                value.
+
+                <div class="alert alert-success">
+                    Try it: Lets discuss how you might tackle creating a capitalized string using methods we've
+                    discussed in the last few classes. Hint: <code>toUpperCase</code>, charAt, and <code>slice</code>.
+                </div>
+
+                <div class="sidenote">
+                    In javascript <strong>strings</strong> are <strong>not mutable</strong>. This means that when
+                    you take any action on a string, you're actually creating a new string. So it's important to realize
+                    that since I can't actually change the string "aaron" into "Aaron", we can fake it by creating another string.
+                </div>
+            </div>
+
+            <pre>
+                <code class="language-javascript">
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+                </code>
+            </pre>
+
+        <h3>The <code>arguments</code> keyword</h3>
+
+        <div class="point">
+            This is more of an advanced topic, but worth mentioning here. Inside any javascript function, you will
+            have available to use an array like object called <code>arguments</code>.
+        </div>
+
+        <div class="point">
+            I say array like because it looks like an array, but is actually missing many of the functions arrays
+            have to work with. However, it does contain a <code>length</code> property.
+        </div>
+
+        <div class="point">
+            Lets take a look at how the <code>arguments</code> variable works.
+
+            <div class="alert alert-success">
+                Try it: lets create a function that will add up all of the arguments we pass into it. In all other
+                cases we've looked at, you must map the arguments being passed into the function, to the function
+                declaration itself, so the <code>arguments</code> variable will actually let us handle an arbitrary
+                number of arguments. This means we don't need to define the arguments in the function
+                <strong>signature</strong>.
+            </div>
+        </div>
+
+            <pre>
+                <code class="language-javascript">
+                    function adder() {
+                    console.log(arguments);
+                    }
+                </code>
+            </pre>
+
+        <div class="point">
+            Lets finish this function by making it add up all of the arguments we pass into it. Anything non
+            numberish
+            should be ignored. For instance, if I call <code>adder(1, 2, "foo")</code>, the result should be 3.
+        </div>
+
+        <div class="point">
+                Lets put all this knowledge to use with a skill builder.
+            </div>
+            <div class="point">
+
+            </div>
+        </div>
+	</div>
+
+
+
+	<div class="row">
+		<div class="col-md-3">
+			<h2 class="subhdr">Take Home Assignment</h2>
+		</div>
+		<div class="col-md-9">
+			<div class="point">
+
+			</div>
+		</div>
+	</div>
+</div>
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="./static/js/prism.js"></script>
+	<script type="text/javascript" src="./static/js/nav.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="static/js/nav.js"></script>
+</body>
+</html>
