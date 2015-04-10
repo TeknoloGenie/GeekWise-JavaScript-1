@@ -25,12 +25,58 @@
 		<div class="col-md-9 concepts">
 			<ul>
 				<li>Review Take Home</li>
-]                <li>Functions</li>
-                <li>Skill Builder - Functions</li>
-                <li>Take Home Assignment</li>
+				<li><a href="http://jsfiddle.net/a7tzp414/">Skill Builder - Recap</a></li>
+                <li>Edge Casing</li>
+                <li><a href="http://jsfiddle.net/4sb6gctm/">Skill Builder - Edge Casing</a></li>
+]               <li>Functions</li>
+                <li><a href="">Skill Builder - Functions</a></li>
+                <li><a href="http://jsfiddle.net/quwkoL6s/">Skill Builder - Dynamic Functions</a></li>
+                <li><a href="">Take Home Assignment</a></li>
 			</ul>
 		</div>
 	</div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">Handling Edge Cases</h2>
+
+            <div class="point">
+                When writing functions (or any js program, really), it's very important to consider edge cases. As a
+                developer, it's your job to anticipate odd ways your function might be used and make sure it handles
+                those cases.
+                <!--Teacher: Give some examples of edge casing, spent 15 minutes going over different ways to edge case different datatypes-->
+            </div>
+
+            <div class="point">
+                The <code>typeof</code> operator is helpful here. <code>typeof</code> operator will evaluate the type
+                of thing we are working with, and return that value as a string.
+
+                <div class="alert alert-success">
+                    Try it: Use the <code>typeof</code> keyword to detect the type of thing we're dealing with.
+                </div>
+            </div>
+
+    <pre>
+        <code class="language-javascript">
+            typeof 'Aaron'
+            typeof 3
+        </code>
+    </pre>
+
+
+            <div class="point">
+                Edge casing is a sure proof way of preventing bugs in your application. Or even properly notifying a
+                user what
+                went wrong and why. Always begin thinking about odd ways someone might use your code and anticipate how
+                you could handle it!
+            </div>
+
+            <div class="point">
+                Skill Builder - Edge Casing
+            </div>
+
+        </div>
+    </div>
 
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
@@ -87,6 +133,7 @@ var str = 'hello world!';
 var firstLetter = str.charAt(0);
 </code>
 </pre>
+            <!--Teacher: Go over the concepts of a string having an index value, the first char being 0.-->
 
             <div class="point">
                 Ok, so we know that javascript has built in functions that perform tasks on certain datatypes, but
@@ -111,11 +158,12 @@ var firstLetter = str.charAt(0);
             </div>
 
             <!--Teacher: Draw out on the board a helloWorld function that will log "hello world" and go through line by line -->
-            <!--explaining along the way.-->
+            <!--explaining along the way. Go into details like function declaration, naming, -->
 
             </div>
 
-            <div class="point">You call a function by using it's name, followed by a set of parenthesis. If you
+            <div class="point">
+                You call a function by using it's name, followed by a set of parenthesis. If you
                 recall other functions we've used, the functions are always called with the parentheses.
                 <code>console.log(...)</code>
                 <code>alert(...)</code>, etc...
@@ -130,10 +178,11 @@ var firstLetter = str.charAt(0);
             </div>
 
             <div class="point">
-                Modify the function to take 1 parameter and log that value to the console. Rename function.
-
                 <!--Teacher: Explain to the students parameters are like in house variables, any dataype can be passed
                 into a parameter.-->
+
+                Modify the function to take 1 parameter and log that value to the console. Rename function.
+
 
                 <div class="alert alert-success">
                     Whiteboard: Create a function called log that accepts one parameter, and logs it to the console.
@@ -146,7 +195,7 @@ var firstLetter = str.charAt(0);
                 </div>
             </div>
 
-            <!--Teacher: Have the students think of a set of functions they can -->
+            <!--Teacher: Have the students think of a set of functions they can create.-->
 
             <div class="point">
                 Lets try something a little more complicated, but more useful. It would be really nice if we had a
@@ -228,65 +277,11 @@ function capitalize(str) {
                 </code>
             </pre>
 
-        <h3>The <code>arguments</code> keyword</h3>
-
         <div class="point">
-            This is more of an advanced topic, but worth mentioning here. Inside any javascript function, you will
-            have available to use an array like object called <code>arguments</code>.
-        </div>
-
-        <div class="point">
-            I say array like because it looks like an array, but is actually missing many of the functions arrays
-            have to work with. However, it does contain a <code>length</code> property.
-        </div>
-
-        <div class="point">
-            Lets take a look at how the <code>arguments</code> variable works.
-
-            <div class="alert alert-success">
-                Try it: lets create a function that will add up all of the arguments we pass into it. In all other
-                cases we've looked at, you must map the arguments being passed into the function, to the function
-                declaration itself, so the <code>arguments</code> variable will actually let us handle an arbitrary
-                number of arguments. This means we don't need to define the arguments in the function
-                <strong>signature</strong>.
-            </div>
-        </div>
-
-            <pre>
-                <code class="language-javascript">
-                    function adder() {
-                    console.log(arguments);
-                    }
-                </code>
-            </pre>
-
-        <div class="point">
-            Lets finish this function by making it add up all of the arguments we pass into it. Anything non
-            numberish
-            should be ignored. For instance, if I call <code>adder(1, 2, "foo")</code>, the result should be 3.
-        </div>
-
-        <div class="point">
-                Lets put all this knowledge to use with a skill builder.
-            </div>
-            <div class="point">
-
-            </div>
+            Skill Builder - Dynamic Function
         </div>
 	</div>
 
-
-
-	<div class="row">
-		<div class="col-md-3">
-			<h2 class="subhdr">Take Home Assignment</h2>
-		</div>
-		<div class="col-md-9">
-			<div class="point">
-
-			</div>
-		</div>
-	</div>
 </div>
 	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="./static/js/prism.js"></script>
