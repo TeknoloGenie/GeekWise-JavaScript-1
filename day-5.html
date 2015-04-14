@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geekwise Javascript 1</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet'
+          type='text/css'>
+</head>
+<body class="theme">
+<header id="nav">
+</header>
+
+<div class="container content">
+    <h1 class="row text-center hdr">
+        Day 5
+    </h1>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Concepts</h2>
+        </div>
+        <div class="col-md-9 concepts">
+            <ul>
+                <li>Review Take Home Assignment</li>
+                <li>Skill Builder - Recap</li>
+                <li>Setup your environment</li>
+                <li>Project Structure</li>
+                <li>Including .js files in html</li>
+                <li>Take home assignment</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Skill Builder</h2>
+        </div>
+        <div class="col-md-9">
+            <div class="point">
+                Write a js program that will:
+
+                <ul class="list">
+                    <li>
+                        Create a function named isMultipleThree that will accept a number (please consider edge cases)
+                        and return <code>true</code> if a number is a multiple of three else return <code>false</code>.
+                    </li>
+                    <li>
+                        Create a function named isMultipleFive that will accept a number (please consider edge cases)
+                        and return <code>true</code> if a number is a multiple of five else return <code>false</code>.
+                    </li>
+                    <li>
+                        You should be able to use your function with any number, try it out, pass in any number to any
+                        of your functions and make sure you get the desired result.
+
+                        Lets take it a step further and create some conditions that will use our functions to display the appropriate word.
+
+                        <!--Teacher: Make sure they are using the function directly within the condition statement, example: if (isMultipleThree(3)) { } -->
+
+                        <ul class="list">
+                            <li>
+                                If the number is a multiple of three log the word "fizz"
+                            </li>
+                            <li>
+                                If the number is a multiple of five log the word "buzz"
+                            </li>
+                            <li>
+                                If the number is a multiple of both three and five, log the word "fizzbuzz"
+                            </li>
+                            <li>
+                                If a number is neither a multiple of three or five, log the number
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">Setting up your environment</h2>
+
+            <!--Teacher: Have them download the Intellij Enterprise Edition and provide them with the teknologenie.github.io/GeekWise-JavaScript-1/key.html link for the license key. -->
+
+            <div class="point">
+                Lets go over some development environment terminology.
+            </div>
+            <div class="point">
+                An <code>IDE</code> is what we use to code our projects in. Its basically a text editor on steroids. Most
+                IDE now adays come with autocomplete, VCS (version control system) integration, auto save and much more.
+                For this class we use Intellij (from JetBrains), its the leading IDE for the software development industry.
+            </div>
+
+            <!--Teacher: Give an example of what autocomplete will do for them. How much faster they can develop.-->
+
+            <div class="point">
+                JSLint is a JavaScript program that looks for problems in JavaScript programs. It is a code quality tool.
+
+                <!--Teacher: Give them a quick overview of how JSLint helps keep code readibility clean, how when enabled it advises when you are declaring to many var, or how it will tell you to use a ternary statement on simple conditions.-->
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h3 class="text-center sub">This Application Structure</h3>
+		<pre class="language-markup">
+			<code class="language-markup">
+                /* File Structure
+                ├── images
+                ├── css
+                │   └── style.css
+                ├── js
+                │   └── scripts.js
+                └── index.html
+            </code>
+		</pre>
+
+        <!--Teacher: go over how to use the cd command in their terminal to go up one directory. example: cd ../css/style.css if we were inside the js folder -->
+
+    </div>
+
+    <!--Teacher: Have them create the basic Application Structure for their final ToDoApp project. Then start going over the 3 ways to include javascript in your html.-->
+
+    <div class="row">
+        <h3 class="text-center sub">Inline</h3>
+        <div class="point">
+            Lets start with a basic example of Inline JavaScript. At this point you should have a pretty basic index.html
+            file. Lets make a button and do some inline javascript directly in the HTML.
+        </div>
+		<pre class="language-markup">
+			<code class="language-markup">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;GeekWise JavaScript 1&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button onclick="alert('You clicked my button!');"&gt;click me!&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </code>
+		</pre>
+
+        <div class="point">
+            There are many different types of event handler methods besides the <code>onclick</code>. In this case
+            its pretty self explanatory, we want to alert the user when they click the button, hence "onclick".
+        </div>
+        <div class="alert alert-warning">
+            Please note: This is <b>not</b> the recommended way of attaching functionality to your DOM elements, we will later
+            discuss best practices.
+        </div>
+    </div>
+    <div class="row">
+        <h3 class="text-center sub">Inline Script Tag</h3>
+
+        <div class="point">
+            The next way is another type of inline JavaScript, in this case, the JavaScript is executed when
+            the pages <code>script</code> tag is loaded.
+
+            <div class="excercise">
+                Open up your <code>index.html</code> and on the next line of code create a <code>script</code> tag
+                and close it. Then place <code>alert('I run inline too!');</code> inside of the script tag.
+            </div>
+        </div>
+
+		<pre class="language-markup">
+			<code class="language-markup">
+&lt;html&gt;
+    &lt;head&gt;
+     &lt;title&gt;Day 1 | GeekWise JavaScript 1&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button onclick="alert('You clicked my button!');"&gt;click me!&lt;/button&gt;
+        &lt;script&gt;
+            alert('I run inline too!');
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </code>
+		 </pre>
+    </div>
+
+    <div class="row">
+        <h3 class="text-center sub">Script Tag with Src</h3>
+
+        <div class="point">
+            The last way to include JavaScript in your Web Page is to use a <code>script</code> tag with a
+            <code>src</code> attribute that links to the javascript file. This allows for your JavaScript to be
+            maintained in a separate file, which is the proper way to include JavaScript in your code.
+
+            <div class="excercise">
+                You should already have a <code>script.js</code> file created for you in the <code>js</code> folder.
+                so the <code>src</code> attributes value should be "js/scripts.js". After you add the src you should
+                remove the inline script tag. And replace the onclick value on the button to <code>alertMsg()</code>
+                instead of <code>alert('You clicked my button!');</code>
+            </div>
+        </div>
+
+		<pre class="language-markup">
+			<code class="language-markup">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Day 1 | GeekWise JavaScript 1&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button onclick="alertMsg()"&gt;click me!&lt;/button&gt;
+        &lt;script src="js/scripts.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </code>
+		</pre>
+        <div class="alert alert-warning">
+            Notice we didn't include it in between the <code>head</code> like we do our css files? For the
+            most part we should always be including our JavaScript at the bottom of our page but before the
+            closing <code>body</code> tag. Why? DOM Manipulation is a big factor. We want the DOM to be loaded
+            before we try and handle any manipulation or execute any javascript upon it. Also script tags that are loaded
+            in the <code>head</code> tag block the page from loading until those files have been downloaded. Thus increasing
+            performance.
+        </div>
+        <br>
+        <div class="point">
+            We now should have a button and a script tag pointing to our scripts.js file. Inside of this scripts.js
+            file we should have created a very simple function.
+        </div>
+
+		<pre>
+			<code class="language-javascript">
+function alertMsg() {
+    alert('Im inside of a function!');
+}
+            </code>
+		</pre>
+
+    </div>
+
+    <!--Teacher: Tell them to use Bootstrap and include it into their files. Go over initiating a repository. And have them upload it to a public repository on GitHub.-->
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Take home assignment</h2>
+        </div>
+        <div class="col-md-9">
+
+            <div class="point">
+                Get your projects on Github! Use your googling powers to figure it out using either the Intellij IDE or CLI (Command Line Interface.... so your terminal)
+            </div>
+        </div>
+    </div>
+    <!-- closing the main container -->
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="./static/js/prism.js"></script>
+<script type="text/javascript" src="./static/js/nav.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/js/nav.js"></script>
+</body>
+</html>
