@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geekwise Javascript 1</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet'
+          type='text/css'>
+</head>
+<body class="theme">
+<header id="nav">
+</header>
+
+<div class="container content">
+    <h1 class="row text-center hdr">
+        Day 6
+    </h1>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Concepts</h2>
+        </div>
+        <div class="col-md-9 concepts">
+            <ul>
+                <li>Review Take Home</li>
+                <li><a href="http://jsfiddle.net/gtfr2937/">Skill Builder - Recap</a></li>
+                <li>While Loop</li>
+                <!--Notes: Go over a while loop, give a few solid examples of what to use a while loop for-->
+                <li><a href="http://jsfiddle.net/sjdape1u/">Skill Builder - While Loop</a></li>
+                <li><a href="http://www.git-tower.com/learn/ebook/command-line/appendix/command-line-101">Command Line 101</a></li>
+                <li><a href="http://rogerdudler.github.io/git-guide/">Version Control - Git</a></li>
+                <li>Skill Builder - Git</li>
+                <li>Debugging</li>
+                <!--Notes: Good articles to base this section off of, http://blog.codeunion.io/2014/09/03/teaching-novices-how-to-debug-code/-->
+                <li>Take Home Assignment</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">While Loop</h2>
+
+            <div class="point">
+                Loops are blocks of code that repeat until the condition used for the loop is met.
+            </div>
+
+            <div class="point">
+                The <code>while</code> statement creates a loop that executes a specified statement as long as the test condition evaluates to true.
+            </div>
+            <div class="point">
+                The <code>do while</code> statement creates a loop that executes a specified statement as long as the test condition evaluates to true.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+while (condition) {
+    statement
+}
+    </code>
+</pre>
+            <div class="point">
+                An examples on how to use a while statement.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var n = 0;
+var x = 0;
+
+while (n < 5) {
+    n++;
+    x += n;
+}
+    </code>
+</pre>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub"> Debugging </h2>
+
+            <div class="point"> Part of debugging is asking yourself these 3 questions. 80% of the time, asking yourself these questions will answer your problem.</div>
+
+            <ol>
+                <li>1. What makes you say your code isn't working?</li>
+                <li>2. What did you expect your code to do and why?</li>
+                <li>3. What did your code do instead and how do you know?</li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="./static/js/prism.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./static/js/nav.js"></script>
+<script type="text/javascript">
+    function geekwiseClass() {
+        console.log("Congrats, you found a global function");
+    }
+</script>
+</body>
+</html>
