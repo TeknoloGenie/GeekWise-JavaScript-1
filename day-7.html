@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geekwise Javascript 1</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/prism.css">
+    <link rel="stylesheet" href="static/js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700' rel='stylesheet'
+          type='text/css'>
+</head>
+<body class="theme">
+<header id="nav">
+</header>
+
+<div class="container content">
+    <h1 class="row text-center hdr">
+        Day 7
+    </h1>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Concepts</h2>
+        </div>
+        <div class="col-md-9 concepts">
+            <ul>
+                <li><a href="https://jsfiddle.net/abm04534/">Skill Builder - Square Root</a></li>
+                <li>Selectors</li>
+                <li><a href="https://jsfiddle.net/y8bm23z3/">Skill Builder - Selecting Elements</a></li>
+                <li>The DOM (Nodes) & Selecting Elements</li>
+                <li><a href="https://jsfiddle.net/8u6s6b32/">Skill Builder - Playing with the element</a></li>
+                <li><a href="https://jsfiddle.net/o9ks4y72/">Skill Builder - Functions, Parameters and Creating Elements</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            Skill Builder - Square Root
+        </div>
+        <div class="col-md-9">
+            <div class="point">
+                Use the <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt">Math.sqrt()</a> javascript function to find the square root of a number.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Selectors</h2>
+        </div>
+        <div class="col-md-9">
+            <div class="point">
+                Selectors in javascript are used just like they are in css.
+                <!--Teacher: Explain how when your using css to design the site you use selectors, its the same in javascript.-->
+
+                <!--Script: When you select an element in CSS you use grab it by whats called a selector, you then use a CSS Selector
+                            to select the elements matching the specific selector. In JavaScript its the same thing just
+                            a different syntax. And offers more functionality. In CSS we can only assign static things
+                            like colors, borders, animations, positions and more. While with JavaScript we can do these
+                            things dynamically and have changes occur whenever you would like, however often you like. -->
+
+            </div>
+
+            <div class="point">
+                <code>#</code> (hashtag) is used to select an element by ID's
+            </div>
+
+            <div class="point">
+                <code>.</code> (dot) is used to select an element by class's
+            </div>
+
+            <div class="point">
+                Just using the element name itself for example <code>div</code> or <code>ul</code> selects all those elements.
+                And don't forget you can combine selectors to select a more defined element.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            Skill Builder - Selecting Elements
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">The DOM (Nodes) & Selecting Elements</h2>
+
+            <div class="point">
+                What is the DOM? Picture it as a Javascript version of your HTML tags.
+            </div>
+
+            <h3>
+                Selecting Elements on a page
+            </h3>
+
+            <div class="point">
+                Javascript has a built in function to the document object called <code>querySelector</code>, with it you can select a
+                desired element using a selector query.
+
+                <!--Teacher: Using the HTML bellow show an example of how to select the h1 element using its ID on the
+                whiteboard using the querySelector.
+
+                    Whiteboard:
+
+                    var h1 = document.querySelector("#myHdr");
+                    console.log(h1);
+
+                    -->
+            </div>
+
+<pre>
+    <code class="language-markup">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Website&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;h1 id="myHdr"&gt;This is an h1 tag&lt;/h1&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+    </code>
+</pre>
+
+
+            <!--Teacher: Do the Selecting Elements Skill Builder-->
+
+            <div class="point">
+                Go to this <a href="https://jsfiddle.net/kgqrc1jg/2/">JSFiddle Page</a> open and your console running type <code>h1.</code> (notice the period).
+                The console should now show you all the various properties and functions available as part of that element.
+            </div>
+
+            <div class="point">
+                <div class="point">
+                    Use the <code>h1.hasAttribute()</code> function to see if the given dom node has a specific attribute.
+                    The hasAttribute takes a string parameter, for example <code>h1.hasAttribute('attribute')</code>
+                </div>
+            </div>
+
+            <div class="point">
+                What about adding new attributes? Using the same DOM node we can call the <code>h1.setAttribute()</code>.
+                It takes two parameters, the property name to set, and it's value. Below is an example of how you would
+                add a class attribute to an element.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+h1.setAttribute("class", "myClassName");
+    </code>
+</pre>
+
+            <div class="point">
+               Not only can can we set attributes, but we can remove them as well.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+h1.removeAttribute("class");
+    </code>
+</pre>
+
+            <!--Teacher: Have the students pick their favorite website, and select the navbar using javascript to hide and show it.
+                         Hint to them about the hidden property on an element.-->
+
+            <h3>Creating Elements</h3>
+
+            <div class="point">
+                Open up this <a href="https://jsfiddle.net/uoq18qn7/">JSFiddle page</a> and knock out these TODO's as we go over them.
+            </div>
+
+            <div class="point">
+                To create an element use the <code>document.createElement()</code> function. It takes one parameter, a
+                string of the element you want to create. So if you wanted to create an anchor tag, you would use
+                <code>document.createElement('a')</code>.  Lets make a new element now in our JSFiddle...
+            </div>
+
+<pre>
+    <code class="language-javascript">
+var elem = document.createElement('tagName');
+    </code>
+</pre>
+
+            <div class="point">
+                All we have is an empty element tag lets assign some other attributes. How about some text (so we have something to
+                see). We can set the text content using the <code>textContent</code> property.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+elem.textContent = 'String of text content between the opening and closing tags';
+    </code>
+</pre>
+
+            <div class="point">
+                Whats the point in creating an element with some text in it if we dont know how to add it to the page. Thats where the
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">Node.appendChild()</a> comes into play.
+            </div>
+
+
+            <div class="point">
+                Lets just add this anchor tag to the <code>body</code>, we can target the body with <code>document.body</code>.
+            </div>
+
+<pre>
+    <code class="language-javascript">
+        document.body.appendChild(elem);
+    </code>
+</pre>
+
+            <div class="point">
+                As you can see above, the <code>document.body</code> is a reference to the &lt;body&gt; tag.  So it's telling
+                javascript to append a child node to the body tag.  This can be done on ANY node you have selected.
+            </div>
+
+            <div class="point">
+                Now that we have our element in the body wouldn't it be cool if we could change the text color?
+            </div>
+
+            <!--Teacher: Ask a student if they an come up to the whiteboard and write out how they would add styling directly onto the HTML element using the style attribute-->
+<pre>
+    <code class="language-javascript">
+elem.setAttribute('style', 'color: #FF0000');
+    </code>
+</pre>
+
+            <div class="point">
+                Some properties of an element can be accessed using the dot notation. One happens to be the href attribute.
+                To get a more specific list check out the Mozilla Developer Network (MDN) - <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement">Anchor interface section</a>.
+            </div>
+
+            <div class="point">
+                Lets set the color of the text to red using the <code>style</code> attribute of the <code>element</code> tag using the dot notation syntax.
+            </div>
+<pre>
+    <code class="language-javascript">
+elem.style.color = '#FF0000';
+    </code>
+</pre>
+
+           <!--Teacher: Go over everyones JSFiddle that they should have been doing while following along with the teachings.-->
+
+            <div class="row">
+                <div class="col-md-3">
+                    Skill Builder - Playing with the element
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="./static/js/prism.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./static/js/nav.js"></script>
+<script type="text/javascript">
+    function geekwiseClass() {
+        console.log("Congrats, you found a global function");
+    }
+</script>
+</body>
+</html>
