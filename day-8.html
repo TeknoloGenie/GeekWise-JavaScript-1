@@ -1,0 +1,212 @@
+<!--.row>(.col-md-3>h2.text-right)+.col-md-9-->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Geekwise Javascript 1</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700'
+              rel='stylesheet'
+              type='text/css'>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./static/css/prism.css" />
+        <link rel="stylesheet" href="./static/css/reset.css">
+        <link rel="stylesheet" href="./static/css/style.css">
+    </head>
+    <body class="theme day">
+        <header id="nav">
+        </header>
+
+        <div class="container content">
+            <h1 class="row text-center hdr">
+                Day 8
+            </h1>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <h2 class="text-right">Concepts</h2>
+                </div>
+                <div class="col-md-9 concepts">
+                    <ul>
+                        <li>Review Take Home Assignment</li>
+                        <li><a href="">Skill Builder - Recap</a></li>
+                        <li>Event Listeners</li>
+                        <li>Working with forms</li>
+                        <li>Event Delegation</li>
+                        <li>Take Home Assignment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Teacher: Before beginning today's lesson mention (but dont go into details) a few new keywords and terminologies they will be seeing
+                         today. this, context and callbacks. -->
+
+            <div class="row">
+                <div class="col-md-3">
+                    <h2 class="text-center sub">Event Listeners</h2>
+                </div>
+                <div class="col-md-9">
+
+                    <div class="point">
+                        In javascript, Event listeners are how we can react to user interaction on the page.
+                        <!--Teacher: Give example of how you can listen for when a user types a key into an input field.
+                                     Or when a submit button inside a form is clicked.-->
+                    </div>
+
+                    <div class="point">
+                        The DOM has built in methods that allow for registering "handlers" for a given
+                        "<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Events">event</a>", like click or
+                        mouseover.
+                        <!--Teacher: Go to the link to show the students some of the basic events and how to navigate
+                                     how each event works-->
+                    </div>
+
+                    <div class="point">
+                        Lets start a new JSFiddle, create a button and be sure to give it an ID.
+                        <!--Teacher: Get them started on creating a new JSFiddle-->
+                    </div>
+
+                    <div class="point">
+                        Now that we have a button we can add a <code>click</code> handler for, lets actually add the listener. We
+                        will use the <code>element.addEventListener(event, handler)</code> function where event is a string for a
+                        named event, and the handler is a function to call when the event happens. In this way, the
+                        function is referred to as a <code>callback</code>.
+
+                        <!--Teacher: Explain what the element is in element.addEventListener, and give a strong example
+                                     of what a callback is-->
+                    </div>
+
+                    <div class="point">Lets go back to the JSFiddle you created and add a click event listener that will call
+                        a function that you create. The function you create should be something simple like
+                        logging or alerting something. Also add a debugger statement in the first line of your function</div>
+
+                    <!--Teacher: Once they get their function to run and hit the debugger statement, go over the concepts
+                                 of 'this', explain how for events the 'this' is the button element itself. Show them 'this.id'-->
+
+                    <div class="point">
+                        Lets make this a little more dynamic. Add an attribute to your button called <code>rel="..."</code>
+                    </div>
+
+                    <div class="point">
+                        Lets use that new rel attribute as the content of our alert. Since we know that the context of
+                        our function is going to be the node itself, we can use all of our node related functions on the
+                        this object.
+
+                        <!--Teacher: Explain how when you target an element using the document.querySelector method and
+                                     assign it to a variable, you then can access all of that nodes properties and methods.
+                                     Imagine the 'this' as that same variable. Plus a little more. (a little more being
+                                     the events properties and methods which we will get more into later)-->
+
+                        <!--Teacher: Have ths students go back to the JSFiddle and use their new knowledge of 'this' to
+                                     access their 'rel' attribute to alert something.-->
+                    </div>
+
+
+                    <div class="point">
+                        <div class="excercise">
+                            Alter the takehome assignment to add an even that will listen for when each list item is clicked
+                            on. Alert the <code>description</code> attributes for each li that is clicked on.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h2 class="text-center sub">Working with forms</h2>
+                </div>
+                <div class="col-md-9">
+
+                    <div class="point">
+                        Forms in HTML are a perfect way to collect information from someone interacting with your webpage.
+                        Until now, we've used prompts as a way of collecting data, but prompts are clunky which makes a
+                        form a much more attractive alternative.  Form usages vary widely based on the type of
+                        information you're collecting, and which form elements you decide to work with.
+                    </div>
+
+                    <div class="point">
+                        Lets start building something right off the bat. Lets build a form that will wrap a paragraph.
+                        Inside the paragraph will be some blank input fields. And when you click submit your input fields
+                        will turn into Bold text of the value you typed into the field. Go to
+                        <a href="https://jsfiddle.net/5ocdvpdy/">this JSFiddle</a> and do the TODO's as we learn about them.
+                        And do the ones we have already learned about.
+                    </div>
+
+                    <div class="point">
+                        Our first three todo's we should be able to handle using <code>document.querySelector()</code>
+                        and <code>element.addEventListener()</code> and by creating a function to use for the event handler.
+                        It looks like the last todo we can do as well using <code>removeChild()</code>. and the 5th one
+                        can be done using <code>document.createElement()</code>
+                    </div>
+
+                    <h3>The <code>submit</code> event</h3>
+
+                    <div class="point">
+                        So, just like we added a <code>click</code> event to our li tags in the previous exercise, there
+                        are other events we can listen for and react to with javascript.  One of these is the <code>submit</code>
+                        event of an HTML form. After creating your even handler go ahead and click submit, what happens?
+                        Either one your Result area in JSFiddle refreshed. Or two you got this error
+                        <code>{"error": "Please use POST request"}</code>.
+
+                        <!--Teacher: The reason this is happening is due to the <code>event</code> being handled by the
+                                     browsers default behavior. In order to prevent the browsers default behavior from
+                                     refreshing a page after a submit event you need to pass in a parameter to your event
+                                     handler lets call it <code>evt</code> and on the first line of code you need to
+                                     <code>evt.preventDefault</code>.-->
+                    </div>
+
+                    <div class="point">
+                        This works like you would probably expect.  We get a reference to our form, add a submit event
+                        listener, then write a callback function to handle processing the form.
+                    </div>
+
+                    <div class="point">
+                        The first thing we need to learn is, without modifying the html provided in the JSFiddle how can
+                        we target the input fields. Notice each input field has a name attribute. Lets say our form element
+                        was assigned to the variable <code>dogEntryForm</code> that form had some input fields, one of which
+                        has the name attribute <code>dogBreed</code>. We could access that input elements node with <code>dogEntryForm.dogBreed</code>.
+                    </div>
+
+                    <div class="point">
+                        The next thing to do is to create two new elements as said in todo #5.
+                    </div>
+
+                    <div class="point">
+                        For TODO #6, in order to get the value that you have typed into the text input field you will need to get access
+                        to the node elements value property. So for example <code>dogEntryForm.dogBreed.value</code>
+                    </div>
+
+                    <div class="point">
+                        Now, enter a value in your form field, and click submit.  What happens?  What result did you get?
+                        What happened after you dismissed the alert?
+                    </div>
+
+                    <div class="point">
+                        The last and final thing we need to learn in order to complete this Fiddle is the ability to
+                        replace the input elements with a strong element. Javascript provides a simple way to do that
+                        using <code>replaceChild(newChild, oldChild)</code>.
+
+                        <!--Teacher: If your having a hard time explaining and painting a picture of how the replaceChild
+                                     method works then draw on the board one div. and inside that div put two span elements.
+                                     Explain that in order to remove one of those span elements they would need to access
+                                     the replaceChild method embeded on the div itself. Refer to the drawing i'll be sending
+                                     over to you if you have any problems visualizing that.-->
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- closing the main container -->
+        </div>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./static/js/prism.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./static/js/nav.js"></script>
+        <script type="text/javascript">
+            function geekwiseClass() {
+                console.log("Congrats, you found a global function");
+            }
+        </script>
+    </body>
+</html>
+
