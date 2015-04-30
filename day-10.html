@@ -1,0 +1,270 @@
+<!--.row>(.col-md-3>h2.text-right)+.col-md-9-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geekwise Javascript 1</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700'
+          rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/prism.css" />
+    <link rel="stylesheet" href="./static/css/reset.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <style>
+        .urgent {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body class="theme">
+<header id="nav">
+</header>
+
+<div class="container content">
+    <h1 class="row text-center hdr">
+        Day 10
+    </h1>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="text-right">Concepts</h2>
+        </div>
+        <div class="col-md-9 concepts">
+            <ul>
+                <li>Review Take Home Assignment</li>
+                <li>array forEach</li>
+                <li>Skill Builder</li>
+                <li>Date Object</li>
+                <li>Other fun stuff</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h3 class="text-center sub">Removing items from an array</h3>
+            <div class="point">
+                So now we can create Arrays, access array properties, and add items to arrays, how about removing
+                items?
+            </div>
+            <div class="point">
+                Items can be removed one at a time <strong>from the end</strong> of the array, using the <code>pop</code>
+                method. NOTE: This modifies the original array
+            </div>
+
+            <div class="alert alert-success">
+                Try it: Create a variable called lastFriend and assign it to <code>friends.pop()</code>. Then log the variable
+                and what do you get? What about logging the friends array? Has it changed?
+            </div>
+
+            <div class="point">
+                Another handy array function we'll talk about is the <code>slice</code> function.  It works on arrays a little
+                differently.
+            </div>
+
+            <div class="point">
+                The <code>slice</code> function will make a copy of the specified indexes and return them in a new
+                array.
+            </div>
+            <div class="point">
+                The <strong>signature</strong> of the slice function looks like:
+                <code class="language-javascript">friends.slice(begin, end)</code>
+            </div>
+
+            <div class="point">
+                The <code>begin</code> is the starting index, and the <code>end</code> is the index to
+                stop at.  NOTE: If the end (param) is not passed it will get everything until the last one.
+
+            </div>
+
+            <div class="alert alert-success">
+                Try it: Create an array with 4 strings, then slice the array to return the middle 2 strings.
+            </div>
+
+            <div class="point">
+                One point to remember about the <code>slice</code> functions is that is <strong>does not</strong>
+                modify the original array.
+            </div>
+
+            <div class="point">
+                If we did want to modify the original array we would use <code>splice</code>!  The splice function works in a similar way to the slice function,
+                however it allows you to modify the original array. So imagine this like a cake, where as we are splicing
+                out those pieces of cake and the will never be there again.
+            </div>
+
+            <div class="point">
+                The <strong>signature</strong> of the splice function looks like:
+            </div>
+<pre>
+	<code class="language-javascript">
+strings.splice(begin, deleteCount, [additional, items, to, add]);
+    </code>
+</pre>
+            <div class="point">
+                So lets break this apart, the <code>begin</code> param is our starting index, <code>deleteCount</code> is how many items to remove
+                from the starting index, and additional items to add are more elements that you want to add to the
+                array (comma separated values).
+
+            </div>
+
+            <div class="alert alert-success">
+                Try it: Create an array with at least 6 strings in it. And splice the array to where it leaves the
+                first 2 strings and the last string and add one leaving a total of 4 items in the array
+                (the 3rd item being the new one you added)
+            </div>
+
+            <div class="point">
+                We can do a lot more with array's, just look at all it's available functions
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+                   target="_blank">on the MDN site</a>.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">Control Flow - Looping</h2>
+            <div class="point">
+                Looping is the act of repeating a block of code based on a given condition. When the conditions
+                is no longer truthy, the loop stops.
+            </div>
+
+            <div class="point">
+                The <code>for</code> loop, maybe the most common loop we'll use in class.
+            </div>
+            <div class="point">
+                With <code>for</code> loops we need to set up 3 things, our starting point, our condition, and our
+                incrementer.
+            </div>
+            <div class="point">
+                This type of loop is nice because you do not need to manage the incrementer in your normal code
+                excecution, because it's built into the loop structure.
+            </div>
+<pre>
+	<code class="language-javascript">
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+    </code>
+</pre>
+            <div class="point">
+                What if I want a loop to stop early? Or maybe completely end the loop entirely and all remaining loops?
+            </div>
+            <div class="point">
+                Javascript provides two ways of controlling the flow of a loop, the <code>continue</code> and <code>
+                break</code> keywords.
+            </div>
+            <div class="point">
+                <code>continue</code> will immediately reset the loop to the next iteration, and continue on with the
+                loop.  It's basically just saying, disregard the rest of this loop and go to the next loop.
+            </div>
+
+            <div class="alert alert-success">
+                Try it: Create a for loop that will loop 10 times, and skip the 5th and 7th loop.
+                All other loops should log the loop number to the console.
+            </div>
+<pre>
+	<code class="language-javascript">
+
+for (var i = 0; i < 10; i++) {
+    if (i === 5 || i === 7) {
+        i++;
+        continue;
+    }
+    console.log(i);
+    i++;
+}
+    </code>
+</pre>
+            <div class="point">
+                The <code>break</code> keyword will, when encountered, immediately stop the loop AND all subsequent
+                loops.
+            </div>
+            <div class="alert alert-success">
+                Try it: Create a <code>for</code> loop that will loop ten times, each time logging the current loop number,
+                but terminate the loop on the seventh loop.
+            </div>
+<pre>
+	<code class="language-javascript">
+for (var i = 0; i < 10; i++) {
+    if (i === 6) {
+        break;
+    }
+    console.log(i);
+}
+    </code>
+</pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h3 class="text-center sub">Skill Builder - Looping</h3>
+
+            <div class="point">
+                Create a small jsfiddle where a user can type in any number and click a button to get a list of all the
+                divisible numbers. For example if i type in 72 i should get back <code>2,3,4,6,8,9,12,18,24,36</code>
+            </div>
+        </div>
+    </div>
+
+    <!--Teacher: Skill Builder Answer https://jsfiddle.net/z7ysm8fu/1/ -->
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">Looping &amp; Arrays, a perfect match</h2>
+            <div class="point">
+                So all our work with arrays up to this point has been retrieving array indexes one at a time using
+                a numbered bracket notation, for example <code>friends[3]</code>.  This is useful, but what if your application
+                requirements were such that you needed to do something to every element in the array?
+            </div>
+            <div class="point">
+                A for loop is a perfect mechanism for iterating over each element in an array. Lets think about how we can do this.
+                When we write a for loops condition we manually give it an amount of times we want to loop some code.
+                What property in an array tells us how many items are in it?
+
+            </div>
+            <div class="alert alert-success">
+                Try it: Using what we have discussed give it a shot and try to create your first for loop on your own.
+            </div>
+
+            <div class="point">
+                Okay, now that i have made you learn how to loop arrays the hard way, time to show you the easy way to do it.
+            </div>
+
+            <div class="point">
+                <code>array.forEach(callback, thisArgs)</code> is a javascript method on every array that executes a given callback on every item.
+                There are a few downfalls to this, we cannot force the loop to start at a desired index, and we cant <code>continue</code> or <code>break</code> the loop.
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h3 class="text-center sub">Takehome</a></h3>
+
+            <div class="point">
+                Create a JSFiddle that will ask a user how many family members they have, then it should ask them the family members names.
+                After you have all of the family members names then ask again whats the relationship of that family member
+                and age. And reassign their string name in the array to an array formatted like so [name, relation, age].
+                In the end you should have an array of arrays of all your families basic info.
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- closing the main container -->
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="./static/js/prism.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./static/js/nav.js"></script>
+</body>
+</html>
