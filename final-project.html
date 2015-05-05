@@ -8,192 +8,195 @@
           rel='stylesheet'
           type='text/css'>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./static/css/prism.css" />
+    <link rel="stylesheet" href="./static/css/prism.css"/>
     <link rel="stylesheet" href="./static/css/reset.css">
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
 <body class="theme">
-    <header id="nav">
-    </header>
+<header id="nav">
+</header>
 
-    <div class="container content">
-        <h1 class="row text-center hdr">
-            Final Project Overview
-        </h1>
-        <div class="row">
-            <div class="col-md-3">
-                <h2 class="text-right">HTML Files</h2>
+<div class="container content">
+    <h1 class="row text-center hdr">
+        Final Project Overview
+    </h1>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">Project Structure</h2>
+
+            <div class="point">
+                Before we begin lets outline the project folder structure, you should all have an empty folder created
+                called TodoApp. Open up IntelliJ and <code>create a new project from existing source</code>. Open up the
+                terminal and initiate your git repo using <code>git init</code>. Go to your GitHub account
             </div>
-            <div class="col-md-9 concepts">
-                <ul>
-                    <li>index.html</li>
-                    <li>registration.html</li>
-                    <li>dashboard.html</li>
-                    <li>friends.html</li>
-                    <li>messages.html</li>
-                    <li>chat.html</li>
-                </ul>
+
+            <div class="point">
+                After you have your project create in IntelliJ and your GitHub repo has been created create the
+                following file/folder structure. After your done commit it with the commit message "Initial Commit" and
+                push it up. using <code>ctrl</code> + <code>shift</code> + <code>K</code> on windows and
+                <code>cmd</code> + <code>shift</code> + <code>K</code> for mac.
             </div>
+
+<pre>
+<code class="language-javascript">
+    TodoApp/
+    |--css/
+    | |--style.css
+    |
+    |--js/
+    | |--scripts.js
+    |
+    |--index.html
+</code>
+</pre>
+            <div class="point">
+                Every project needs a file structure and this is just the most basic one you will use when creating a
+                simple Vanilla Javascript Application. The next thing to do is to think about what were building, and
+                how to build it. Piece by piece.
+            </div>
+
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                <h2 class="text-right">Javascript Files</h2>
-            </div>
-            <div class="col-md-9 concepts">
-                <ul >
-                    <li>app.js</li>
-                    <li>register.js</li>
-                    <li>auth.js</li>
-                    <li>friends.js</li>
-                    <li>messages.js</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <h2 class="text-center sub">HTML Files</h2>
-                <div class="point">
-                    The file structure for your project should follow along these lines:
-
-                    Project Root Folder
-                    <ul>
-                        <li>css folder
-                            <ul class="list">
-                                <li>styles.css</li>
-                            </ul>
-                        </li>
-                        <li>js folder
-                            <ul class="list">
-                                <li>scripts.js or main.js</li>
-                                <li>auth.js</li>
-                                <li>friends.html</li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </li>
-                        <li>
-                            pages folder
-                            <ul class="list">
-                                <li>registration.html</li>
-                                <li>dashboard.html</li>
-                                <li>messages.html</li>
-                                <li>chat.html</li>
-                                <li>friends.html</li>
-                            </ul>
-                        </li>
-                        <li>
-                            index.html
-                        </li>
-                    </ul>
-                </div>
-
-                <h2 class="text-center sub">HTML Files</h2>
-                <h3>index.html</h3>
-                <div class="point">
-                    The index.html will serve as the login page for the project. It will need input fields for a username and
-                    password. Below the form should be a link to the registration page for creating new accounts. Upon successful
-                    log in the user should be redirected to the dashboard.html page.
-                </div>
-
-                <h3>registration.html</h3>
-                <div class="point">
-                    The registration page should have a form with the following inputs:
-                    <ul class="list">
-                        <li>Username</li>
-                        <li>Password</li>
-                        <li>First name</li>
-                        <li>Last name</li>
-                        <li>Date of Birth</li>
-                        <li>Email - be sure to use validation to check that it follows email format (email@email.com)</li>
-                        <li>Gender - may use radios or dropdown</li>
-                    </ul>
-
-                    Be sure to check for edge casing, ie. no numbers in the name fields.
-
-                    When all information is entered and the user is created then the user should be redirected to the login page.
-                </div>
-
-                <h3>dashboard.html</h3>
-                <div class="point">
-                    The dashboard should display links to the Friends page, Messages page, chat page, and a button for logging out, as well
-                    as display the user name.
-                </div>
-
-                <h3>friends.html</h3>
-                <div class="point">
-                    The friends page will have a list of all friends, using their username and first and last names, as
-                    well as their current status and, if offline, when they were last logged in. Friends should also have
-                    links for private chatting and messages. The friends list should also have a way of sorting the list
-                    by username, status, and any other way you might want to order it.
-                    <br>
-                    Finally, the list should also have buttons for adding and removing friends. The Remove friend button
-                    can be added to each friend’s info.Adding friends should require a first and last name.
-                    The fields can be set up how you like, whether that’s always visible or setting the form to display:none;
-                    and setting the attributes to display:block; when a button is clicked.
-                </div>
-
-                <h3>messages.html</h3>
-                <div class="point">
-                    The messages page will display direct messages from other users in order of last received and should
-                    have the username of the sender, the message, and a remove message button, as well as a way to send
-                    messages to other users.
-                </div>
-
-                <h3>chat.html</h3>
-                <div class="point">
-                    The chatroom will have an area to display everyones messages, an input field for you to type out
-                    messages and a send button to post those messages. The msg should not only take what you put in,
-                    but should also add your username to the posted text so everyone knows who sent it. The page will
-                    need to check the server every 5 seconds or so to see if any new messages have been added.
-                </div>
-
-                <h2 class="text-center sub">JS Files</h2>
-                <h3>main.js/app.js</h3>
-                <div class="point">
-                    This will be the the main javascript file that will access your other js files and force them to
-                    communicate with each other. It should contain a function for logging in user as well as an event
-                    listener to check when a login event happens.
-                </div>
-
-                <h3>auth.js</h3>
-                <div class="point">
-                    The auth.js file will be responsible for authorizing a user at login, as well as prototyping a logout
-                    method to the auth object.
-                </div>
-
-                <h3>register.js</h3>
-                <div class="point">
-                    The register.js file will be responsible for registering a new user. It should have a function for
-                    setting a new user's information and posting it to a server as well as a function that will check
-                    for an event and gather the information a user inputs into a registration form. This info should be
-                    passed to the the function responsible for posting the data to the server.
-                </div>
-
-                <h3>user.js</h3>
-                <div class="point">
-                    This file will contain your user object constructor and prototypes for adding, removing, and messaging.
-                </div>
-
-
-
-
-            </div>
-        </div>
-
-
-
-
-
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./static/js/prism.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./static/js/nav.js"></script>
-    <script type="text/javascript">
-        function geekwiseClass() {
-            console.log("Congrats, you found a global function");
-        }
-    </script>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h1 class="text-center sub">Project Overview</h1>
+
+            <div class="point">
+                The first thing we should always do is think about how what the desired result we want is. Im going to
+                give a brief description of what the application should do. Along with some details and specifics about
+                each of the features this TodoApp should have. How you accomplish the task is completely up to you,
+                there are a million ways to skin a cat, or in a development sense, a million ways to code the same
+                thing.
+            </div>
+
+            <div class="point">
+                While developing this Todo app please keep in mind Edge Casing, for example stopping a user from adding
+                an empty Todo.
+            </div>
+
+            <div class="point">
+                Keep in mind you may use any frontend framework to help you make the UI fancy. Actually its encouraged
+                and extra points will be given.
+            </div>
+
+            <div class="point">
+                TodoApp simply allows users to type in any given task and add it to a list of
+                things Todo. After a todo task is added a user should be able to edit, delete or complete the task.
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h1 class="text-center sub">User Interface</h1>
+
+            <div class="point">
+                When building an application he first thing you always do is built out the user interface. Most
+                developers like to draw out on paper or in photoshop some mockup's of what the app might like look in
+                order to help them lay out the skeleton design of the HTML.
+            </div>
+
+            <div class="point">
+                The user interface for a todo app is relatively simple, we need an input field in order to type what
+                Todo in, we need a list to hold our Todo items in and we need a button to actually tell the text in the
+                input field to get inserted into the list of items. This design logic however only takes care of adding
+                some tasks to a list of items.
+            </div>
+
+            <div class="point">
+                In order to add the functionality to edit, remove or complete a Todo we need to think on a more specific
+                level, what are we editing, removing or completing? The Todo item right? Aren't we going to need some
+                type of way to call some function for each of these features? So to fine tune our UI requirements we'll
+                need a list item with a checkbox inside it, and a few buttons one to edit on to delete.
+            </div>
+
+            <div class="point">
+                At this point your UI requirements are complete and you can start building the Javascript Logic.
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h1 class="text-center sub">Javascript Logic</h1>
+
+            <div class="point">
+                This is the hard part, its time to use the elements (html) you created to make your Todo app do what it
+                needs to do. Hopefully you assigned each of your main elements that your users will interact with some
+                ID's so you can target them in your javascript. If not do so now, and lets go over what each UI Element
+                that calls a function will do.
+            </div>
+
+            <div class="point">
+                <u>Input Field</u>: The input field where the user will type in what they want Todo. This field should
+                be cleared when its text is added to the list of things Todo.
+            </div>
+
+            <div class="point">
+                <u>Add Todo Button</u>: This is the button that will call our function to add a new Todo to the list.
+                The logic behind this function is to dynamically create a new <code>Todo Item</code> list item element
+            </div>
+
+            <div class="point">
+                <u>Todo Item (List Item)</u>: This is the element that gets created when you click your add todo button.
+                It should contain the text of the Todo (text of the input field), a checkbox (for completing) and the
+                two buttons to edit and delete the items.
+            </div>
+
+            <div class="point">
+                <u>Todo Item (Checkbox)</u>: When a user checks this you should add some kind of class to the list item
+                that strikes through the text and makes the text lighter. And dont allow it to be edited. (So hide the
+                edit button)
+            </div>
+
+            <div class="point">
+                <u>Todo Item (Edit Button)</u>: Remember when we created that <a
+                    href="https://jsfiddle.net/5ocdvpdy/1/">JSFiddle</a> to turn an input field into text? Well were
+                doing the same thing here, accept this time were turning the text of the list item into an input field,
+                allowing ourselves to edit it then turning it back into plain text when you hit enter.So if you think
+                about it, your creating an input element, with an event listener listening for when the user hit the
+                enter key. (Do some google'ing).
+            </div>
+
+            <div class="point">
+                <u>Todo Item (Delete Button)</u>: Fairly simple, remove the entire List Item this button is within. How
+                can you target the parent element of the button?
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h1 class="text-center sub">Final Project Grading</h1>
+
+            <div class="point">
+                First lets remember, this class is not accredited, meaning this grade you get does not mean much on
+                academic level. This grade scaling system is strictly meant to give the student a rough idea of how they
+                grew and where there at by the end of the class.
+            </div>
+
+            <div class="point">User Interface: 10%</div>
+            <div class="point">Edge Casing: 10%</div>
+            <div class="point">Control Flow: 10%</div>
+            <div class="point">Readability: 10%</div>
+            <div class="point">DOM Manipulation: 20%</div>
+            <div class="point">Logic makes sense: 20%</div>
+            <div class="point">Project Completion: 20%</div>
+        </div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="./static/js/prism.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./static/js/nav.js"></script>
+<script type="text/javascript">
+    function geekwiseClass() {
+        console.log("Congrats, you found a global function");
+    }
+</script>
 </body>
 </html>
