@@ -37,10 +37,8 @@
     </div>
 
     <div class="row">
-        <div class="col-md-3">
-            <h2 class="text-right">More DOM Manipulation</h2>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">More DOM Manipulation</h2>
 
             <div class="point">
                 Before we can continue on with the final project we need to learn a few more DOM Manipulation
@@ -52,35 +50,33 @@
             </div>
 
 <pre>
-    <code class="language-javascript">
-        <div id="changeMe">
-            <p>Im just some plain old text in a paragraph element</p>
-        </div>
+    <code class="language-html">
+&lt;div id="changeMe"&gt;
+    &lt;p&gt;Im just some plain old text in a paragraph element&lt;/p&gt;
+&lt;/div&gt;
     </code>
 </pre>
             <div class="point">
                 To this
             </div>
 
-            <pre>
-    <code class="language-javascript">
-        <div id="changeMe">
-            <p>Now i have an input element too!</p> <input type="text"/>
-        </div>
-    </code>
-
-                <div class="point">
-                    Using the following javascript
-                </div>
-
 <pre>
     <code class="language-javascript">
-        var div = document.querySelector('#changeMe');
-
-        div.innerHTML = '<p>Now i have an input element too!</p> \n
-        <input type="text"/>';
+&lt;div id="changeMe"&gt;
+    &lt;p&gt;Now i have an input element too!&lt;/p&gt; &lt;input type="text"/&gt;
+&lt;/div&gt;
     </code>
 </pre>
+
+            <div class="point">
+                Using the following javascript
+            </div>
+<pre>
+    <code class="language-javascript">
+var div = document.querySelector('#changeMe');
+
+div.innerHTML = '&lt;p&gt;Now i have an input element too!&lt;/p&gt; &lt;input type="text"/&gt;';
+    </code>
 </pre>
 
             <div class="point">
@@ -94,10 +90,8 @@
     </div>
 
     <div class="row">
-        <div class="col-md-3">
-            <h2 class="text-right">The Final Project</h2>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="text-center sub">The Final Project</h2>
 
             <div class="point">
                 Continue on to the Final Project Page that is now available.
